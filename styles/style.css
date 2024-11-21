@@ -263,3 +263,16 @@ footer p {
     font-weight: bold;
     margin: 0;
 }
+
+
+/* For Mobile Screens */
+@media (max-width: 576px) {
+    .content-box {
+        padding: 20px 10px;
+        font-size: 1rem;
+        margin: 5px;
+    }
+    .content-box h5 {
+        font-size: 1rem;
+    }
+}
