@@ -93,15 +93,6 @@ header img {
     transform: scale(1.05);
 }
 
-/* Functional Areas */
-.functional-area {
-    text-align: center;
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #007bff;
-    font-weight: bold;
-}
-
 /* Projects Section */
 #projects {
     padding: 50px 0;
@@ -236,40 +227,39 @@ footer p {
     text-decoration: none;
 }
 
-/* Functional Areas Section */
 #functional-areas {
-    padding: 50px 0;
-}
-
-#functional-areas h3 {
-    font-size: 2rem;
-    color: #333;
-    font-weight: bold;
-}
-
-.functional-area-card {
-    border: 2px solid #007bff; /* Blue border for emphasis */
+    background-color: #f8f9fa;
     border-radius: 10px;
-    background-color: #f9f9f9; /* Light background */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animation effect */
-}
-
-.functional-area-card:hover {
-    transform: scale(1.05); /* Slightly enlarge card on hover */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow effect */
-}
-
-.card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #007bff;
-}
-
-.card-body {
     padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Optional: Customize card hover effects */
-.functional-area-card:hover .card-title {
-    color: #0056b3; /* Darker blue on hover */
+.functional-area-item {
+    margin-bottom: 20px;
+}
+
+.content-box {
+    padding: 20px;
+    background: linear-gradient(135deg, #a066fd, #448bf0);
+    color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.content-box i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.content-box h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
 }
