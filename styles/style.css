@@ -289,6 +289,39 @@ footer p {
     border-color: #2575fc;
 }
 
+/* Ensure both buttons have the same height, padding, and alignment */
+.btn {
+    height: 40px; /* Same height for both */
+    padding: 10px 20px; /* Consistent padding */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Style the default 'Live View' button background */
+#liveViewButton {
+    background-color: #6c757d; /* Secondary background color */
+    color: white;
+}
+
+/* Hover effect for Live View button */
+#liveViewButton:hover {
+    background-color: #5a6268; /* Darker shade on hover */
+}
+
+/* 'View Project' button will keep its primary style */
+.btn-primary {
+    background-color: #007bff; /* Primary background color */
+    color: white;
+}
+
+/* Hover effect for 'View Project' button */
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker primary color on hover */
+}
+
 
 /* For Mobile Screens */
 @media (max-width: 576px) {
