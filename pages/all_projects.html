@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/all_projects.css">
+</head>
+<body>
+
+    <main>
+        <section class="projects-section">
+            <div class="container">
+
+                <div class="section-header">
+                    <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                    <div class="header-content">
+                        <h1 class="section-title">My Projects</h1>
+                        <div class="section-divider"></div>
+                        <p class="section-subtitle">Explore my recent work and personal projects showcasing my skills and creativity</p>
+                    </div>
+                </div>
+
+
+                <section class="project-filters">
+                    <div class="container">
+                        <div class="filter-container">
+                            <h2>Filter By:</h2>
+                            <div class="filter-groups">
+                                <div class="filter-group">
+                                    <h3>Tools</h3>
+                                    <div class="filter-options">
+                                        <select name="tool" id="tool-filter">
+                                            <option value="">All Tools</option>
+                                            <option value="python">Python</option>
+                                            <option value="django">Django</option>
+                                            <option value="pandas">Pandas</option>
+                                            <!-- Add more options as needed -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <h3>Technique</h3>
+                                    <div class="filter-options">
+                                        <select name="technique" id="technique-filter">
+                                            <option value="">All Techniques</option>
+                                            <option value="machine-learning">Machine Learning</option>
+                                            <option value="iot-integration">IoT Integration</option>
+                                            <option value="data">Data Analysis</option>
+                                            <option value="ai">AI</option>
+                                            <!-- Add more options as needed -->
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <h3>Industry</h3>
+                                    <div class="filter-options">
+                                        <select name="industry" id="industry-filter">
+                                            <option value="">All Industries</option>
+                                            <option value="finance">Finance</option>
+                                            <option value="environment">Environment</option>
+                                            <!-- Add more options as needed -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="clear-filters">Clear Filters</button>
+                        </div>
+                    </div>
+                </section>
+
+
+                
+                <div class="projects-grid" id="projects">
+                    <!-- Project Card Example -->
+                    <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
+                        <div class="project-image">
+                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="project1.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Sales Data Analysis Dashboard</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Pandas</span>
+                            </div>
+                            <p class="project-description">
+                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
+                                using machine learning algorithms.
+                            </p>
+                            <div class="project-links">
+                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://demo-link.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
+                        <div class="project-image">
+                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="project1.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Sales Data Analysis Dashboard</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Pandas</span>
+                            </div>
+                            <p class="project-description">
+                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
+                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
+                                using machine learning algorithms.
+                            </p>
+                            <div class="project-links">
+                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://demo-link.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Add more project cards here with proper data attributes -->
+                </div>
+                
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>Portfolio</h3>
+                    <p>A showcase of my projects and professional journey.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a href="#" target="_blank"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/all_projects.js"></script>
+</body>
+</html>
