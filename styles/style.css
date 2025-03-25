@@ -1,0 +1,343 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Header Section */
+header {
+    background-image: url('images/header-bg.jpg'); /* Update with your image path */
+    background-size: cover; /* Ensures the image covers the whole header */
+    background-position: center center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating of the image */
+    padding: 100px 0; /* Adds padding around the content */
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+header p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+header img {
+    border: 5px solid white; /* Optional: Adds a white border around the image */
+    margin-bottom: 20px; /* Optional: Adds spacing between the photo and text */
+}
+
+/* About Section */
+#about {
+    padding: 50px 0;
+    background-color: white;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+#about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Skills Section */
+#skills {
+    background-color: #f1f1f1;
+    padding: 50px 0;
+}
+
+#skills h2 {
+    font-size: 2rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.skill-card {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+.skill-card h5 {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+.skill-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.skill-card:hover {
+    transform: scale(1.05);
+}
+
+/* Projects Section */
+#projects {
+    padding: 50px 0;
+}
+
+#projects h2 {
+    font-size: 2rem;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    background-color: white;
+}
+
+.card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.card .btn {
+    margin-right: 10px;
+}
+
+/* Contact Section */
+#contact {
+    background-color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 40px;
+}
+
+.social-icons {
+    text-align: center;
+}
+
+.social-icons a {
+    font-size: 1.8rem;
+    margin: 0 20px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #0056b3;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .skill-card {
+        margin-bottom: 30px;
+    }
+
+    .functional-area {
+        font-size: 1rem;
+    }
+
+    .card-title {
+        font-size: 1.2rem;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    .card-body {
+        padding: 15px;
+    }
+}
+
+/* Contact Section */
+#contact {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#contact a {
+    font-size: 1.1rem;
+    padding: 12px 20px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contact i {
+    margin-right: 10px; /* Adds space between icon and text */
+}
+
+/* Add hover effect to buttons */
+#contact a:hover {
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+#functional-areas {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.functional-area-item {
+    margin-bottom: 20px;
+}
+
+.content-box {
+    padding: 20px;
+    background: linear-gradient(135deg, #a066fd, #448bf0);
+    color: #fff;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.content-box i {
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.content-box h5 {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#resume-download {
+    background: linear-gradient(135deg, #7f42c0, #367bf1);
+    color: #fff;
+    border-radius: 10px;
+    padding: 50px 20px;
+}
+
+#resume-download h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#resume-download .btn-primary {
+    background-color: #fff;
+    color: #2575fc;
+    border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
+
+#resume-download .btn-primary:hover {
+    background-color: #2575fc;
+    color: #fff;
+    border-color: #2575fc;
+}
+
+/* Ensure both buttons have the same height, padding, and alignment */
+.btn {
+    height: 40px; /* Same height for both */
+    padding: 10px 20px; /* Consistent padding */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Style the default 'Live View' button background */
+#liveViewButton {
+    background-color: #6c757d; /* Secondary background color */
+    color: white;
+}
+
+/* Hover effect for Live View button */
+#liveViewButton:hover {
+    background-color: #5a6268; /* Darker shade on hover */
+}
+
+/* 'View Project' button will keep its primary style */
+.btn-primary {
+    background-color: #007bff; /* Primary background color */
+    color: white;
+}
+
+/* Hover effect for 'View Project' button */
+.btn-primary:hover {
+    background-color: #0056b3; /* Darker primary color on hover */
+}
+
+
+/* For Mobile Screens */
+@media (max-width: 576px) {
+    .content-box {
+        padding: 20px 10px;
+        font-size: 1rem;
+        margin: 5px;
+    }
+    .content-box h5 {
+        font-size: 1rem;
+    }
+}
+
+.card-img-top {
+    width: 100%; /* Ensures the image spans the card width */
+    height: 200px; /* Sets a consistent height */
+    object-fit: cover; /* Crops the image to fit while maintaining aspect ratio */
+    border-radius: 4px; /* Optional: for rounded corners */
+}
