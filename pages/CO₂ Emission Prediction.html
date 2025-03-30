@@ -20,14 +20,13 @@
         
         <div class="project-detail-content">
             <div class="project-tags">
-                <span class="project-tag">Python</span>
-                <span class="project-tag">Data Analysis</span>
-                <span class="project-tag">Pandas</span>
-                <span class="project-tag">Matplotlib</span>
-                <span class="project-tag">Promotional Analysis</span>
-                <span class="project-tag">Retail Analytics</span>
-                <span class="project-tag">Sales Performance</span>
-                <span class="project-tag">Visualization</span>
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">Polynomial Regression</span>
+                <span class="project-tag">Dimensionality Reduction</span>
+                <span class="project-tag">Docker</span>
+                <span class="project-tag">Flask</span>
+                <span class="project-tag">MLOps</span>
+                <span class="project-tag">Sustainability</span>
             </div>
             
             <!-- <div class="project-metadata">
@@ -47,47 +46,39 @@
             
             <div class="project-description">
                 <h2>Project Overview</h2>
-                <p>General Overview Comes Here</p>
+                <p>This project focuses on predicting hourly CO₂ emissions in steel production, allowing businesses to monitor and optimize their processes to reduce environmental impact. By leveraging machine learning models, stakeholders can proactively manage emissions, meet regulatory standards, and enhance sustainability in production operations. The project initially utilized Polynomial Regression for prediction and was later deployed using Flask and Docker, making it accessible via an API on Render.</p>
                 
                 <h2>Key Insights</h2>
                 <ul>
-                    <li>point 1:
-                        <ul>
-                            <li>line 1</li>
-                            <li>line 2</li>
-                            <li>line 3</li>
-                            <li>line 4</li>
-                        </ul>
-                    </li>
-                    <li>point 2:
-                        <ul>
-                            <li>line 1</li>
-                            <li>line 2</li>
-                            <li>line 3</li>
-                            <li>line 4</li>
-                        </ul>
-                    </li>
-                    <li>point 3:
-                        <ul>
-                            <li>line 1</li>
-                            <li>line 2</li>
-                            <li>line 3</li>
-                            <li>line 4</li>
-                        </ul>
-                    </li>
+                    <li>Accurate hourly predictions help industries optimize production schedules to reduce emissions.</li>
+                    <li>Polynomial Regression (degree 2) captures non-linear emission patterns better than linear models. </li>
+                    <li>PCA (Principal Component Analysis) aids in feature reduction and better visualization of emissions.</li>
+                    <li>Deploying the model as an API makes predictions accessible for integration into industrial systems.</li>
                 </ul>
                 
                 <h2>Technical Implementation</h2>
-                <p>Technical Implementation Comes Here</p>
                 <ul>
-                    <li>line 1</li>
-                    <li>line 2</li>
-                    <li>line 3</li>
-                    <li>line 4</li>
-                    <li>line 5</li>
-                    <li>line 6</li>
-                </ul>
-                
+                    <li><strong>Data Preprocessing:</strong>
+                        <ul>
+                            <li>Aggregated data to hourly values for accurate forecasting.</li>
+                            <li>Applied PCA to reduce dimensions and identify emission patterns.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Modeling Approach:</strong>
+                        <ul>
+                            <li>Started with Linear Regression but observed non-linearity.</li>
+                            <li>Implemented Polynomial Regression (degree 2), significantly improving accuracy.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Deployment & MLOps:</strong>
+                        <ul>
+                            <li>Built a Flask API to serve predictions.</li>
+                            <li>Containerized the model with Docker for consistent deployment.</li>
+                            <li>Deployed on Render, making it publicly accessible.</li>
+                            <li>Previously developed a Streamlit app for real-time CO₂ monitoring.</li>
+                        </ul>
+                    </li>
+                </ul>                
                 <!-- <div class="code-snippet">
                     <h3>Code Example</h3>
                     <pre><code class="language-python">
@@ -104,7 +95,7 @@ def analyze_data(dataset):
                         <div class="spinner"></div>
                         <p>Loading preview...</p>
                     </div>
-                    <iframe src="https://example.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
+                    <iframe src="https://co2-emission-prediction-mlops.onrender.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
                 </div>
 
                 <!-- <h2>Video Preview</h2>
@@ -114,14 +105,12 @@ def analyze_data(dataset):
                 </video> -->
                 
                 <h2>Key Learnings</h2>
-                <p>What we learn comes here:</p>
                 <ul>
-                    <li>line 1</li>
-                    <li>line 2</li>
-                    <li>line 3</li>
-                    <li>line 4</li>
-                    <li>line 5</li>
-                    <li>line 6</li>
+                    <li>Polynomial Regression is effective for capturing complex, non-linear emission patterns.</li>
+                    <li>PCA helps visualize CO₂ emissions trends and improve model efficiency.</li>
+                    <li>Docker enables smooth deployment by ensuring environment consistency.</li>
+                    <li>Flask APIs make ML models easily accessible for real-world applications.</li>
+                    <li>Deploying on Render simplifies hosting and model accessibility.</li>                    
                 </ul>
                 
                 <!-- <div class="project-metrics">
@@ -141,9 +130,9 @@ def analyze_data(dataset):
             </div>
             
             <div class="project-links">
-                <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="#" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
-                <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a>
+                <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <!-- <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a> -->
             </div>
             
             <div class="related-projects">

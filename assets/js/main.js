@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentGroup = 0;
     
     // Initialize carousel
-    updateCarousel();
+    // updateCarousel();
     
     // Filter functionality
     filterButtons.forEach(button => {
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentGroup = (currentGroup + 1) % totalGroups;
             }
             
-            updateCarousel();
+            // updateCarousel();
         });
     });
     
@@ -155,28 +155,28 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileIndicators.forEach(indicator => {
         indicator.addEventListener('click', function() {
             currentGroup = parseInt(this.getAttribute('data-index'));
-            updateCarousel();
+            // updateCarousel();
         });
     });
     
     desktopIndicators.forEach(indicator => {
         indicator.addEventListener('click', function() {
             currentGroup = parseInt(this.getAttribute('data-index'));
-            updateCarousel();
+            // updateCarousel();
         });
     });
     
     // Update carousel based on current group
-    function updateCarousel() {
-        // Get active filter
-        const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+    // function updateCarousel() {
+    //     // Get active filter
+    //     const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
         
-        // Filter projects
-        filterProjects(activeFilter);
+    //     // Filter projects
+    //     filterProjects(activeFilter);
         
-        // Update indicators
-        updateAllIndicators();
-    }
+    //     // Update indicators
+    //     updateAllIndicators();
+    // }
     
     // Filter projects based on category and current group
     function filterProjects(filterValue) {
@@ -231,8 +231,7 @@ function initTypingEffect() {
         "Deep Learning",
         "Generative AI",
         "Natural Language Processing",
-        "Computer Vision",
-        "Backend Dev"
+        "Computer Vision"
     ];
     
     let wordIndex = 0;
@@ -346,6 +345,68 @@ function initParticlesJS() {
 }
 
 // Additional functions (placeholders - implement as needed)
+// function initMobileNav() {
+//     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+//     const mainNav = document.querySelector('.main-nav');
+    
+//     if (mobileNavToggle && mainNav) {
+//         mobileNavToggle.addEventListener('click', function() {
+//             this.classList.toggle('active');
+//             mainNav.classList.toggle('active');
+//         });
+        
+//         // Close mobile menu when clicking on a nav link
+//         const navLinks = document.querySelectorAll('.main-nav a');
+//         navLinks.forEach(link => {
+//             link.addEventListener('click', function() {
+//                 mainNav.classList.remove('active');
+//                 mobileNavToggle.classList.remove('active');
+//             });
+//         });
+
+//         navLinks.forEach(link => {
+//             link.addEventListener('click', function(event) {
+
+//                 const targetToggle = this.getAttribute('data-toggle'); // Check if navbar link has toggle action
+//                 if (targetToggle) {
+//                     event.preventDefault(); // Prevent default scrolling behavior
+
+//                     // Scroll to Education section smoothly
+//                     document.getElementById('education').scrollIntoView({ behavior: "smooth" });
+
+//                     // Switch to Experience tab
+//                     document.querySelectorAll('.toggle-btn').forEach(btn => {
+//                         btn.classList.remove('active'); // Remove active from both buttons
+//                         if (btn.getAttribute('data-target') === targetToggle) {
+//                             btn.classList.add('active'); // Activate Experience button
+//                         }
+//                     });
+
+//                     // Hide all sections and show Experience
+//                     document.querySelectorAll('.section-content').forEach(section => {
+//                         section.classList.remove('active');
+//                     });
+//                     document.getElementById(targetToggle).classList.add('active'); // Show Experience
+//                 }
+
+//                 event.preventDefault();
+//                 const targetId = this.getAttribute('href').substring(1);
+//                 console.log("Navigating to:", targetId);
+//                 const targetSection = document.getElementById(targetId);
+                
+//                 if (targetSection) {
+//                     targetSection.scrollIntoView({ behavior: "smooth" });
+//                 } else {
+//                     console.error("Section not found:", targetId);
+//                 }
+
+//             });
+
+//         });
+
+//     }
+// }
+
 function initMobileNav() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const mainNav = document.querySelector('.main-nav');
@@ -362,10 +423,80 @@ function initMobileNav() {
             link.addEventListener('click', function() {
                 mainNav.classList.remove('active');
                 mobileNavToggle.classList.remove('active');
+                
+                // Get the target section ID from the href attribute
+                const targetId = this.getAttribute('href').substring(1);
+                console.log("Navigating to:", targetId);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    // Prevent default behavior to handle navigation manually
+                    event.preventDefault();
+                    
+                    // Check if this is a special toggle section
+                    const targetToggle = this.getAttribute('data-toggle');
+                    
+                    // Handle toggle if necessary
+                    if (targetToggle) {
+                        // Switch to specific tab
+                        document.querySelectorAll('.toggle-btn').forEach(btn => {
+                            btn.classList.remove('active'); // Remove active from all buttons
+                            if (btn.getAttribute('data-target') === targetToggle) {
+                                btn.classList.add('active'); // Activate correct button
+                            }
+                        });
+
+                        // Hide all sections and show the target
+                        document.querySelectorAll('.section-content').forEach(section => {
+                            section.classList.remove('active');
+                        });
+                        document.getElementById(targetToggle).classList.add('active');
+                    }
+                    
+                    // Scroll to the target section smoothly
+                    setTimeout(() => {
+                        targetSection.scrollIntoView({ behavior: "smooth" });
+                    }, 10);
+                } else {
+                    console.error("Section not found:", targetId);
+                }
             });
         });
     }
 }
+
+// Unified function for navigating and toggling sections
+function navigateAndToggle(event, sectionId, toggleTarget) {
+    event.preventDefault(); // Stop default jump behavior
+
+    // Handle toggle if specified
+    if (toggleTarget) {
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-target') === toggleTarget) {
+                btn.classList.add('active');
+            }
+        });
+
+        // Hide all sections first, then show the selected one
+        document.querySelectorAll('.section-content').forEach(section => {
+            section.classList.remove('active');
+        });
+        document.getElementById(toggleTarget).classList.add('active');
+    }
+    
+    // Scroll to the section
+    const targetSection = document.getElementById(sectionId);
+    if (targetSection) {
+        // Small delay to ensure toggle effects complete first
+        setTimeout(() => {
+            targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 10);
+    } else {
+        console.error("Section not found:", sectionId);
+    }
+}
+
 
 function initSmoothScroll() {
     const navLinks = document.querySelectorAll('header a[href^="#"], .hero-actions a[href^="#"]');
@@ -389,7 +520,6 @@ function initSmoothScroll() {
         });
     });
 }
-
 function setupProjectFiltering() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');

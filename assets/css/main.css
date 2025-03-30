@@ -13,6 +13,10 @@
     --border-radius: 8px;
 }
 
+html {
+    scroll-behavior: smooth;
+    }
+
 * {
     margin: 0;
     padding: 0;
@@ -44,6 +48,16 @@ a:hover {
 }
  
 .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    /* overflow: visible !important; */
+    overflow: hidden;
+}
+
+.projects-container{
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -464,14 +478,23 @@ a:hover {
 
 /* Section Content Visibility */
 .section-content {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute; /* Prevents taking up space */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s;
+    width: 100%;
+    /* display: none; */
     padding: 3rem 0;
     background-color: var(--light-bg);
-}
-
-.section-content.active {
-    display: block;
-}
+    min-height: 400px; /* Adjust as needed to maintain structure */
+    }
+    
+    .section-content.active {
+    opacity: 1;
+    visibility: visible;
+    /* display: block; */
+    position: relative; /* Ensures active section takes up space */
+    }   
 
 /* Education Section - Keep your existing styles */
 .education-timeline,
@@ -685,7 +708,8 @@ a:hover {
 
 .areas-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1.5fr));
+    grid-template-columns: repeat(5, 1fr); /* Fixed 5 columns to match your image */
+    /* grid-template-columns: repeat(auto-fill, minmax(180px, 1.5fr)); */
     height: 20%;
     gap: 2rem;
 }
@@ -707,15 +731,38 @@ a:hover {
     font-size: 2.5rem;
     color: var(--secondary-color);
     margin-bottom: 1rem;
+    height: 60px; /* Fixed height for icons */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .area-icon img {
-    width: 19%;
+    width: 60px; /* Fixed width instead of percentage */
     height: auto;
 }
 
 .area-title {
     margin-bottom: 1rem;
+}
+
+/* Make it responsive */
+@media (max-width: 1200px) {
+    .areas-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .areas-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .areas-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Projects Section */
@@ -1155,13 +1202,13 @@ a:hover {
 }
 
 .footer-links a {
-    color: var(--white);
+    color: var(--dark-bg);
     text-decoration: none;
     transition: var(--transition);
 }
 
 .footer-links a:hover {
-    color: var(--secondary);
+    color: var(--secondary-color);
 }
 
 /* Mobile Navigation Styles */
@@ -1253,3 +1300,6 @@ a:hover {
         justify-content: center;
     }
 }
+
+
+    
