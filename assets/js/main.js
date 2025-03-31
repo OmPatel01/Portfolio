@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let currentGroup = 0;
     
     // Initialize carousel
-    // updateCarousel();
+    updateCarousel();
     
     // Filter functionality
     filterButtons.forEach(button => {
@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentGroup = (currentGroup + 1) % totalGroups;
             }
             
-            // updateCarousel();
+            updateCarousel();
         });
     });
     
@@ -155,28 +155,28 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileIndicators.forEach(indicator => {
         indicator.addEventListener('click', function() {
             currentGroup = parseInt(this.getAttribute('data-index'));
-            // updateCarousel();
+            updateCarousel();
         });
     });
     
     desktopIndicators.forEach(indicator => {
         indicator.addEventListener('click', function() {
             currentGroup = parseInt(this.getAttribute('data-index'));
-            // updateCarousel();
+            updateCarousel();
         });
     });
     
     // Update carousel based on current group
-    // function updateCarousel() {
-    //     // Get active filter
-    //     const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
+    function updateCarousel() {
+        // Get active filter
+        // const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
         
-    //     // Filter projects
-    //     filterProjects(activeFilter);
+        // Filter projects
+        // filterProjects(activeFilter);
         
-    //     // Update indicators
-    //     updateAllIndicators();
-    // }
+        // Update indicators
+        updateAllIndicators();
+    }
     
     // Filter projects based on category and current group
     function filterProjects(filterValue) {
