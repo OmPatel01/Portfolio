@@ -116,27 +116,27 @@ document.addEventListener('DOMContentLoaded', function() {
     updateCarousel();
     
     // Filter functionality
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
+    // filterButtons.forEach(button => {
+    //     button.addEventListener('click', function() {
+    //         // Remove active class from all buttons
+    //         filterButtons.forEach(btn => btn.classList.remove('active'));
             
-            // Add active class to clicked button
-            this.classList.add('active');
+    //         // Add active class to clicked button
+    //         this.classList.add('active');
             
-            // Reset to first group when changing filters
-            currentGroup = 0;
+    //         // Reset to first group when changing filters
+    //         currentGroup = 0;
             
-            // Update indicators
-            updateAllIndicators();
+    //         // Update indicators
+    //         updateAllIndicators();
             
-            // Get filter value
-            const filterValue = this.getAttribute('data-filter');
+    //         // Get filter value
+    //         const filterValue = this.getAttribute('data-filter');
             
-            // Filter projects
-            filterProjects(filterValue);
-        });
-    });
+    //         // Filter projects
+    //         filterProjects(filterValue);
+    //     });
+    // });
     
     // Carousel arrows functionality
     carouselArrows.forEach(arrow => {
@@ -174,31 +174,49 @@ document.addEventListener('DOMContentLoaded', function() {
         // Filter projects
         // filterProjects(activeFilter);
         
+        // Instead, just show the current group of projects
+        showCurrentGroup();
+    
         // Update indicators
         updateAllIndicators();
     }
     
-    // Filter projects based on category and current group
-    function filterProjects(filterValue) {
-        // Hide all projects
+
+    // Show only the current group of projects
+    function showCurrentGroup() {
+        // Hide all projects first
         projectCards.forEach(card => card.classList.add('hidden'));
         
-        // Show projects for current group and filter
+        // Show only projects in the current group
         projectCards.forEach((card, index) => {
             const cardGroup = Math.floor(index / 3);
-            
             if (cardGroup === currentGroup) {
-                if (filterValue === 'all') {
-                    card.classList.remove('hidden');
-                } else {
-                    const cardCategories = card.getAttribute('data-category').split(' ');
-                    if (cardCategories.includes(filterValue)) {
-                        card.classList.remove('hidden');
-                    }
-                }
+                card.classList.remove('hidden');
             }
         });
     }
+
+    // Filter projects based on category and current group
+    // function filterProjects(filterValue) {
+    //     // Hide all projects
+    //     projectCards.forEach(card => card.classList.add('hidden'));
+        
+    //     // Show projects for current group and filter
+    //     projectCards.forEach((card, index) => {
+    //         const cardGroup = Math.floor(index / 3);
+            
+    //         if (cardGroup === currentGroup) {
+    //             if (filterValue === 'all') {
+    //                 card.classList.remove('hidden');
+    //             } else {
+    //                 const cardCategories = card.getAttribute('data-category').split(' ');
+    //                 if (cardCategories.includes(filterValue)) {
+    //                     card.classList.remove('hidden');
+    //                 }
+    //             }
+    //         }
+    //     });
+    // }
     
     // Update all indicators (both mobile and desktop)
     function updateAllIndicators() {
