@@ -9,11 +9,9 @@
     <link rel="stylesheet" href="../assets/css/all_projects.css">
 </head>
 <body>
-
     <main>
         <section class="projects-section">
             <div class="container">
-
                 <div class="section-header">
                     <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
                     <div class="header-content">
@@ -22,7 +20,6 @@
                         <p class="section-subtitle">Explore my recent work and personal projects showcasing my skills and creativity</p>
                     </div>
                 </div>
-
 
                 <section class="project-filters">
                     <div class="container">
@@ -35,10 +32,14 @@
                                         <select name="tool" id="tool-filter">
                                             <option value="">All Tools</option>
                                             <option value="python">Python</option>
-                                            <option value="django">Django</option>
-                                            <option value="pandas">Pandas</option>
-                                            <!-- Add more options as needed -->
-                                        </select>
+                                            <option value="sql">SQL</option>
+                                            <option value="powerbi">Power BI</option>
+                                            <option value="scikit-learn">Scikit-learn</option>
+                                            <option value="tensorflow">TensorFlow</option>
+                                            <option value="streamlit">Streamlit</option>                                        
+                                            <!-- <option value="nltk">NLTK</option>
+                                            <option value="openai-api">OpenAI API</option>   -->
+                                        </select>                                        
                                     </div>
                                 </div>
                                 <div class="filter-group">
@@ -46,12 +47,21 @@
                                     <div class="filter-options">
                                         <select name="technique" id="technique-filter">
                                             <option value="">All Techniques</option>
+                                            <option value="machine-learning">Data Analysis</option>
                                             <option value="machine-learning">Machine Learning</option>
-                                            <option value="iot-integration">IoT Integration</option>
-                                            <option value="data">Data Analysis</option>
-                                            <option value="ai">AI</option>
-                                            <!-- Add more options as needed -->
+                                            <option value="deep-learning">Deep Learning</option>
+                                            <option value="predictive-modeling">Predictive Modeling</option>
+                                            <option value="clustering">Clustering</option>
+                                            <option value="classification">Classification</option>
+                                            <!-- <option value="regression">Regression</option>
+                                            <option value="sentiment-analysis">Sentiment Analysis</option>
+                                            <option value="recommendation-systems">Recommendation Systems</option>
+                                            <option value="natural-language-processing">Natural Language Processing (NLP)</option>
+                                            <option value="time-series-analysis">Time Series Analysis</option>
+                                            <option value="anomaly-detection">Anomaly Detection</option>
+                                            <option value="reinforcement-learning">Reinforcement Learning</option> -->
                                         </select>
+                                        
                                     </div>
                                 </div>
                                 <div class="filter-group">
@@ -61,8 +71,16 @@
                                             <option value="">All Industries</option>
                                             <option value="finance">Finance</option>
                                             <option value="environment">Environment</option>
-                                            <!-- Add more options as needed -->
+                                            <option value="healthcare">Healthcare</option>
+                                            <option value="technology">Technology</option>
+                                            <option value="sports">Sports</option>
+                                            <option value="retail">Retail</option>
+                                            <option value="education">Education</option>
+                                            <option value="manufacturing">Manufacturing</option>
+                                            <option value="marketing">Marketing</option>
+                                            <option value="automotive">Automotive</option>
                                         </select>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -75,25 +93,25 @@
                     <!-- Project Card Example -->
                     <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
                         <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <img src="../assets/images/project_images/predict_co2.jpg" alt="Sales Data Analysis Dashboard">
                             <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
+                                <a href="CO₂ Emission Prediction.html" class="view-project">View Details</a>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Hourly CO₂ Emission Prediction for Steel Production</h3>
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
-                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Docker</span>
+                                <span class="project-tag">Flask</span>
                                 <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">Regression</span>
                             </div>
                             <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
+                                Built a machine learning model to predict hourly CO₂ emissions in steel production using regression techniques. Deployed the model with Flask and Docker for real-time predictions.
                             </p>
                             <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="CO₂ Emission Prediction.html" class="btn btn-outline">View Project</a>
                                 <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -106,26 +124,25 @@
                     
                     <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
                         <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <img src="../assets/images/project_images/cedit_risk.jpeg" alt="Sales Data Analysis Dashboard">
                             <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
+                                <a href="CO₂ Emission Prediction.html" class="view-project">View Details</a>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Credit Risk Prediction Using Ensemble Learning</h3>
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
-                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Streamlit</span>
                                 <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">Voting Classifier</span>
+                                <span class="project-tag">Classification</span>
                             </div>
                             <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
+                                Developed a credit risk prediction model using Random Forest and Logistic Regression to assess loan applicants’ default risk and improve financial decision-making.
                             </p>
                             <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="Credit Risk Prediction.html" class="btn btn-outline">View Project</a>
                                 <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -138,26 +155,24 @@
 
                     <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
                         <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <img src="../assets//images/project_images/university_admission.png" alt="Sales Data Analysis Dashboard">
                             <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
+                                <a href="Predicting Student Admission.html" class="view-project">View Details</a>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Predicting Student Admission to University</h3>
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
-                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Streamlit</span>
                                 <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">Classification</span>
                             </div>
                             <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
+                                Built a machine learning model to predict student admissions based on academic scores, and extracurriculars, aiding universities in data-driven selection processes.
                             </p>
                             <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="Predicting Student Admission.html" class="btn btn-outline">View Project</a>
                                 <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -170,26 +185,24 @@
 
                     <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
                         <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <img src="../assets/images/project_images/medical_insuarance.jpg" alt="Sales Data Analysis Dashboard">
                             <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
+                                <a href="Medical Insurance Cost Estimation.html" class="view-project">View Details</a>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Medical Insurance Cost Estimation</h3>
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
-                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Streamlit</span>
                                 <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">Regression</span>
                             </div>
                             <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
+                                Developed a predictive model to estimate insurance costs based on customer demographics and health metrics, aiding in policy pricing and risk assessment.
                             </p>
                             <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="Medical Insurance Cost Estimation.html" class="btn btn-outline">View Project</a>
                                 <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -202,9 +215,9 @@
 
                     <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
                         <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <img src="../assets/images/project_images/customer_segmentation.jpg" alt="Sales Data Analysis Dashboard">
                             <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
+                                <a href="Customer Segmentation.html" class="view-project">View Details</a>
                             </div>
                         </div>
                         <div class="project-content">
@@ -212,16 +225,15 @@
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
                                 <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Streamlit</span>
                                 <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">Clustering</span>
                             </div>
                             <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
+                                Applied clustering techniques to segment customers based on purchasing behavior, enabling businesses to create targeted marketing campaigns.
                             </p>
                             <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="Customer Segmentation.html" class="btn btn-outline">View Project</a>
                                 <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -234,26 +246,24 @@
 
                     <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
                         <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <img src="../assets/images/project_images/bank_customer_churn.jpg" alt="Sales Data Analysis Dashboard">
                             <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
+                                <a href="Bank Customer Churn Prediction.html" class="view-project">View Details</a>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Bank Customer Churn Prediction</h3>
                             <div class="project-tags">
                                 <span class="project-tag">Python</span>
-                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Streamlit</span>
                                 <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">Classification</span>
                             </div>
                             <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
+                                Identified key factors influencing customer churn using machine learning. Implemented predictive analytics to help banks retain high-value customers.
                             </p>
                             <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="Bank Customer Churn Prediction.html" class="btn btn-outline">View Project</a>
                                 <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -266,26 +276,24 @@
 
                     <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
                         <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <img src="../assets/images/project_images/internatonal_demographics.png" alt="Sales Data Analysis Dashboard">
                             <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
+                                <a href="International Student Demographics in US.html" class="view-project">View Details</a>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">International Student Demographics in US</h3>
                             <div class="project-tags">
-                                <span class="project-tag">Python</span>
                                 <span class="project-tag">Data Analysis</span>
-                                <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">Power BI</span>
+                                <span class="project-tag">Data Visualization</span>
+                                <span class="project-tag">DAX</span>
                             </div>
                             <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
+                                Created an interactive Power BI dashboard to analyze international student demographics in the US. Visualized trends in student enrollment, country-wise distribution, and academic preferences.
                             </p>
                             <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="International Student Demographics in US.html" class="btn btn-outline">View Project</a>
                                 <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -298,26 +306,24 @@
 
                     <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
                         <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <img src="../assets/images/project_images/bike_store.jpg" alt="Sales Data Analysis Dashboard">
                             <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
+                                <a href="Bike Store Analysis Power BI.html" class="view-project">View Details</a>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Bike Store Analysis Power BI Project</h3>
                             <div class="project-tags">
-                                <span class="project-tag">Python</span>
                                 <span class="project-tag">Data Analysis</span>
-                                <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">Power BI</span>
+                                <span class="project-tag">Data Visualization</span>
+                                <span class="project-tag">DAX</span>
                             </div>
                             <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
+                                Developed a Power BI dashboard to analyze bike store sales, customer demographics, and product demand. Provided insights on revenue trends, top-selling products, and customer behavior.
                             </p>
                             <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="Bike Store Analysis Power BI.html" class="btn btn-outline">View Project</a>
                                 <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -330,58 +336,22 @@
                     
                     <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
                         <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
+                            <img src="../assets/images/project_images/pizza_sales.jpg" alt="Sales Data Analysis Dashboard">
                             <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
+                                <a href="Pizza Sales Analysis.html" class="view-project">View Details</a>
                             </div>
                         </div>
                         <div class="project-content">
                             <h3 class="project-title">Pizza Sales Analysis using SQL</h3>
                             <div class="project-tags">
-                                <span class="project-tag">Python</span>
                                 <span class="project-tag">Data Analysis</span>
-                                <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
+                                <span class="project-tag">SQL</span>
                             </div>
                             <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
+                                Analyzed pizza sales data using SQL to identify trends, optimize sales strategies, and improve revenue. Key insights included peak sales periods, top-selling pizzas, and customer preferences.
                             </p>
                             <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
-                                <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="https://demo-link.com" class="btn btn-icon" target="_blank">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-tools="python, pandas" data-techniques="ai, data" data-industry="finance">
-                        <div class="project-image">
-                            <img src="assets/images/project1-placeholder.jpg" alt="Sales Data Analysis Dashboard">
-                            <div class="project-overlay">
-                                <a href="project1.html" class="view-project">View Details</a>
-                            </div>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">BikeStore Analysis: Leveraging SQL for Business Insights</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">Data Analysis</span>
-                                <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Pandas</span>
-                            </div>
-                            <p class="project-description">
-                                An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms. An interactive dashboard for analyzing sales data, identifying trends, and making predictions 
-                                using machine learning algorithms.
-                            </p>
-                            <div class="project-links">
-                                <a href="project1.html" class="btn btn-outline">View Project</a>
+                                <a href="Pizza Sales Analysis.html" class="btn btn-outline">View Project</a>
                                 <a href="https://github.com/username/project" class="btn btn-icon" target="_blank">
                                     <i class="fab fa-github"></i>
                                 </a>
@@ -418,13 +388,12 @@
                     <div class="social-links">
                         <a href="#" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                         <a href="#" target="_blank"><i class="far fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 My Portfolio. All rights reserved.</p>
+                <p>&copy; Om Patel. All rights reserved.</p>
             </div>
         </div>
     </footer>

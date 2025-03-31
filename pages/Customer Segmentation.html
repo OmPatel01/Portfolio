@@ -13,21 +13,19 @@
         <div class="project-detail-header">
             <button class="close-button" aria-label="Close project details">&times;</button>
             <div class="project-detail-image">
-                <img src="../assets/project_images/img.jpg" alt="Project thumbnail image">
+                <img src="../assets/images/project_images/customer_segmentation.jpg" alt="Project thumbnail image">
             </div>
-            <h1 class="project-detail-title">Project 2</h1>
+            <h1 class="project-detail-title">Revealing Shopping Personalities: Customer Segmentation</h1>
         </div>
         
         <div class="project-detail-content">
             <div class="project-tags">
                 <span class="project-tag">Python</span>
-                <span class="project-tag">Data Analysis</span>
-                <span class="project-tag">Pandas</span>
-                <span class="project-tag">Matplotlib</span>
-                <span class="project-tag">Promotional Analysis</span>
-                <span class="project-tag">Retail Analytics</span>
-                <span class="project-tag">Sales Performance</span>
-                <span class="project-tag">Visualization</span>
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">Clustering</span>
+                <span class="project-tag">Customer Segmentation </span>
+                <span class="project-tag">Data Visualization</span>
+                <span class="project-tag">Streamlit</span>
             </div>
             
             <!-- <div class="project-metadata">
@@ -47,45 +45,33 @@
             
             <div class="project-description">
                 <h2>Project Overview</h2>
-                <p>General Overview Comes Here</p>
-                
+                <p>This project applies <strong>K-Means Clustering</strong> to segment mall customers based on their <strong>annual income</strong> and <strong>spending score</strong>. By identifying distinct customer groups, businesses can tailor marketing strategies, enhance customer experiences, and improve retention.</p>
+
+                <p>The model groups customers into <strong>five unique clusters</strong>, each representing different spending behaviors. A <strong>Streamlit web application</strong> was developed to allow users to interact with the segmentation results visually.</p>               
                 <h2>Key Insights</h2>
                 <ul>
-                    <li>point 1:
+                    <li><strong>Customer segmentation</strong> helps businesses understand diverse shopping behaviors and personalize engagement.</li>
+                    <li>The <strong>K-Means algorithm</strong> effectively groups customers based on similarities in income and spending.</li>
+                    <li>Five clusters were identified, each representing different spending personalities:
                         <ul>
-                            <li>line 1</li>
-                            <li>line 2</li>
-                            <li>line 3</li>
-                            <li>line 4</li>
+                            <li><strong>Mid Income, Mid Spending:</strong> Balanced spenders.</li>
+                            <li><strong>High Income, Low Spending:</strong> Conservative spenders.</li>
+                            <li><strong>Low Income, Low Spending:</strong> Budget-conscious shoppers.</li>
+                            <li><strong>Low Income, High Spending:</strong> Impulse buyers.</li>
+                            <li><strong>High Income, High Spending:</strong> Luxury shoppers.</li>
                         </ul>
                     </li>
-                    <li>point 2:
-                        <ul>
-                            <li>line 1</li>
-                            <li>line 2</li>
-                            <li>line 3</li>
-                            <li>line 4</li>
-                        </ul>
-                    </li>
-                    <li>point 3:
-                        <ul>
-                            <li>line 1</li>
-                            <li>line 2</li>
-                            <li>line 3</li>
-                            <li>line 4</li>
-                        </ul>
-                    </li>
+                    <li>Businesses can use these insights to develop targeted marketing campaigns and improve customer satisfaction.</li>
                 </ul>
                 
                 <h2>Technical Implementation</h2>
                 <p>Technical Implementation Comes Here</p>
                 <ul>
-                    <li>line 1</li>
-                    <li>line 2</li>
-                    <li>line 3</li>
-                    <li>line 4</li>
-                    <li>line 5</li>
-                    <li>line 6</li>
+                    <li><strong>Data Preprocessing:</strong> Scaled numerical features using <strong>StandardScaler</strong> for better clustering performance.</li>
+                    <li><strong>Modeling Approach:</strong> Applied <strong>K-Means Clustering</strong> with the <strong>Elbow Method</strong> to determine the optimal number of clusters.</li>
+                    <li><strong>Cluster Visualization:</strong> Used <strong>Matplotlib</strong> and <strong>Seaborn</strong> to plot customer segments.</li>
+                    <li><strong>Interpretation:</strong> Analyzed clusters to understand the shopping behavior of different customer groups.</li>
+                    <li><strong>Deployment:</strong> Developed an interactive <strong>Streamlit web app</strong> for users to explore the clusters dynamically.</li>
                 </ul>
                 
                 <!-- <div class="code-snippet">
@@ -104,7 +90,7 @@ def analyze_data(dataset):
                         <div class="spinner"></div>
                         <p>Loading preview...</p>
                     </div>
-                    <iframe src="https://example.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
+                    <iframe src="https://mallcustomersegmentation.streamlit.app/" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
                 </div>
 
                 <!-- <h2>Video Preview</h2>
@@ -114,14 +100,12 @@ def analyze_data(dataset):
                 </video> -->
                 
                 <h2>Key Learnings</h2>
-                <p>What we learn comes here:</p>
                 <ul>
-                    <li>line 1</li>
-                    <li>line 2</li>
-                    <li>line 3</li>
-                    <li>line 4</li>
-                    <li>line 5</li>
-                    <li>line 6</li>
+                    <li><strong>K-Means Clustering</strong> effectively groups customers with similar shopping behaviors.</li>
+                    <li><strong>Feature scaling</strong> is crucial for improving clustering performance.</li>
+                    <li>Visualizing clusters helps in better understanding <strong>customer segmentation results</strong>.</li>
+                    <li>Deploying with <strong>Streamlit</strong> makes the project more interactive and user-friendly.</li>
+                    <li>Businesses can leverage <strong>customer segmentation</strong> to enhance marketing strategies and boost sales.</li>
                 </ul>
                 
                 <!-- <div class="project-metrics">
@@ -141,12 +125,12 @@ def analyze_data(dataset):
             </div>
             
             <div class="project-links">
-                <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="#" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
-                <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a>
+                <a href="https://mallcustomersegmentation.streamlit.app/" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Clustering/Mall%20Customer%20Segmentation" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <!-- <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a> -->
             </div>
             
-            <div class="related-projects">
+            <!-- <div class="related-projects">
                 <h2>Related Projects</h2>
                 <div class="related-projects-grid">
                     <div class="related-project-card">
@@ -160,19 +144,19 @@ def analyze_data(dataset):
                         <a href="project-detail.html?id=related2">View Project</a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         
         <div class="project-navigation">
-            <a href="project-detail.html?id=prev" class="nav-link prev-project">
+            <a href="Medical Insurance Cost Estimation.html" class="nav-link prev-project">
                 <i class="fas fa-chevron-left"></i>
                 <span>Previous Project</span>
             </a>
-            <a href="projects.html" class="nav-link all-projects">
+            <a href="all_projects.html" class="nav-link all-projects">
                 <i class="fas fa-th-large"></i>
                 <span>All Projects</span>
             </a>
-            <a href="project-detail.html?id=next" class="nav-link next-project">
+            <a href="Bank Customer Churn Prediction.html?id=next" class="nav-link next-project">
                 <span>Next Project</span>
                 <i class="fas fa-chevron-right"></i>
             </a>
