@@ -1240,3 +1240,54 @@ function initNeuralNetwork() {
     // Start periodic predictions
     runSamplePrediction();
 }
+
+/**
+ * Adjusts images to maintain proper aspect ratio within their containers
+ * This function checks each project image and adjusts it based on its natural dimensions
+ */
+// function adjustProjectImages() {
+//     // Get all project images
+//     const projectImages = document.querySelectorAll('.project-image img');
+    
+//     projectImages.forEach(img => {
+//         // Wait for the image to load to get its natural dimensions
+//         img.onload = function() {
+//             const container = img.parentElement;
+//             const containerWidth = container.offsetWidth;
+//             const containerHeight = container.offsetHeight;
+//             const containerRatio = containerWidth / containerHeight;
+            
+//             const imgRatio = img.naturalWidth / img.naturalHeight;
+            
+//             // If image is wider than container (landscape vs portrait)
+//             if (imgRatio > containerRatio) {
+//                 img.style.width = 'auto';
+//                 img.style.height = '100%';
+//                 // Center horizontally
+//                 const widthDiff = (img.offsetWidth - containerWidth) / 2;
+//                 img.style.marginLeft = `-${widthDiff}px`;
+//                 img.style.marginTop = '0';
+//             } 
+//             // If image is taller than container
+//             else {
+//                 img.style.width = '100%';
+//                 img.style.height = 'auto';
+//                 // Center vertically
+//                 const heightDiff = (img.offsetHeight - containerHeight) / 2;
+//                 img.style.marginTop = `-${heightDiff}px`;
+//                 img.style.marginLeft = '0';
+//             }
+//         };
+        
+//         // Trigger onload for cached images
+//         if (img.complete) {
+//             img.onload();
+//         }
+//     });
+// }
+
+// // Run when DOM is loaded
+// document.addEventListener('DOMContentLoaded', adjustProjectImages);
+
+// // Also run when window is resized
+// window.addEventListener('resize', adjustProjectImages);

@@ -875,6 +875,18 @@ a:hover {
     transition: var(--transition);
 }
 
+/* .project-image {
+    height: 200px;
+    overflow: hidden;
+    position: relative; /* Add this */
+}
+
+.project-image img {
+    position: absolute; /* Add this */
+    /* Remove object-fit: cover; as our JS will handle this */
+    transition: var(--transition);
+} */
+
 .project-card:hover .project-image img {
     transform: scale(1.05);
 }
