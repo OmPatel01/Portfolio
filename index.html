@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Template</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">Om Patel</a>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <!-- <li>
+                        <a href="#education">
+                        Experience
+                        </a>
+                    </li>  -->
+                    <li><a href="#skills">Skills</a></li>                       
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#research">Research</a></li>
+                    <li><a href="#certificates">Certificate</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Hi, I'm <span class="highlight">Om Patel</span></h1>
+                <p id="auto-typer" style="margin-bottom: 1.5rem;">I'm passionate about <span id="typing-text"></span><span class="cursor">|</span></p>
+                <!-- <p class="hero-subtitle">Data Scientist & AI Specialist</p> -->
+                <div class="hero-actions">
+                    <a href="#about" class="btn btn-primary">About Me</a>
+                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
+                </div>
+            </div>
+            <!-- <div class="hero-image">
+                <div class="profile-image">
+                    <img src="assets/images/profile-placeholder.jpg" alt="Your Name">
+                </div>
+            </div> -->
+        </div>
+        <div class="hero-background" id="particles-js"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
+                <h2 class="section-title">About Me</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-image" data-aos="fade-right" data-aos-delay="200">
+                    <div class="profile-circle">
+                        <img src="assets/images/Om Photo.jpg" alt="About Me">
+                    </div>
+                </div>
+                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
+                    <p>I am a <strong>Machine Learning and AI enthusiast</strong> with hands-on experience in 
+                        <strong>predictive modeling, classification, NLP, and data-driven decision-making</strong>. 
+                        My journey in AI has led me to explore <strong>Generative AI, Large Language Models (LLMs), 
+                        and advanced ML techniques</strong> to tackle real-world challenges.</p>
+                     <p>Beyond my current expertise, I am eager to <strong>dive deeper into LLMs and Computer Vision</strong>, 
+                        continuously expanding my skill set to stay ahead in the fast-evolving AI landscape. 
+                        I thrive on solving complex problems with AI and love collaborating with like-minded 
+                        professionals to push the boundaries of innovation.</p>
+                 
+                     <p>If you're looking for someone who is passionate about 
+                        <strong>AI, ML, and data-driven insights</strong>, let’s connect and explore how we can 
+                        shape the future of AI together!</p>
+                 
+                    <!-- <p>I am a Machine Learning and AI enthusiast with hands-on experience in predictive modeling, classification, NLP, and data-driven decision-making. My journey in AI has led me to explore Generative AI, Large Language Models (LLMs), and advanced ML techniques to tackle real-world challenges.
+
+                        Beyond my current expertise, I am eager to dive deeper into LLMs and Computer Vision, continuously expanding my skill set to stay ahead in the fast-evolving AI landscape. I thrive on solving complex problems with AI and love collaborating with like-minded professionals to push the boundaries of innovation.
+                        
+                        If you're looking for someone who is passionate about AI, ML, and data-driven insights, let’s connect and explore how we can shape the future of AI together!</p> -->
+                    <div class="about-actions">
+                        <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-primary" style="margin-left:10px;">Let's Connect</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toggle Section -->
+    <div class="toggle-container" data-aos="fade-up" data-aos-duration="600">
+        <div class="toggle-buttons">
+            <button class="toggle-btn active" data-target="education">Education</button>
+            <button class="toggle-btn" data-target="experience">Experience</button>
+        </div>
+    </div>
+
+    <!-- Education Section -->
+    <section id="education" class="section-content active">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
+                <h2 class="section-title">Education</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="education-timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="degree">BSc IT(Information Technology)</h3>
+                        <h4 class="institution">University of Mumbai</h4>
+                        <p class="period">Aug 2020 - May 2023</p>
+                        <p class="description">CGPA: 9.47</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="degree">MSc Data Science</h3>
+                        <h4 class="institution">Thakur College of Science and Commerce</h4>
+                        <p class="period">Aug 2023 - Mar 2025</p>
+                        <p class="description">SGPA(sem 3): 8.82</p>
+                    </div>
+                </div>
+
+                <!-- EDITABLE: Same structure for other education items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section-content">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
+                <h2 class="section-title">Experience</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="experience-timeline">
+                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Machine Learning Intern</h3>
+                        <h4 class="company">Fynn Labs</h4>
+                        <p class="period">Dec 2024 - Jan 2025</p>
+                        <p class="description">Worked on Market Segmentation and applied Clustering algorithms.</p>
+                    </div>
+                </div>
+                
+                <!-- <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="timeline-marker"></div>
+                    <div class="timeline-content">
+                        <h3 class="job-title">Job Title</h3>
+                        <h4 class="company">Company Name</h4>
+                        <p class="period">Period</p>
+                        <p class="description">Description of responsibilities and achievements.</p>
+                    </div>
+                </div> -->
+
+                <!-- EDITABLE: Same structure for other experience items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="skills-container">
+                <!-- Programming & Databases Category -->
+                <div class="skills-category skill-card" data-aos="zoom-in" data-aos-delay="100">
+                    <h3 class="category-title">Programming & Databases</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/python.svg" alt="Python">
+                            </div>
+                            <h4 class="skill-name">Python</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/sql.svg" alt="SQL">
+                            </div>
+                            <h4 class="skill-name">SQL</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/mongodb.svg" alt="MongoDB">
+                            </div>
+                            <h4 class="skill-name">MongoDB</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Tools Category -->
+                <div class="skills-category skill-card" data-aos="zoom-in" data-aos-delay="200">
+                    <h3 class="category-title">Tools</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/excel.png" alt="Excel">
+                            </div>
+                            <h4 class="skill-name">Excel</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/power-bi.png" alt="Power BI">
+                            </div>
+                            <h4 class="skill-name">Power BI</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- MLOps Category -->
+                <div class="skills-category skill-card" data-aos="zoom-in" data-aos-delay="300">
+                    <h3 class="category-title">MLOps</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/git.svg" alt="Git">
+                            </div>
+                            <h4 class="skill-name">Git</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/github.svg" alt="GitHub">
+                            </div>
+                            <h4 class="skill-name">GitHub</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/github-actions.svg" alt="GitHub Actions">
+                            </div>
+                            <h4 class="skill-name">GitHub Actions</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/dvc.svg" alt="DVC">
+                            </div>
+                            <h4 class="skill-name">DVC</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/mlflow.png" alt="MLflow">
+                            </div>
+                            <h4 class="skill-name">MLflow</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/docker.svg" alt="Docker">
+                            </div>
+                            <h4 class="skill-name">Docker</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Libraries & Frameworks Category - Full Width -->
+                <div class="skills-category skill-card full-width" data-aos="zoom-in" data-aos-delay="400">
+                    <h3 class="category-title">Libraries & Frameworks</h3>
+                    <div class="skills-grid frameworks-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/numpy.svg" alt="NumPy">
+                            </div>
+                            <h4 class="skill-name">NumPy</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/pandas.svg" alt="Pandas">
+                            </div>
+                            <h4 class="skill-name">Pandas</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/matplotlib.svg" alt="Matplotlib">
+                            </div>
+                            <h4 class="skill-name">Matplotlib</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/seaborn.svg" alt="Seaborn">
+                            </div>
+                            <h4 class="skill-name">Seaborn</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/scikit-learn.svg" alt="Scikit-Learn">
+                            </div>
+                            <h4 class="skill-name">Scikit-Learn</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/tensorflow.svg" alt="TensorFlow">
+                            </div>
+                            <h4 class="skill-name">TensorFlow</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/soup.png" alt="Beautiful Soup">
+                            </div>
+                            <h4 class="skill-name">Beautiful Soup</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/flask.svg" alt="Flask">
+                            </div>
+                            <h4 class="skill-name">Flask</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/fastapi.svg" alt="FastAPI">
+                            </div>
+                            <h4 class="skill-name">FastAPI</h4>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">
+                                <img src="assets/icons/streamlit.svg" alt="Streamlit">
+                            </div>
+                            <h4 class="skill-name">Streamlit</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Functional Areas Section -->
+    <section id="functional-areas" class="functional-areas-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
+                <h2 class="section-title">Functional Areas</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="areas-grid">
+                <div class="area-card" data-aos="flip-up" data-aos-delay="100">
+                    <div class="area-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="area-title">Data Analysis</h3>
+                </div>
+                
+                <div class="area-card" data-aos="flip-up" data-aos-delay="200">
+                    <div class="area-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3 class="area-title">Data Vislualization</h3>
+                </div>
+                
+                <div class="area-card" data-aos="flip-up" data-aos-delay="300">
+                    <div class="area-icon">
+                        <!-- <i class="fas fa-brain"></i> style="height: 35%; width: 35%;" -->
+                        <img src="assets/icons/ml-output.svg" alt="Machine_Learning">
+                    </div>
+                    <h3 class="area-title">Machine Learning</h3>
+                </div>
+                
+                <div class="area-card" data-aos="flip-up" data-aos-delay="400">
+                    <div class="area-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="area-title">Deep Learning</h3>
+                </div>
+                
+                <div class="area-card" data-aos="flip-up" data-aos-delay="500">
+                    <div class="area-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="area-title">Generative AI</h3>
+                </div>
+                
+                <!-- EDITABLE: Same structure for other functional areas -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="projects-container">
+            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
+                <h2 class="section-title">My Projects</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <!-- <div class="projects-filter" data-aos="fade-up" data-aos-duration="600">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="ai">AI</button>
+                <button class="filter-btn" data-filter="data">Data</button>
+                <button class="filter-btn" data-filter="web">Web</button>
+            </div> -->
+            
+            <div class="carousel-container" data-aos="fade-up" data-aos-delay="200">
+                <button class="carousel-arrow prev-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                
+                <div class="projects-grid">
+                    <!-- Group 1 (Initially visible) -->
+                    <div class="project-card" data-category="ai data">
+                        <div class="project-image">
+                            <img class="responsive-image" src="assets/images/project_images/predict_co2.jpg" alt="Project 1">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Hourly CO₂ Emission Prediction for Steel Production</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">ML</span>
+                                <span class="project-tag">Regression</span>
+                                <span class="project-tag">Flask</span>
+                                <span class="project-tag">Docker</span>
+                            </div>
+                            <!-- <p class="project-description">Project description goes here.</p> -->
+                            <a href="pages/CO₂ Emission Prediction.html" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="web">
+                        <div class="project-image">
+                            <img class="responsive-image" src="assets/images/project_images/cedit_risk.jpeg" alt="Project 2">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Credit Risk Prediction Using Ensemble Learning</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">ML</span>
+                                <span class="project-tag">Classification</span>
+                                <span class="project-tag">Credit Risk</span>
+                            </div>
+                            <!-- <p class="project-description">Project description goes here.</p> -->
+                            <a href="pages/Credit Risk Prediction.html" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-category="ai">
+                        <div class="project-image">
+                            <img class="responsive-image" src="assets/images/project_images/university_admission.png" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Predicting Student Admission to University</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">ML</span>
+                                <span class="project-tag">Classification</span>
+                            </div>
+                            <!-- <p class="project-description">Project description goes here.</p> -->
+                            <a href="pages/Predicting Student Admission.html" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Group 2 (Initially hidden) -->
+                    <div class="project-card hidden" data-category="data">
+                        <div class="project-image">
+                            <img class="responsive-image" src="assets/images/project_images/medical_insuarance.jpg" alt="Project 4">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Medical Insurance Cost Estimation</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">ML</span>
+                                <span class="project-tag">Regression</span>
+                                <span class="project-tag">Cost Estimation</span>
+                            </div>
+                            <!-- <p class="project-description">Project description goes here.</p> -->
+                            <a href="pages/Medical Insurance Cost Estimation.html" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card hidden" data-category="data">
+                        <div class="project-image">
+                            <img class="responsive-image" src="assets/images/project_images/customer_segmentation.jpg" alt="Project 6">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Revealing Shopping Personalities: Customer Segmentation</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">ML</span>
+                                <span class="project-tag">Clustering</span>
+                            </div>
+                            <!-- <p class="project-description">Project description goes here.</p> -->
+                            <a href="pages/project1.html" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Group 3 (Initially hidden) -->
+                    <div class="project-card hidden" data-category="web">
+                        <div class="project-image">
+                            <img class="responsive-image" src="assets/images/project_images/bank_customer_churn.jpg" alt="Project 7">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Bank Customer Churn Prediction</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">ML</span>
+                                <span class="project-tag">Classification</span>
+                            </div>
+                            <!-- <p class="project-description">Project description goes here.</p> -->
+                            <a href="pages/project1.html" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card hidden" data-category="ai">
+                        <div class="project-image">
+                            <img class="responsive-image" src="assets/images/project_images/internatonal_demographics.png" alt="Project 8">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">International Student Demographics in US</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Power BI</span>
+                            </div>
+                            <!-- <p class="project-description">Project description goes here.</p> -->
+                            <a href="pages/project1.html" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card hidden" data-category="web data">
+                        <div class="project-image">
+                            <img class="responsive-image" src="assets/images/project_images/bike_store.jpg" alt="Project 9">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Bike Store Analysis Power BI Project</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Power BI</span>
+                            </div>
+                            <!-- <p class="project-description">Project description goes here.</p> -->
+                            <a href="pages/Bike Store Analysis Power BI.html" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                    <div class="project-card hidden" data-category="web data">
+                        <div class="project-image">
+                            <img class="responsive-image" src="assets/images/project_images/pizza_sales.jpg" alt="Project 9">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Pizza Sales Analysis using SQL</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">SQL</span>
+                            </div>
+                            <!-- <p class="project-description">Project description goes here.</p> -->
+                            <a href="pages/Pizza Sales Analysis.html" class="btn btn-outline">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-arrow next-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            <!-- NEW: Mobile-friendly navigation (arrows + indicators in one row) -->
+            <div class="mobile-carousel-nav" data-aos="fade-up" data-aos-delay="100">
+                <button class="carousel-arrow prev-arrow">
+                    <i class="fa-solid fa-arrow-left"></i>
+                </button>
+                <div class="mobile-carousel-indicators">
+                    <span class="indicator active" data-index="0"></span>
+                    <span class="indicator" data-index="1"></span>
+                    <span class="indicator" data-index="2"></span>
+                </div>
+                <button class="carousel-arrow next-arrow">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+            
+            <!-- Desktop-only indicators (hidden on mobile) -->
+            <div class="desktop-carousel-indicators" data-aos="fade-up" data-aos-delay="100">
+                <span class="indicator active" data-index="0"></span>
+                <span class="indicator" data-index="1"></span>
+                <span class="indicator" data-index="2"></span>
+            </div>
+            
+            <div class="section-footer" data-aos="fade-up" data-aos-delay="300">
+                <a href="pages/all_projects.html" class="btn btn-text">View All Projects <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Section -->
+    <section id="research" class="research-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
+                <h2 class="section-title">Research</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="research-grid">
+                <div class="research-card" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="research-title">Machine Failure Prediction Using Machine Learning: A Multi
+                        Stage Approach for Predictive Maintenance </h3>
+                    <p class="research-meta">IJSRED, March 2025</p>
+                    <!-- <p class="research-abstract">Abstract of the research paper.</p> -->
+                    <div class="research-actions">
+                        <a href="https://drive.google.com/file/d/16sQo0j9fZgukwEnfc3s-KPMBTWE0kxK7/view?usp=sharing" class="btn btn-outline" target="_blank">View Certificate</a>
+                    </div>
+                </div>
+                
+                <div class="research-card" data-aos="fade-left" data-aos-delay="200">
+                    <h3 class="research-title"> Deepfake Detection of Images Using Deep Learning Techniques</h3>
+                    <p class="research-meta">IJCRT, March 2024</p>
+                    <!-- <p class="research-abstract">Abstract of the research paper.</p> -->
+                    <div class="research-actions">
+                        <a href="https://drive.google.com/file/d/1jiGtiY3eKIwGD2bTfyfcUYPzJFnpl1kl/view?usp=sharing" class="btn btn-outline" target="_blank">View Certificate</a>
+                    </div>
+                </div>           
+                <!-- EDITABLE: Same structure for other research items -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="certificates-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
+                <h2 class="section-title">Certificates</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="certificates-grid">
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-image">
+                        <img class="responsive-image" src="assets/images/certificates/Coursera IBM Machine Learning.jpg" alt="Certificate 1">
+                    </div>
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">IBM Machine Learning</h3>
+                        <p class="certificate-issuer">Coursera</p>
+                    </div>
+                </div>
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-image">
+                        <img class="responsive-image" src="assets/images/certificates/NVIDIA NLP Transformer.jpg" alt="Certificate 2">
+                    </div>
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">Introduction to Transformer based NLP</h3>
+                        <p class="certificate-issuer">NVIDIA</p>
+                    </div>
+                </div>
+                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certificate-image">
+                        <img class="responsive-image" src="assets/images/certificates/Databricks Generative AI Fundamentals.jpg" alt="Certificate 3">
+                    </div>
+                    <div class="certificate-content">
+                        <h3 class="certificate-title">Generative AI Fundamentals</h3>
+                        <p class="certificate-issuer">Databricks</p>
+                    </div>
+                </div>
+                
+                
+                <!-- EDITABLE: Same structure for other certificates (only show 3) -->
+            </div>
+            
+            <div class="section-footer" data-aos="fade-up" data-aos-delay="300">
+                <a href="pages/certificates.html" class="btn btn-text">View All Certificates <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-divider"></div>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-image">
+                        <img src="assets/images/contact-z.png" alt="Contact">
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                        <a class="social-link"><i class="fa-solid fa-location-dot"></i></a>
+                        <p style="margin-top: 8px;"> Mumbai, Maharashtra</p>
+                    </div>
+                </div>
+                
+                <!-- <div class="contact-form">
+                    <form id="contact-form" action="submit-form.php" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div> -->
+
+                <div class="contact-form">
+                    <form id="contact-form" method="POST">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your Message</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="copyright">
+                    <p>&copy; <span id="current-year"></span> Om Patel. All Rights Reserved.</p>
+                </div>
+                <div class="footer-links">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/main.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/brain.js/2.0.0-beta.1/brain-browser.min.js"></script>
+
+    <!-- Particles.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+
+    <!-- Add before closing body tag -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        // Global settings
+        once: true, // Animation only happens once
+        offset: 120, // Offset (in px) from the original trigger point
+        duration: 800, // Default animation duration
+        easing: 'ease', // Default easing
+        delay: 0 // Default delay
+    });
+    </script>
+
+</body>
+</html>

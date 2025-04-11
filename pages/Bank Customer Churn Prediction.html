@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+</head>
+<body>
+    <div class="project-detail-container">
+        <div class="project-detail-header">
+            <button class="close-button" aria-label="Close project details">&times;</button>
+            <div class="project-detail-image">
+                <img class="responsive-image" src="../assets/images/project_images/bank_customer_churn.jpg" alt="Project thumbnail image">
+            </div>
+            <h1 class="project-detail-title">Bank Customer Churn Prediction</h1>
+        </div>
+        
+        <div class="project-detail-content">
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">Classification</span>
+                <span class="project-tag">Customer Churn</span>
+                <span class="project-tag">Streamlit</span>
+            </div>
+            
+            <!-- <div class="project-metadata">
+                <div class="metadata-item">
+                    <i class="far fa-calendar-alt"></i>
+                    <span>Completed: January 2025</span>
+                </div>
+                <div class="metadata-item">
+                    <i class="far fa-clock"></i>
+                    <span>Duration: 3 weeks</span>
+                </div>
+                <div class="metadata-item">
+                    <i class="far fa-user"></i>
+                    <span>Role: Lead Developer</span>
+                </div>
+            </div> -->
+            
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>This project aims to <strong>predict customer churn</strong> for a bank using <strong>machine learning techniques</strong>. Churn occurs when customers stop using the bank’s services, leading to revenue loss. By accurately predicting churn, the bank can proactively implement retention strategies and improve customer satisfaction.</p>
+    
+                <p>The dataset includes key customer attributes such as <strong>credit score, age, account balance</strong>, and <strong>engagement metrics</strong>.</p>
+                <h2>Key Insights</h2>
+                <ul>
+                    <li>Banks can reduce churn by identifying <strong>high-risk customers early</strong>.</li>
+                    <li>Feature importance analysis revealed that <strong>age, credit score, and account balance</strong> significantly impact churn.</li>
+                    <li>Handling <strong>class imbalance</strong> is crucial—models trained on imbalanced data underperform in predicting actual churners.</li>
+                </ul>
+            
+                <strong>Different approaches suit different business priorities:</strong>
+                <ul>
+                    <li><strong>SMOTE</strong> improves precision (better targeting of churners).</li>
+                    <li><strong>Class Weight Adjustment</strong> improves recall (catching more actual churners).</li>
+                </ul>
+                
+                <h2>Technical Implementation</h2>
+                <strong>Preprocessing & Feature Engineering:</strong>
+                <ul>
+                    <li>Handled <strong>missing values</strong> and <strong>outliers</strong>.</li>
+                    <li>Encoded <strong>categorical variables</strong> like gender.</li>
+                    <li>Scaled <strong>numerical features</strong> for better model performance.</li>
+                </ul>
+
+                <strong>Modeling Approaches:</strong>
+                <ul>
+                    <li><strong>Random Forest + SMOTE</strong>: Used <strong>Synthetic Minority Over-sampling Technique</strong> to balance classes.</li>
+                    <li><strong>Random Forest + Class Weight Adjustment</strong>: Adjusted class weights to give more importance to churners.</li>
+                </ul>
+
+                <strong>Evaluation Metrics:</strong>
+                <ul>
+                    <li>Used <strong>Precision</strong>, <strong>Recall</strong>, <strong>F1-Score</strong>, and <strong>Confusion Matrix</strong> to assess model performance.</li>
+                    <li><strong>Cross-validation</strong> ensured robust and reliable model accuracy.</li>
+                </ul>
+                
+                <!-- <div class="code-snippet">
+                    <h3>Code Example</h3>
+                    <pre><code class="language-python">
+# Sample code snippet
+def analyze_data(dataset):
+    # Processing logic here
+    return results
+                    </code></pre>
+                </div> -->
+                
+                <!-- <h2>Live Preview</h2>
+                <div class="iframe-container">
+                    <div class="iframe-loading" id="iframe-loading">
+                        <div class="spinner"></div>
+                        <p>Loading preview...</p>
+                    </div>
+                    <iframe src="https://example.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
+                </div> -->
+
+                <h2>Key Learnings</h2>
+                <ul>
+                    <li><strong>Class imbalance</strong> significantly affects model performance, requiring targeted techniques like SMOTE or weight adjustment.</li>
+                    <li><strong>Feature importance analysis</strong> helps in making data-driven business decisions.</li>
+                    <li>Model selection should align with <strong>business goals</strong>—whether prioritizing precision or recall.</li>
+                    <li><strong>Hyperparameter tuning</strong> plays a vital role in optimizing model performance.</li>
+                </ul>
+                
+                <!-- <div class="project-metrics">
+                    <div class="metric">
+                        <span class="metric-value">25%</span>
+                        <span class="metric-label">Efficiency Improvement</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">5k+</span>
+                        <span class="metric-label">Data Points Analyzed</span>
+                    </div>
+                    <div class="metric">
+                        <span class="metric-value">3</span>
+                        <span class="metric-label">Key Deliverables</span>
+                    </div>
+                </div> -->
+            </div>
+            
+            <div class="project-links">
+                <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Classisfication/Bank%20Customer%20Churn%20Prediction" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <!-- <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a> -->
+            </div>
+            
+            <div class="related-projects">
+                <h2>Related Projects</h2>
+                <div class="related-projects-grid">
+                    <div class="related-project-card">
+                        <img src="../assets/images/project_images/cedit_risk.jpeg" alt="Related project thumbnail">
+                        <h3>Credit Risk Prediction Using Ensemble Learning</h3>
+                        <a href="Credit Risk Prediction.html?id=related1">View Project</a>
+                    </div>
+                    <div class="related-project-card">
+                        <img src="../assets/images/project_images/university_admission.png" alt="Related project thumbnail">
+                        <h3>Predicting Student Admission to University</h3>
+                        <a href="Predicting Student Admission.html?id=related2">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-navigation">
+            <a href="Bank Customer Churn Prediction.html" class="nav-link prev-project">
+                <i class="fas fa-chevron-left"></i>
+                <span>Previous Project</span>
+            </a>
+            <a href="all_projects.html" class="nav-link all-projects">
+                <i class="fas fa-th-large"></i>
+                <span>All Projects</span>
+            </a>
+            <a href="International Student Demographics in US.html?id=next" class="nav-link next-project">
+                <span>Next Project</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../assets/js/project_detail.js"></script>
+    <script>
+        // Handle iframe error
+        function handleIframeError() {
+            const loadingElement = document.getElementById('iframe-loading');
+            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
+            loadingElement.style.display = 'flex';
+        }
+        
+        // Initialize syntax highlighting if available
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        });
+    </script>
+</body>
+</html>
