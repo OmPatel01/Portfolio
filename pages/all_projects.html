@@ -38,8 +38,8 @@
                                             <!-- <option value="tensorflow">TensorFlow</option> -->
                                             <option value="flask">Flask</option>  
                                             <option value="streamlit">Streamlit</option>                                        
-                                            <!-- <option value="nltk">NLTK</option>
-                                            <option value="openai-api">OpenAI API</option>   -->
+                                            <option value="nltk">NLTK</option>
+                                            <option value="openai-api">OpenAI API</option>  
                                         </select>                                        
                                     </div>
                                 </div>
@@ -56,9 +56,13 @@
                                             <option value="classification">Classification</option>
                                             <option value="regression">Regression</option>
                                             <!-- <option value="sentiment-analysis">Sentiment Analysis</option>
-                                            <option value="recommendation-systems">Recommendation Systems</option>
+                                            <option value="recommendation-systems">Recommendation Systems</option> -->
                                             <option value="natural-language-processing">Natural Language Processing (NLP)</option>
-                                            <option value="time-series-analysis">Time Series Analysis</option>
+                                            <option value="generative-ai">Generative AI</option>
+                                            <option value="transformers">Transformers</option>
+                                            <option value="llms">Large Language Models (LLMs)</option>
+                                            <option value="agents">Agents</option>
+                                            <!-- <option value="time-series-analysis">Time Series Analysis</option>
                                             <option value="anomaly-detection">Anomaly Detection</option>
                                             <option value="reinforcement-learning">Reinforcement Learning</option> -->
                                         </select>
@@ -79,9 +83,12 @@
                                             <option value="education">Education</option>
                                             <option value="manufacturing">Manufacturing</option>
                                             <option value="marketing">Marketing</option>
+                                            <option value="ai">Artificial Intelligence</option>
+                                            <option value="productivity">Productivity Tools</option>
+                                            <option value="creative">Design & Creative</option>
+
                                             <!-- <option value="automotive">Automotive</option> -->
                                         </select>
-                                        
                                     </div>
                                 </div>
                             </div>
@@ -92,6 +99,69 @@
                 
                 <div class="projects-grid" id="projects">
                     <!-- Project Card Example -->
+                    <div class="project-card" data-tools="python, openai-api, streamlit" data-techniques="natural-language-processing ,generative-ai, llms, agents" data-industry="productivity, ai">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/sql_ai_agent.png" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="SQL AI Agent.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">SQL AI Agent</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">NLP</span>
+                                <span class="project-tag">SQL</span>
+                                <span class="project-tag">LangChain</span>
+                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">Flask</span>
+                                <span class="project-tag">OpenAI</span>
+                                <span class="project-tag">Streamlit</span>
+                            </div>
+                            <p class="project-description">
+                                Transform natural language queries into SQL commands and execute them on a PostgreSQL database with this AI-powered agent, providing non-technical users with an intuitive web interface for seamless data interaction.
+                            </p>
+                            <div class="project-links">
+                                <a href="SQL AI Agent.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tools="python, nltk, streamlit" data-techniques="transformers, natural-language-processing, deep-learning, generative-ai" data-industry="ai, productivity">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/text_summarization.png" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Text Summarization.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Text Summarization Using Transformers</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">NLP</span>
+                                <span class="project-tag">Abstractive Summarization</span>
+                                <span class="project-tag">Extractive Summarization</span>
+                                <span class="project-tag">Transformers</span>
+                            </div>
+                            <p class="project-description">
+                                A GenAI-powered project that delivers concise summaries using both abstractive and extractive text summarization techniques with transformer models.
+                            </p>
+                            <div class="project-links">
+                                <a href="Text Summarization.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
                     <div class="project-card" data-tools="python, scikit-learn, flask" data-techniques="machine-learning, predictive-modeling, regression" data-industry="manufacturing, environment">
                         <div class="project-image">
                             <img class="responsive-image" src="../assets/images/project_images/predict_co2.jpg" alt="Sales Data Analysis Dashboard">
@@ -150,6 +220,39 @@
                                 <a href="https://credit-risk-prediction1.streamlit.app/" class="btn btn-icon" target="_blank">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tools="python, streamlit" data-techniques="deep-learning, generative-ai" data-industry="creativity">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/image_colorization.png" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Image Colorization.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Image Colorization using GANs</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Deep Learning</span>
+                                <span class="project-tag">Computer Vision</span>
+                                <span class="project-tag">Pix2Pix</span>
+                                <span class="project-tag">Image Colorization</span>
+                                <span class="project-tag">Conditional GAN</span>
+                                <span class="project-tag">PyTorch</span>
+                            </div>
+                            <p class="project-description">
+                                Transform grayscale images into realistic colorized versions using a Conditional GAN (Pix2Pix), leveraging deep learning for high-quality image generation.
+                            </p>
+                            <div class="project-links">
+                                <a href="Image Colorization.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Computer-Vision/tree/main/Image%20Colorization%20using%20GANs
+                                " class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
                             </div>
                         </div>
                     </div>
@@ -387,9 +490,9 @@
                 </div>
                 <div class="footer-right">
                     <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" target="_blank"><i class="far fa-envelope"></i></a>
+                        <a href="https://github.com/OmPatel01" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/om-patel-tech/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:ompatel2587@example.com" target="_blank"><i class="far fa-envelope"></i></a>
                     </div>
                 </div>
             </div>
