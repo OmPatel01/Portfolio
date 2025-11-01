@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL AI Agent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+</head>
+<body>
+    <div class="project-detail-container">
+        <div class="project-detail-header">
+            <button class="close-button" aria-label="Close project details">&times;</button>
+            <div class="project-detail-image">
+                <img class="responsive-image" src="../assets/images/project_images/sql_ai_agent.png" alt="Project thumbnail image">
+            </div>
+            <h1 class="project-detail-title">SQL AI Agent</h1>
+        </div>
+        
+        <div class="project-detail-content">
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">SQL</span>
+                <span class="project-tag">LangChain</span>
+                <span class="project-tag">PostgreSQL</span>
+                <span class="project-tag">Flask</span>
+                <span class="project-tag">OpenAI</span>
+                <span class="project-tag">Streamlit</span>
+            </div>
+            
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p> This <strong>AI Agent for SQL Query Execution</strong> project leverages the power of <strong>Natural Language Processing (NLP)</strong> to allow non-technical users to interact with databases using simple, natural language queries. By converting user inputs into <strong>SQL queries</strong> and executing them against a <strong>PostgreSQL</strong> database, this AI-powered agent simplifies data extraction without the need for SQL expertise. Built with <strong>LangChain</strong> and the <strong>OpenAI API (gpt-4-turbo-preview)</strong>, the agent ensures efficient and syntactically correct query generation. A <strong>Streamlit-based web interface</strong> provides an intuitive front-end for seamless user interaction, making it an ideal solution for businesses and individuals seeking quick access to data insights. </p>
+                
+                <h2>Key Insights</h2>
+                <ul>
+                    <li><strong>Natural Language Processing (NLP)</strong> enables seamless conversion of user queries into accurate SQL statements, eliminating the need for SQL expertise.</li>
+                    <li><strong>LangChain</strong> with OpenAI’s <strong>GPT-4-turbo-preview</strong> ensures the generation of syntactically correct and optimized SQL queries for PostgreSQL.</li>
+                    <li><strong>AI-powered query generation</strong> adapts to complex user requests, ensuring flexible and scalable query execution.</li>
+                    <li><strong>Web-based interface using Streamlit</strong> provides a user-friendly experience for non-technical users, enabling easy interaction with the backend SQL query system.</li>
+                    <li><strong>PostgreSQL optimization</strong> guarantees that generated queries align with the specific syntax and functions of PostgreSQL for efficient execution.</li>
+                </ul>
+               
+                <h2>Technical Implementation</h2>
+                <ul>
+                    <li><strong>Model Architecture:</strong>
+                        <ul>
+                            <li>Utilized <strong>LangChain</strong> framework integrated with <strong>OpenAI GPT-4-turbo-preview</strong> to translate natural language into SQL queries with high accuracy.</li>
+                            <li>Integrated an <strong>AI Agent chain</strong> to handle context-aware SQL generation and ensure syntactic correctness for PostgreSQL.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Backend Logic:</strong>
+                        <ul>
+                            <li>Built with <strong>Flask</strong> to serve as the API layer that receives user queries, interacts with the AI agent, and fetches results from the database.</li>
+                            <li>Handles secure and efficient execution of generated SQL queries on a <strong>PostgreSQL</strong> database.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Frontend Interface:</strong>
+                        <ul>
+                            <li>Developed using <strong>Streamlit</strong> to create an intuitive web-based UI for user interaction.</li>
+                            <li>Enables users to enter natural language queries, receive tabular results, and view query explanations in real-time.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Query Execution Flow:</strong>
+                        <ul>
+                            <li>Natural language input → Processed by LangChain with GPT-4 → SQL query generated → Executed on PostgreSQL → Structured result returned.</li>
+                            <li>Includes error handling mechanisms for invalid queries, ambiguous inputs, and SQL injection prevention.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Database Integration:</strong>
+                        <ul>
+                            <li>Connected to a live <strong>PostgreSQL</strong> instance containing structured data with multiple tables and relationships.</li>
+                            <li>Supports dynamic schema introspection to tailor query generation according to available tables and columns.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <!-- <h2>Live Preview</h2>
+                <div class="iframe-container">
+                    <div class="iframe-loading" id="iframe-loading">
+                        <div class="spinner"></div>
+                        <p>Loading preview...</p>
+                    </div>
+                    <iframe src="https://example.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
+                </div> -->
+
+                <h2>Video Preview</h2>
+                <video width="100%" height="550" frameborder="0" controls>
+                    <source src="../assets/video/SQL AI Agent.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <h2>Key Learnings</h2>
+                <ul>
+                    <li><strong>Natural Language Processing (NLP)</strong> can be effectively used to translate human queries into accurate SQL statements using large language models like GPT-4.</li>
+                    <li><strong>LangChain framework</strong> simplifies the orchestration of language model chains, improving modularity and reusability in AI agent design.</li>
+                    <li><strong>Integrating GPT with SQL</strong> requires schema-awareness to ensure generated queries align with actual table structures and constraints.</li>
+                    <li><strong>Error handling and query validation</strong> are essential to prevent execution of incorrect or potentially harmful SQL statements.</li>
+                    <li><strong>User experience</strong> is greatly enhanced by offering real-time feedback, clear result formatting, and transparency in how queries are formed.</li>
+                </ul>                
+            </div>
+            
+            <div class="project-links">
+                <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/OmPatel01/SQL-AI-Agent-using-OpenAI" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <a href="https://drive.google.com/file/d/1xqZEHIbxeYaFYUYOv99ceoL9l5simQ2z/view" class="btn btn-outline" target="_blank">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a>
+            </div>
+            
+            <!-- <div class="related-projects">
+                <h2>Related Projects</h2>
+                <div class="related-projects-grid">
+                    <div class="related-project-card">
+                        <img src="../assets/project_images/related1.jpg" alt="Related project thumbnail">
+                        <h3>Related Project 1</h3>
+                        <a href="project-detail.html?id=related1">View Project</a>
+                    </div>
+                    <div class="related-project-card">
+                        <img src="../assets/project_images/related2.jpg" alt="Related project thumbnail">
+                        <h3>Related Project 2</h3>
+                        <a href="project-detail.html?id=related2">View Project</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        
+        <div class="project-navigation">
+            <a href="Pizza Sales Analysis.html" class="nav-link prev-project">
+                <i class="fas fa-chevron-left"></i>
+                <span>Previous Project</span>
+            </a>
+            <a href="all_projects.html" class="nav-link all-projects">
+                <i class="fas fa-th-large"></i>
+                <span>All Projects</span>
+            </a>
+            <a href="Text Summarization.html?id=next" class="nav-link next-project">
+                <span>Next Project</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../assets/js/project_detail.js"></script>
+    <script>
+        // Handle iframe error
+        function handleIframeError() {
+            const loadingElement = document.getElementById('iframe-loading');
+            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
+            loadingElement.style.display = 'flex';
+        }
+        
+        // Initialize syntax highlighting if available
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        });
+    </script>
+</body>
+</html>

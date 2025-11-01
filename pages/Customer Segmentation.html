@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revealing Shopping Personalities: Customer Segmentation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+</head>
+<body>
+    <div class="project-detail-container">
+        <div class="project-detail-header">
+            <button class="close-button" aria-label="Close project details">&times;</button>
+            <div class="project-detail-image">
+                <img class="responsive-image" src="../assets/images/project_images/customer_segmentation.jpg" alt="Project thumbnail image">
+            </div>
+            <h1 class="project-detail-title">Revealing Shopping Personalities: Customer Segmentation</h1>
+        </div>
+        
+        <div class="project-detail-content">
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">Clustering</span>
+                <span class="project-tag">Customer Segmentation </span>
+                <span class="project-tag">Data Visualization</span>
+                <span class="project-tag">Streamlit</span>
+            </div>
+            
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>This project applies <strong>K-Means Clustering</strong> to segment mall customers based on their <strong>annual income</strong> and <strong>spending score</strong>. By identifying distinct customer groups, businesses can tailor marketing strategies, enhance customer experiences, and improve retention.</p>
+
+                <p>The model groups customers into <strong>five unique clusters</strong>, each representing different spending behaviors. A <strong>Streamlit web application</strong> was developed to allow users to interact with the segmentation results visually.</p>               
+                <h2>Key Insights</h2>
+                <ul>
+                    <li><strong>Customer segmentation</strong> helps businesses understand diverse shopping behaviors and personalize engagement.</li>
+                    <li>The <strong>K-Means algorithm</strong> effectively groups customers based on similarities in income and spending.</li>
+                    <li>Five clusters were identified, each representing different spending personalities:
+                        <ul>
+                            <li><strong>Mid Income, Mid Spending:</strong> Balanced spenders.</li>
+                            <li><strong>High Income, Low Spending:</strong> Conservative spenders.</li>
+                            <li><strong>Low Income, Low Spending:</strong> Budget-conscious shoppers.</li>
+                            <li><strong>Low Income, High Spending:</strong> Impulse buyers.</li>
+                            <li><strong>High Income, High Spending:</strong> Luxury shoppers.</li>
+                        </ul>
+                    </li>
+                    <li>Businesses can use these insights to develop targeted marketing campaigns and improve customer satisfaction.</li>
+                </ul>
+                
+                <h2>Technical Implementation</h2>
+                <p>Technical Implementation Comes Here</p>
+                <ul>
+                    <li><strong>Data Preprocessing:</strong> Scaled numerical features using <strong>StandardScaler</strong> for better clustering performance.</li>
+                    <li><strong>Modeling Approach:</strong> Applied <strong>K-Means Clustering</strong> with the <strong>Elbow Method</strong> to determine the optimal number of clusters.</li>
+                    <li><strong>Cluster Visualization:</strong> Used <strong>Matplotlib</strong> and <strong>Seaborn</strong> to plot customer segments.</li>
+                    <li><strong>Interpretation:</strong> Analyzed clusters to understand the shopping behavior of different customer groups.</li>
+                    <li><strong>Deployment:</strong> Developed an interactive <strong>Streamlit web app</strong> for users to explore the clusters dynamically.</li>
+                </ul>
+                
+                <h2>Live Preview</h2>
+                <div class="iframe-container">
+                    <div class="iframe-loading" id="iframe-loading">
+                        <div class="spinner"></div>
+                        <p>Loading preview...</p>
+                    </div>
+                    <iframe src="https://mallcustomersegmentation.streamlit.app/" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
+                </div>
+
+                <h2>Video Preview</h2>
+                <video width="100%" height="550" frameborder="0" controls>
+                    <source src="../assets/video/mall customer segmentation.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <h2>Key Learnings</h2>
+                <ul>
+                    <li><strong>K-Means Clustering</strong> effectively groups customers with similar shopping behaviors.</li>
+                    <li><strong>Feature scaling</strong> is crucial for improving clustering performance.</li>
+                    <li>Visualizing clusters helps in better understanding <strong>customer segmentation results</strong>.</li>
+                    <li>Deploying with <strong>Streamlit</strong> makes the project more interactive and user-friendly.</li>
+                    <li>Businesses can leverage <strong>customer segmentation</strong> to enhance marketing strategies and boost sales.</li>
+                </ul>
+            </div>
+            
+            <div class="project-links">
+                <a href="https://mallcustomersegmentation.streamlit.app/" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Clustering/Mall%20Customer%20Segmentation" class="btn btn-secondary">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <!-- <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a> -->
+            </div>
+            
+            <!-- <div class="related-projects">
+                <h2>Related Projects</h2>
+                <div class="related-projects-grid">
+                    <div class="related-project-card">
+                        <img src="../assets/project_images/related1.jpg" alt="Related project thumbnail">
+                        <h3>Related Project 1</h3>
+                        <a href="project-detail.html?id=related1">View Project</a>
+                    </div>
+                    <div class="related-project-card">
+                        <img src="../assets/project_images/related2.jpg" alt="Related project thumbnail">
+                        <h3>Related Project 2</h3>
+                        <a href="project-detail.html?id=related2">View Project</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        
+        <div class="project-navigation">
+            <a href="Medical Insurance Cost Estimation.html" class="nav-link prev-project">
+                <i class="fas fa-chevron-left"></i>
+                <span>Previous Project</span>
+            </a>
+            <a href="all_projects.html" class="nav-link all-projects">
+                <i class="fas fa-th-large"></i>
+                <span>All Projects</span>
+            </a>
+            <a href="Bank Customer Churn Prediction.html?id=next" class="nav-link next-project">
+                <span>Next Project</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../assets/js/project_detail.js"></script>
+    <script>
+        // Handle iframe error
+        function handleIframeError() {
+            const loadingElement = document.getElementById('iframe-loading');
+            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
+            loadingElement.style.display = 'flex';
+        }
+        
+        // Initialize syntax highlighting if available
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Credit Risk Prediction Using Ensemble Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+</head>
+<body>
+    <div class="project-detail-container">
+        <div class="project-detail-header">
+            <button class="close-button" aria-label="Close project details">&times;</button>
+            <div class="project-detail-image">
+                <img class="responsive-image" src="../assets/images/project_images/cedit_risk.jpeg" alt="Project thumbnail image">
+            </div>
+            <h1 class="project-detail-title">Credit Risk Prediction Using Ensemble Learning</h1>
+        </div>
+        
+        <div class="project-detail-content">
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">Ensemble Learning</span>
+                <span class="project-tag">Voting Classifier</span>
+                <span class="project-tag">Classification</span>
+                <span class="project-tag">Streamlit</span>
+            </div>
+            
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>Predicting loan default is crucial for financial institutions to minimize risk and optimize lending decisions. 
+                    This project utilizes <strong>machine learning techniques</strong> to assess a borrower's likelihood of default based on key attributes. 
+                    By integrating <strong>ensemble learning methods</strong>, including <em>Random Forest, Logistic Regression, and a Voting Classifier</em>, 
+                    the model enhances predictive accuracy and provides data-driven insights.</p>           
+                
+                <h2>Key Insights</h2>
+                <ul>
+                    <li>Missing values in the <code>loan_int_rate</code> column were imputed using the median for data consistency.</li>
+                    <li>Implemented Random Forest and Logistic Regression models individually to evaluate performance.</li>
+                    <li>Utilized a Voting Classifier to combine both models, achieving a 91% accuracy while balancing precision and recall.</li>
+                    <li>Developed a Streamlit-based web app for interactive loan risk assessment.</li>
+                </ul>
+                                
+                <h2>Technical Implementation</h2>
+                <ul>
+                    <li><strong>Dataset Features:</strong>
+                        <ul>
+                            <li><strong>Borrower Attributes:</strong> Age, Income, Home Ownership, Credit History</li>
+                            <li><strong>Loan Attributes:</strong> Amount, Interest Rate, Loan Intent, Loan Grade</li>
+                            <li><strong>Risk Indicators:</strong> Loan Status (Default or Non-default), Credit History Length</li>
+                        </ul>
+                    </li>
+                    <li><strong>Modeling Techniques:</strong>
+                        <ul>
+                            <li><strong>Random Forest:</strong> Captures complex patterns but may overfit.</li>
+                            <li><strong>Logistic Regression:</strong> Provides linear interpretability, preventing overfitting.</li>
+                            <li><strong>Voting Classifier:</strong> Combines both models to enhance accuracy and balance false positives/negatives.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Evaluation Metrics:</strong>
+                        <ul>
+                            <li><strong>Voting Classifier Accuracy:</strong> 91%</li>
+                            <li><strong>Precision:</strong> Effective in identifying safe loans.</li>
+                            <li><strong>Recall:</strong> Minimizes false negatives, reducing the risk of rejecting safe borrowers.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Web Deployment:</strong> Integrated a Streamlit-based web application to allow users to enter borrower details and receive loan default risk predictions.</li>
+                </ul>      
+
+                <h2>Live Preview</h2>
+                <div class="iframe-container">
+                    <div class="iframe-loading" id="iframe-loading">
+                        <div class="spinner"></div>
+                        <p>Loading preview...</p>
+                    </div>
+                    <iframe src="https://credit-risk-prediction1.streamlit.app/" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
+                </div>
+
+                <h2>Video Preview</h2>
+                <video width="100%" height="550" frameborder="0" controls>
+                    <source src="../assets/video/credit risk predciton video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <h2>Key Learnings</h2>
+                <ul>
+                    <li><strong>Handling missing data</strong> effectively ensures model reliability.</li>
+                    <li><strong>Ensemble learning</strong> improves model performance by leveraging strengths from different classifiers.</li>
+                    <li><strong>Balancing precision and recall</strong> is crucial for financial applications to minimize both false approvals (risky loans granted) and false rejections (safe loans denied).</li>
+                    <li><strong>Interactive web apps (Streamlit)</strong> enhance user accessibility and model usability.</li>
+                </ul>                
+            </div>
+            
+            <div class="project-links">
+                <a href="https://credit-risk-prediction1.streamlit.app/" class="btn btn-primary" target="_blank">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Classisfication/Credit%20Risk%20Prediction%20Using%20Ensemble%20Learning" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <!-- <a href="https://drive.google.com/file/d/1KB4Joh0kVpJwFRCzia3WP1tbJUAtoqve/view?usp=sharing" class="btn btn-outline">Demo Video;<i class="fa-solid fa-up-right-from-squar"></i></a> -->
+            </div>
+            
+            <div class="related-projects">
+                <h2>Related Projects</h2>
+                <div class="related-projects-grid">
+                    <div class="related-project-card">
+                        <img src="../assets/images/project_images/bank_customer_churn.jpg" alt="Related project thumbnail">
+                        <h3>Bank Customer Churn Prediction</h3>
+                        <a href="Bank Customer Churn Prediction.html">View Project</a>
+                    </div>
+                    <div class="related-project-card">
+                        <img src="../assets/images/project_images/university_admission.png" alt="Related project thumbnail">
+                        <h3>Predicting Student Admission to University</h3>
+                        <a href="Predicting Student Admission.html">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-navigation">
+            <a href="CO₂ Emission Prediction.html" class="nav-link prev-project">
+                <i class="fas fa-chevron-left"></i>
+                <span>Previous Project</span>
+            </a>
+            <a href="all_projects.html" class="nav-link all-projects">
+                <i class="fas fa-th-large"></i>
+                <span>All Projects</span>
+            </a>
+            <a href="Image Colorization.html?id=next" class="nav-link next-project">
+                <span>Next Project</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../assets/js/project_detail.js"></script>
+    <script>
+        // Handle iframe error
+        function handleIframeError() {
+            const loadingElement = document.getElementById('iframe-loading');
+            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
+            loadingElement.style.display = 'flex';
+        }
+        
+        // Initialize syntax highlighting if available
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        });
+    </script>
+</body>
+</html>

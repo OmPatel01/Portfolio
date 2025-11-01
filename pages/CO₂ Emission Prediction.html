@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hourly CO₂ Emission Prediction</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+</head>
+<body>
+    <div class="project-detail-container">
+        <div class="project-detail-header">
+            <button class="close-button" aria-label="Close project details">&times;</button>
+            <div class="project-detail-image">
+                <img class="responsive-image" src="../assets/images/project_images/predict_co2.jpg" alt="Project thumbnail image">
+            </div>
+            <h1 class="project-detail-title">Hourly CO₂ Emission Prediction</h1>
+        </div>
+        
+        <div class="project-detail-content">
+            <div class="project-tags">
+                <span class="project-tag">Machine Learning</span>
+                <span class="project-tag">Polynomial Regression</span>
+                <span class="project-tag">Dimensionality Reduction</span>
+                <span class="project-tag">Docker</span>
+                <span class="project-tag">Flask</span>
+                <span class="project-tag">MLOps</span>
+                <span class="project-tag">Sustainability</span>
+            </div>
+            
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>This project aims to <strong>predict hourly CO₂ emissions</strong> in steel manufacturing, helping businesses <strong>monitor and optimize production processes</strong> to reduce environmental impact. By utilizing <strong>machine learning models</strong>, stakeholders can proactively manage emissions, comply with <strong>regulatory standards</strong>, and enhance <strong>sustainability</strong> in industrial operations.</p>
+                <p>The project initially implemented <strong>Polynomial Regression</strong> for emission predictions and was later deployed using <strong>Flask</strong> and <strong>Docker</strong>. The model is accessible via an <strong>API on Render</strong>, ensuring seamless integration and real-time monitoring.</p>
+                <h2>Key Insights</h2>
+                <ul>
+                    <li>Accurate hourly predictions help industries optimize production schedules to reduce emissions.</li>
+                    <li>Polynomial Regression (degree 2) captures non-linear emission patterns better than linear models. </li>
+                    <li>PCA (Principal Component Analysis) aids in feature reduction and better visualization of emissions.</li>
+                    <li>Deploying the model as an API makes predictions accessible for integration into industrial systems.</li>
+                </ul>
+                
+                <h2>Technical Implementation</h2>
+                <ul>
+                    <li><strong>Data Preprocessing:</strong>
+                        <ul>
+                            <li>Aggregated data to hourly values for accurate forecasting.</li>
+                            <li>Applied PCA to reduce dimensions and identify emission patterns.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Modeling Approach:</strong>
+                        <ul>
+                            <li>Started with Linear Regression but observed non-linearity.</li>
+                            <li>Implemented Polynomial Regression (degree 2), significantly improving accuracy.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Deployment & MLOps:</strong>
+                        <ul>
+                            <li>Built a Flask API to serve predictions.</li>
+                            <li>Containerized the model with Docker for consistent deployment.</li>
+                            <li>Deployed on Render, making it publicly accessible.</li>
+                            <li>Previously developed a Streamlit app for real-time CO₂ monitoring.</li>
+                        </ul>
+                    </li>
+                </ul>    
+                
+                <h2>Live Preview</h2>
+                <div class="iframe-container">
+                    <div class="iframe-loading" id="iframe-loading">
+                        <div class="spinner"></div>
+                        <p>Loading preview...</p>
+                    </div>
+                    <iframe src="https://co2-emission-prediction-mlops.onrender.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
+                </div>
+
+                <h2>Video Preview</h2>
+                <video width="100%" height="550" frameborder="0" controls>
+                    <source src="../assets/video/CO2 Emission Prediction.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <h2>Key Learnings</h2>
+                <ul>
+                    <li><strong>Polynomial Regression</strong> is effective for capturing complex, non-linear emission patterns.</li>
+                    <li><strong>PCA</strong> helps visualize CO₂ emissions trends and improve model efficiency.</li>
+                    <li><strong>Docker</strong> enables smooth deployment by ensuring environment consistency.</li>
+                    <li><strong>Flask APIs</strong> make ML models easily accessible for real-world applications.</li>
+                    <li><strong>Deploying on Render</strong> simplifies hosting and model accessibility.</li>                    
+                </ul>                
+            </div>
+            
+            <div class="project-links">
+                <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-primary" target="_blank">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <!-- <a href="https://drive.google.com/file/d/1ymbVimRrrTGTAu6PErOb1oZ-UAzNsxxu/view?usp=sharing" class="btn btn-outline" target="_blank">Demo Video&nbsp;<i class="fa-solid fa-up-right-from-square "></i></a> -->
+            </div>
+            
+            <div class="related-projects">
+                <h2>Related Projects</h2>
+                <div class="related-projects-grid">
+                    <div class="related-project-card">
+                        <img src="../assets/images/project_images/medical_insuarance.jpg" alt="Related project thumbnail">
+                        <h3>Medical Insurance Cost Estimation</h3>
+                        <a href="Medical Insurance Cost Estimation.html">View Project</a>
+                    </div>
+                    <!-- <div class="related-project-card">
+                        <img src="../assets/project_images/related2.jpg" alt="Related project thumbnail">
+                        <h3>Related Project 2</h3>
+                        <a href="project-detail.html?id=related2">View Project</a>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="project-navigation">
+            <a href="Text Summarization.html" class="nav-link prev-project">
+                <i class="fas fa-chevron-left"></i>
+                <span>Previous Project</span>
+            </a>
+            <a href="all_projects.html" class="nav-link all-projects">
+                <i class="fas fa-th-large"></i>
+                <span>All Projects</span>
+            </a>
+            <a href="Credit Risk Prediction.html?id=next" class="nav-link next-project">
+                <span>Next Project</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../assets/js/project_detail.js"></script>
+    <script>
+        // Handle iframe error
+        function handleIframeError() {
+            const loadingElement = document.getElementById('iframe-loading');
+            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
+            loadingElement.style.display = 'flex';
+        }
+        
+        // Initialize syntax highlighting if available
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        });
+    </script>
+</body>
+</html>

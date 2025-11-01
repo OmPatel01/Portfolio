@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Summarization</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+</head>
+<body>
+    <div class="project-detail-container">
+        <div class="project-detail-header">
+            <button class="close-button" aria-label="Close project details">&times;</button>
+            <div class="project-detail-image">
+                <img class="responsive-image" src="../assets/images/project_images/text_summarization.png" alt="Project thumbnail image">
+            </div>
+            <h1 class="project-detail-title">Text Summarization Using Transformers</h1>
+        </div>
+        
+        <div class="project-detail-content">
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">Transformers</span>
+                <span class="project-tag">Abstractive Summarization</span>
+                <span class="project-tag">Extractive Summarization</span>
+            </div>
+            
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>
+                    This <strong>GenAI Text Summarization</strong> project showcases both <strong>abstractive</strong> and <strong>extractive summarization</strong> techniques using cutting-edge <strong>transformer models</strong>. Built with <strong>Python</strong> and <strong>Hugging Face Transformers</strong>, it simplifies lengthy documents into concise summaries ideal for news articles, legal texts, academic papers, and content previews. The project integrates <strong>BART</strong> for natural language generation and <strong>MiniLM</strong> for semantic sentence extraction using <strong>cosine similarity</strong>.
+                </p>
+                
+                <h2>Key Insights</h2>
+                <ul>
+                    <li>Dual summarization approach allows flexibility between <strong>abstractive</strong> and <strong>extractive</strong> outputs based on user needs.</li>
+                    <li><strong>BART's generative model</strong> produces fluent and human-like summaries, ideal for content creation and compression.</li>
+                    <li><strong>MiniLM-based extractive summarization</strong> ensures semantic relevance by selecting top-ranking sentences via cosine similarity.</li>
+                    <li>Supports <strong>document-based summarization</strong> from PDFs and .txt files, enhancing usability for professionals.</li>
+                    <!-- <li>Can be easily integrated into <strong>web applications</strong> using Streamlit or Flask for scalable deployment.</li> -->
+                </ul>
+                
+                <h2>Technical Implementation</h2>
+                <ul>
+                    <li><strong>Model Architecture:</strong>
+                        <ul>
+                            <li>Implemented <strong>abstractive summarization</strong> using <strong>facebook/bart-large-cnn</strong> from Hugging Face Transformers.</li>
+                            <li>Used <strong>sentence-transformers/all-MiniLM-L6-v2</strong> for <strong>extractive summarization</strong> via sentence embeddings and cosine similarity.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Natural Language Processing (NLP):</strong>
+                        <ul>
+                            <li>Used <strong>NLTK</strong> for text tokenization and preprocessing.</li>
+                            <li>Employed <strong>Scikit-learn</strong> for calculating cosine similarity to rank sentence relevance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Interface & Deployment:</strong>
+                        <ul>
+                            <li>Integrated with <strong>Streamlit</strong> and <strong>Flask</strong> for interactive summarization through a web interface.</li>
+                            <li>Enabled support for <strong>PDF and .txt file uploads</strong> to allow document-based summarization.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <!-- <h2>Live Preview</h2>
+                <div class="iframe-container">
+                    <div class="iframe-loading" id="iframe-loading">
+                        <div class="spinner"></div>
+                        <p>Loading preview...</p>
+                    </div>
+                    <iframe src="https://example.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
+                </div> -->
+
+                <h2>Video Preview</h2>
+                <video width="100%" height="550" frameborder="0" controls>
+                    <source src="../assets/video/Text Summarization.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+                <h2>Key Learnings</h2>
+                <ul>
+                    <li><strong>Abstractive models</strong> like BART can generate natural, human-like summaries by understanding contextual semantics.</li>
+                    <li><strong>Extractive summarization</strong> using MiniLM and cosine similarity is effective for shorter texts and preserves factual accuracy.</li>
+                    <li><strong>Transformer-based models</strong> require careful handling of input lengths due to token limitations.</li>
+                    <li><strong>Sentence embeddings</strong> are crucial for semantic similarity-based extraction and ranking.</li>
+                </ul>
+            </div>
+            
+            <div class="project-links">
+                <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/OmPatel01/Generative-AI-Projects/tree/main/Text%20Summarization" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <!-- <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a> -->
+            </div>
+            
+            <!-- <div class="related-projects">
+                <h2>Related Projects</h2>
+                <div class="related-projects-grid">
+                    <div class="related-project-card">
+                        <img src="../assets/project_images/related1.jpg" alt="Related project thumbnail">
+                        <h3>Related Project 1</h3>
+                        <a href="project-detail.html?id=related1">View Project</a>
+                    </div>
+                    <div class="related-project-card">
+                        <img src="../assets/project_images/related2.jpg" alt="Related project thumbnail">
+                        <h3>Related Project 2</h3>
+                        <a href="project-detail.html?id=related2">View Project</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        
+        <div class="project-navigation">
+            <a href="SQL AI Agent.html" class="nav-link prev-project">
+                <i class="fas fa-chevron-left"></i>
+                <span>Previous Project</span>
+            </a>
+            <a href="all_projects.html" class="nav-link all-projects">
+                <i class="fas fa-th-large"></i>
+                <span>All Projects</span>
+            </a>
+            <a href="CO₂ Emission Prediction.html" class="nav-link next-project">
+                <span>Next Project</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../assets/js/project_detail.js"></script>
+    <script>
+        // Handle iframe error
+        function handleIframeError() {
+            const loadingElement = document.getElementById('iframe-loading');
+            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
+            loadingElement.style.display = 'flex';
+        }
+        
+        // Initialize syntax highlighting if available
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        });
+    </script>
+</body>
+</html>

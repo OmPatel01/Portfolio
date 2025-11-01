@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Projects | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/all_projects.css">
+</head>
+<body>
+    <main>
+        <section class="projects-section">
+            <div class="container">
+                <div class="section-header">
+                    <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                    <div class="header-content">
+                        <h1 class="section-title">My Projects</h1>
+                        <div class="section-divider"></div>
+                        <p class="section-subtitle">Explore my recent work and personal projects showcasing my skills and creativity</p>
+                    </div>
+                </div>
+
+                <section class="project-filters">
+                    <div class="container">
+                        <div class="filter-container">
+                            <h2>Filter By:</h2>
+                            <div class="filter-groups">
+                                <div class="filter-group">
+                                    <h3>Tools</h3>
+                                    <div class="filter-options">
+                                        <select name="tool" id="tool-filter">
+                                            <option value="">All Tools</option>
+                                            <option value="python">Python</option>
+                                            <option value="sql">SQL</option>
+                                            <option value="powerbi">Power BI</option>
+                                            <option value="scikit-learn">Scikit-learn</option>
+                                            <!-- <option value="tensorflow">TensorFlow</option> -->
+                                            <option value="flask">Flask</option>  
+                                            <option value="streamlit">Streamlit</option>                                        
+                                            <option value="nltk">NLTK</option>
+                                            <option value="openai-api">OpenAI API</option>  
+                                        </select>                                        
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <h3>Technique</h3>
+                                    <div class="filter-options">
+                                        <select name="technique" id="technique-filter">
+                                            <option value="">All Techniques</option>
+                                            <option value="data-analysis">Data Analysis</option>
+                                            <option value="machine-learning">Machine Learning</option>
+                                            <option value="deep-learning">Deep Learning</option>
+                                            <option value="predictive-modeling">Predictive Modeling</option>
+                                            <option value="clustering">Clustering</option>
+                                            <option value="classification">Classification</option>
+                                            <option value="regression">Regression</option>
+                                            <!-- <option value="sentiment-analysis">Sentiment Analysis</option>
+                                            <option value="recommendation-systems">Recommendation Systems</option> -->
+                                            <option value="natural-language-processing">Natural Language Processing (NLP)</option>
+                                            <option value="generative-ai">Generative AI</option>
+                                            <option value="transformers">Transformers</option>
+                                            <option value="llms">Large Language Models (LLMs)</option>
+                                            <option value="agents">Agents</option>
+                                            <!-- <option value="time-series-analysis">Time Series Analysis</option>
+                                            <option value="anomaly-detection">Anomaly Detection</option>
+                                            <option value="reinforcement-learning">Reinforcement Learning</option> -->
+                                        </select>
+                                        
+                                    </div>
+                                </div>
+                                <div class="filter-group">
+                                    <h3>Industry</h3>
+                                    <div class="filter-options">
+                                        <select name="industry" id="industry-filter">
+                                            <option value="">All Industries</option>
+                                            <option value="finance">Finance</option>
+                                            <option value="environment">Environment</option>
+                                            <option value="healthcare">Healthcare</option>
+                                            <!-- <option value="sports">Sports</option> -->
+                                            <option value="retail">Retail</option>
+                                            <option value="education">Education</option>
+                                            <option value="manufacturing">Manufacturing</option>
+                                            <!-- <option value="marketing">Marketing</option> -->
+                                            <option value="ai">Artificial Intelligence</option>
+                                            <option value="productivity">Productivity Tools</option>
+                                            <option value="creative">Design & Creative</option>
+
+                                            <!-- <option value="automotive">Automotive</option> -->
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="clear-filters">Clear Filters</button>
+                        </div>
+                    </div>
+                </section>
+                
+                <div class="projects-grid" id="projects">
+                    <!-- Project Card Example -->
+                    <div class="project-card" data-tools="python, openai-api, streamlit" data-techniques="natural-language-processing ,generative-ai, llms, agents" data-industry="productivity, ai">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/sql_ai_agent.png" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="SQL AI Agent.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">SQL AI Agent</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">NLP</span>
+                                <span class="project-tag">SQL</span>
+                                <span class="project-tag">LangChain</span>
+                                <span class="project-tag">PostgreSQL</span>
+                                <span class="project-tag">Flask</span>
+                                <span class="project-tag">OpenAI</span>
+                                <span class="project-tag">Streamlit</span>
+                            </div>
+                            <p class="project-description">
+                                Transform natural language queries into SQL commands and execute them on a PostgreSQL database with this AI-powered agent, providing non-technical users with an intuitive web interface for seamless data interaction.
+                            </p>
+                            <div class="project-links">
+                                <a href="SQL AI Agent.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tools="python, nltk, streamlit" data-techniques="transformers, natural-language-processing, deep-learning, generative-ai" data-industry="ai, productivity">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/text_summarization.png" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Text Summarization.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Text Summarization Using Transformers</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">NLP</span>
+                                <span class="project-tag">Abstractive Summarization</span>
+                                <span class="project-tag">Extractive Summarization</span>
+                                <span class="project-tag">Transformers</span>
+                            </div>
+                            <p class="project-description">
+                                A GenAI-powered project that delivers concise summaries using both abstractive and extractive text summarization techniques with transformer models.
+                            </p>
+                            <div class="project-links">
+                                <a href="Text Summarization.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tools="python, scikit-learn, flask" data-techniques="machine-learning, predictive-modeling, regression" data-industry="manufacturing, environment">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/predict_co2.jpg" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="CO₂ Emission Prediction.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Hourly CO₂ Emission Prediction for Steel Production</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Docker</span>
+                                <span class="project-tag">Flask</span>
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Regression</span>
+                            </div>
+                            <p class="project-description">
+                                Built a machine learning model to predict hourly CO₂ emissions in steel production using regression techniques. Deployed the model with Flask and Docker for real-time predictions.
+                            </p>
+                            <div class="project-links">
+                                <a href="CO₂ Emission Prediction.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tools="python, scikit-learn, streamlit" data-techniques="machine-learning, predictive-modeling, classification" data-industry="finance">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/cedit_risk.jpeg" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="CO₂ Emission Prediction.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Credit Risk Prediction Using Ensemble Learning</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Streamlit</span>
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Voting Classifier</span>
+                                <span class="project-tag">Classification</span>
+                            </div>
+                            <p class="project-description">
+                                Developed a credit risk prediction model using Random Forest and Logistic Regression to assess loan applicants’ default risk and improve financial decision-making.
+                            </p>
+                            <div class="project-links">
+                                <a href="Credit Risk Prediction.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Classisfication/Credit%20Risk%20Prediction%20Using%20Ensemble%20Learning" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://credit-risk-prediction1.streamlit.app/" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tools="python, streamlit" data-techniques="deep-learning, generative-ai" data-industry="creative">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/image_colorization.png" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Image Colorization.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Image Colorization using GANs</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Deep Learning</span>
+                                <span class="project-tag">Computer Vision</span>
+                                <span class="project-tag">Pix2Pix</span>
+                                <span class="project-tag">Image Colorization</span>
+                                <span class="project-tag">Conditional GAN</span>
+                                <span class="project-tag">PyTorch</span>
+                            </div>
+                            <p class="project-description">
+                                Transform grayscale images into realistic colorized versions using a Conditional GAN (Pix2Pix), leveraging deep learning for high-quality image generation.
+                            </p>
+                            <div class="project-links">
+                                <a href="Image Colorization.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Computer-Vision/tree/main/Image%20Colorization%20using%20GANs
+                                " class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tools="python, scikit-learn, streamlit" data-techniques="machine-learning, predictive-modeling, classification" data-industry="education">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets//images/project_images/university_admission.png" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Predicting Student Admission.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Predicting Student Admission to University</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Streamlit</span>
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Classification</span>
+                            </div>
+                            <p class="project-description">
+                                Built a machine learning model to predict student admissions based on academic scores, and extracurriculars, aiding universities in data-driven selection processes.
+                            </p>
+                            <div class="project-links">
+                                <a href="Predicting Student Admission.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Classisfication/Student%20Admission%20to%20University" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://student-admission-prediction.streamlit.app/" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tools="python, scikit-learn, streamlit" data-techniques="machine-learning, predictive-modeling, regression" data-industry="healthcare">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/medical_insuarance.jpg" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Medical Insurance Cost Estimation.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Medical Insurance Cost Estimation</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Streamlit</span>
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Regression</span>
+                            </div>
+                            <p class="project-description">
+                                Developed a predictive model to estimate insurance costs based on customer demographics and health metrics, aiding in policy pricing and risk assessment.
+                            </p>
+                            <div class="project-links">
+                                <a href="Medical Insurance Cost Estimation.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Regression/Predicting%20Medical%20Insurance" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://demo-link.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tools="python, scikit-learn, streamlit" data-techniques="machine-learning, predictive-modeling, clustering" data-industry="retail">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/customer_segmentation.jpg" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Customer Segmentation.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Revealing Shopping Personalities: Customer Segmentation</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Streamlit</span>
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Clustering</span>
+                            </div>
+                            <p class="project-description">
+                                Applied clustering techniques to segment customers based on purchasing behavior, enabling businesses to create targeted marketing campaigns.
+                            </p>
+                            <div class="project-links">
+                                <a href="Customer Segmentation.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Clustering/Mall%20Customer%20Segmentation" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="https://mallcustomersegmentation.streamlit.app/" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tools="python, scikit-learn, streamlit" data-techniques="machine-learning, predictive-modeling, classification" data-industry="finance">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/bank_customer_churn.jpg" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Bank Customer Churn Prediction.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Bank Customer Churn Prediction</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Streamlit</span>
+                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Classification</span>
+                            </div>
+                            <p class="project-description">
+                                Identified key factors influencing customer churn using machine learning. Implemented predictive analytics to help banks retain high-value customers.
+                            </p>
+                            <div class="project-links">
+                                <a href="Bank Customer Churn Prediction.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Classisfication/Bank%20Customer%20Churn%20Prediction" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://demo-link.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tools="powerbi" data-techniques="data-analysis" data-industry="education">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/internatonal_demographics.png" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="International Student Demographics in US.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">International Student Demographics in US</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Power BI</span>
+                                <span class="project-tag">Data Visualization</span>
+                                <span class="project-tag">DAX</span>
+                            </div>
+                            <p class="project-description">
+                                Created an interactive Power BI dashboard to analyze international student demographics in the US. Visualized trends in student enrollment, country-wise distribution, and academic preferences.
+                            </p>
+                            <div class="project-links">
+                                <a href="International Student Demographics in US.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Data-Analysis-Projects/tree/main/Power%20BI%20Projects/International%20Student%20Demographics%20in%20US" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://demo-link.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card" data-tools="powerbi" data-techniques="data-analysis" data-industry="retail">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/bike_store.jpg" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Bike Store Analysis Power BI.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Bike Store Analysis Power BI Project</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">Power BI</span>
+                                <span class="project-tag">Data Visualization</span>
+                                <span class="project-tag">DAX</span>
+                            </div>
+                            <p class="project-description">
+                                Developed a Power BI dashboard to analyze bike store sales, customer demographics, and product demand. Provided insights on revenue trends, top-selling products, and customer behavior.
+                            </p>
+                            <div class="project-links">
+                                <a href="Bike Store Analysis Power BI.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Data-Analysis-Projects/tree/main/Power%20BI%20Projects/Bike%20Store%20Analysis" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://demo-link.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card" data-tools="sql" data-techniques="data-analysis" data-industry="retail">
+                        <div class="project-image">
+                            <img class="responsive-image" src="../assets/images/project_images/pizza_sales.jpg" alt="Sales Data Analysis Dashboard">
+                            <div class="project-overlay">
+                                <a href="Pizza Sales Analysis.html" class="view-project">View Details</a>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Pizza Sales Analysis using SQL</h3>
+                            <div class="project-tags">
+                                <span class="project-tag">Data Analysis</span>
+                                <span class="project-tag">SQL</span>
+                            </div>
+                            <p class="project-description">
+                                Analyzed pizza sales data using SQL to identify trends, optimize sales strategies, and improve revenue. Key insights included peak sales periods, top-selling pizzas, and customer preferences.
+                            </p>
+                            <div class="project-links">
+                                <a href="Pizza Sales Analysis.html" class="btn btn-outline">View Project</a>
+                                <a href="https://github.com/OmPatel01/Data-Analysis-Projects/tree/main/SQL%20Projects/Pizza%20Sales%20Analysis" class="btn btn-icon" target="_blank">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <!-- <a href="https://demo-link.com" class="btn btn-icon" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more project cards here with proper data attributes -->
+                </div>
+
+                <div class="pagination">
+                    <button class="pagination-btn active">1</button>
+                    <button class="pagination-btn">2</button>
+                    <button class="pagination-btn">3</button>
+                    <button class="pagination-btn next">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <h3>Portfolio</h3>
+                    <p>A showcase of my projects and professional journey.</p>
+                </div>
+                <div class="footer-right">
+                    <div class="social-links">
+                        <a href="https://github.com/OmPatel01" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/om-patel-tech/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:ompatel2587@example.com" target="_blank"><i class="far fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; Om Patel. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/all_projects.js"></script>
+</body>
+</html>

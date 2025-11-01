@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Colorization using GANs</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/project-detail.css">
+</head>
+<body>
+    <div class="project-detail-container">
+        <div class="project-detail-header">
+            <button class="close-button" aria-label="Close project details">&times;</button>
+            <div class="project-detail-image">
+                <img class="responsive-image" src="../assets/images/project_images/image_colorization.png" alt="Project thumbnail image">
+            </div>
+            <h1 class="project-detail-title">Image Colorization using GANs</h1>
+        </div>
+        
+        <div class="project-detail-content">
+            <div class="project-tags">
+                <span class="project-tag">Python</span>
+                <span class="project-tag">Deep Learning</span>
+                <span class="project-tag">Computer Vision</span>
+                <span class="project-tag">Pix2Pix</span>
+                <span class="project-tag">Image Colorization</span>
+                <span class="project-tag">Conditional GAN</span>
+                <span class="project-tag">PyTorch</span>
+            </div>
+            
+            <div class="project-description">
+                <h2>Project Overview</h2>
+                <p>
+                    This <strong>Image Colorization using GANs</strong> project demonstrates the power of deep learning and <strong>Generative Adversarial Networks (GANs)</strong> for transforming grayscale images into realistic colorized versions. Leveraging the <strong>Pix2Pix architecture</strong>, the model utilizes a <strong>Conditional GAN</strong> to learn the mapping between grayscale images and their color counterparts, producing high-quality and visually appealing results. 
+                    Built with <strong>PyTorch</strong>, this project focuses on a <strong>U-Net inspired generator</strong> and a <strong>PatchGAN discriminator</strong> for effective image generation. It supports a full training pipeline, including optimization strategies, loss functions, and model evaluation metrics like <strong>SSIM</strong> and <strong>PSNR</strong> for assessing image quality.
+                </p>
+                
+                <h2>Key Insights</h2>
+                <ul>
+                    <li><strong>Conditional GANs (cGANs)</strong> enable realistic colorization by learning conditional relationships between grayscale and color images.</li>
+                    <li><strong>Pix2Pix architecture</strong> utilizes a U-Net inspired Generator and PatchGAN Discriminator for high-quality, detail-preserving image colorization.</li>
+                    <li><strong>Combining L1 Loss and GAN Loss</strong> ensures pixel-accurate results while maintaining visual appeal by balancing reconstruction and adversarial objectives.</li>
+                    <li><strong>PatchGAN Discriminator</strong> enhances image quality by focusing on local image patches rather than entire images, capturing fine details.</li>
+                    <li><strong>Gradient clipping and learning rate scheduling</strong> stabilize training and prevent issues like exploding gradients, ensuring smooth model convergence.</li>
+                </ul>
+
+                <h2>Technical Implementation</h2>
+                <ul>
+                    <li><strong>Model Architecture:</strong>
+                        <ul>
+                            <li>Implemented a <strong>Conditional Generative Adversarial Network (cGAN)</strong> based on the <strong>Pix2Pix</strong> architecture.</li>
+                            <li>The <strong>Generator</strong> follows a <strong>U-Net-inspired encoder-decoder structure</strong> to convert grayscale input to colorized images.</li>
+                            <li>The <strong>Discriminator</strong> uses a <strong>PatchGAN</strong> approach to classify real/fake image patches for improved detail preservation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Loss Functions:</strong>
+                        <ul>
+                            <li>Used a combination of <strong>Adversarial Loss (BCE)</strong> and <strong>Reconstruction Loss (L1)</strong> for stable training and high-quality output generation.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Training Process:</strong>
+                        <ul>
+                            <li>Trained the model with the <strong>Adam optimizer</strong> (learning rate 0.0002) and gradient clipping for stable convergence.</li>
+                            <li>Implemented <strong>StepLR learning rate scheduler</strong> to adjust the learning rate during training for optimal performance.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Image Input and Output:</strong>
+                        <ul>
+                            <li>Input grayscale images are resized to <strong>128x128</strong> resolution for consistent processing and output.</li>
+                            <li>Generated images are output as <strong>3-channel RGB color images</strong> from the model.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Evaluation Metrics:</strong>
+                        <ul>
+                            <li><strong>SSIM (Structural Similarity Index):</strong> Measures the perceived quality of the generated colorized images by comparing structural similarity to the ground truth.</li>
+                            <li><strong>PSNR (Peak Signal-to-Noise Ratio):</strong> Measures how close the generated image is to the ground truth in terms of pixel-wise similarity.</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <!-- <h2>Live Preview</h2>
+                <div class="iframe-container">
+                    <div class="iframe-loading" id="iframe-loading">
+                        <div class="spinner"></div>
+                        <p>Loading preview...</p>
+                    </div>
+                    <iframe src="https://example.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
+                </div> -->
+
+                <!-- <h2>Video Preview</h2>
+                <video width="100%" height="550" frameborder="0" controls>
+                    <source src="../assets/video/grayscale to color image.png" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video> -->
+
+                <h2>Image Preview</h2>
+                <img src="../assets/video/grayscale to color image.png" alt="Grayscale to Color Image Preview" width="100%" height="600">
+                
+                <h2>Key Learnings</h2>
+                <ul>
+                    <li><strong>Conditional GANs (cGANs)</strong> are effective for generating realistic colorized images by learning the mapping between grayscale and color images.</li>
+                    <li><strong>U-Net architecture</strong> in the generator ensures high-quality output by using skip connections to preserve important features in the image.</li>
+                    <li><strong>PatchGAN discriminator</strong> focuses on local image patches, which helps in generating high-frequency details and fine textures.</li>
+                    <li><strong>Adversarial loss</strong> combined with <strong>reconstruction loss (L1)</strong> provides a balanced approach to training, maintaining both visual fidelity and content accuracy.</li>
+                    <li><strong>Training stability</strong> can be enhanced using techniques like <strong>gradient clipping</strong> and <strong>learning rate scheduling</strong>.</li>
+                </ul>
+            </div>
+            
+            <div class="project-links">
+                <a href="#" class="btn btn-primary" target="_blank">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://github.com/OmPatel01/Computer-Vision/tree/main/Image%20Colorization%20using%20GANs" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
+                <!-- <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a> -->
+            </div>
+            
+            <!-- <div class="related-projects">
+                <h2>Related Projects</h2>
+                <div class="related-projects-grid">
+                    <div class="related-project-card">
+                        <img src="../assets/project_images/related1.jpg" alt="Related project thumbnail">
+                        <h3>Related Project 1</h3>
+                        <a href="project-detail.html?id=related1">View Project</a>
+                    </div>
+                    <div class="related-project-card">
+                        <img src="../assets/project_images/related2.jpg" alt="Related project thumbnail">
+                        <h3>Related Project 2</h3>
+                        <a href="project-detail.html?id=related2">View Project</a>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+        
+        <div class="project-navigation">
+            <a href="Credit Risk Prediction.html" class="nav-link prev-project">
+                <i class="fas fa-chevron-left"></i>
+                <span>Previous Project</span>
+            </a>
+            <a href="all_projects.html" class="nav-link all-projects">
+                <i class="fas fa-th-large"></i>
+                <span>All Projects</span>
+            </a>
+            <a href="Predicting Student Admission.html?id=next" class="nav-link next-project">
+                <span>Next Project</span>
+                <i class="fas fa-chevron-right"></i>
+            </a>
+        </div>
+    </div>
+    
+    <script src="../assets/js/project_detail.js"></script>
+    <script>
+        // Handle iframe error
+        function handleIframeError() {
+            const loadingElement = document.getElementById('iframe-loading');
+            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
+            loadingElement.style.display = 'flex';
+        }
+        
+        // Initialize syntax highlighting if available
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof hljs !== 'undefined') {
+                hljs.highlightAll();
+            }
+        });
+    </script>
+</body>
+</html>
