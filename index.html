@@ -1,883 +1,972 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Om Patel</title>
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Om Patel — ML Engineer & Data Scientist</title>
+
+  <!-- OG / SEO meta -->
+  <meta name="description" content="Om Patel — ML Engineer & Data Scientist. 12+ deployed projects in NLP, Generative AI, Computer Vision. MSc Data Science, CGPA 9.34. Oracle OCI Certified.">
+  <meta property="og:title" content="Om Patel — ML Engineer & Data Scientist">
+  <meta property="og:description" content="12+ deployed ML projects · Oracle OCI GenAI Certified · 2 Published Papers · MSc Data Science CGPA 9.34">
+  <meta property="og:image" content="assets/images/Om Photo.jpg">
+  <meta property="og:url" content="https://ompatel01.github.io/Portfolio/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+
+<style>
+/* ═══════════════════════════════════════
+   TOKENS
+═══════════════════════════════════════ */
+:root {
+  --navy:      #1A2B47;
+  --navy-lt:   #253d61;
+  --teal:      #26A69A;
+  --teal-lt:   #e0f4f2;
+  --teal-dk:   #1E9082;
+  --text:      #1c1c1e;
+  --text-2:    #4a4a54;
+  --text-3:    #888;
+  --bg:        #fafafa;
+  --bg-2:      #f3f4f6;
+  --white:     #ffffff;
+  --border:    rgba(0,0,0,0.08);
+  --border-2:  rgba(0,0,0,0.14);
+  --fh:        'Fraunces', Georgia, serif;
+  --fb:        'DM Sans', system-ui, sans-serif;
+  --r-sm:      6px;
+  --r-md:      10px;
+  --r-lg:      16px;
+  --sh-sm:     0 1px 4px rgba(0,0,0,0.06);
+  --sh-md:     0 4px 16px rgba(0,0,0,0.08);
+  --sh-lg:     0 8px 32px rgba(0,0,0,0.10);
+  --tr:        0.22s ease;
+  --mw:        1160px;
+}
+
+/* ═══════════════════════════════════════
+   RESET
+═══════════════════════════════════════ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--teal) transparent}
+body{font-family:var(--fb);font-size:16px;line-height:1.7;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:var(--fh);font-weight:700;line-height:1.2;color:var(--navy)}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+ul{list-style:none}
+
+/* ═══════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════ */
+.container{width:100%;max-width:var(--mw);margin:0 auto;padding:0 1.5rem}
+section{padding:6rem 0}
+
+.section-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--fb);font-size:0.72rem;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:0.6rem}
+.section-label::before{content:'';display:block;width:22px;height:2px;background:var(--teal);border-radius:1px}
+.section-title{font-size:clamp(1.9rem,3.5vw,2.6rem);font-weight:700;color:var(--navy);margin-bottom:0.5rem}
+.section-sub{font-size:1rem;color:var(--text-2);max-width:520px;margin-bottom:3rem;line-height:1.65}
+
+/* ═══════════════════════════════════════
+   SCROLL PROGRESS
+═══════════════════════════════════════ */
+#prog{position:fixed;top:0;left:0;height:3px;width:0%;background:var(--teal);z-index:9999;transition:width .1s linear}
+
+/* ═══════════════════════════════════════
+   HEADER
+═══════════════════════════════════════ */
+.site-header{position:fixed;top:3px;left:0;right:0;z-index:1000;background:rgba(255,255,255,0.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);transition:box-shadow var(--tr)}
+.site-header.scrolled{box-shadow:var(--sh-sm)}
+.hdr-inner{display:flex;align-items:center;justify-content:space-between;height:62px}
+
+.logo{font-family:var(--fh);font-size:1.2rem;font-weight:700;color:var(--navy)}
+.logo span{color:var(--teal)}
+
+.main-nav{display:flex;align-items:center;gap:1.75rem}
+.main-nav a{font-size:0.865rem;font-weight:500;color:var(--text-2);transition:color var(--tr);position:relative}
+.main-nav a::after{content:'';position:absolute;bottom:-3px;left:0;width:0;height:2px;background:var(--teal);border-radius:1px;transition:width var(--tr)}
+.main-nav a:hover,.main-nav a.active{color:var(--navy)}
+.main-nav a.active::after,.main-nav a:hover::after{width:100%}
+
+.nav-resume{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:var(--navy);color:var(--white)!important;border-radius:var(--r-sm);font-size:0.83rem;font-weight:600;transition:background var(--tr),transform var(--tr)!important;margin-left:0.25rem}
+.nav-resume:hover{background:var(--teal-dk)!important;transform:translateY(-1px)}
+.nav-resume::after{display:none!important}
+
+.mob-tog{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.mob-tog span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:var(--tr)}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero{min-height:100vh;display:flex;align-items:center;background:var(--navy);position:relative;overflow:hidden;padding:0}
+
+/* CSS-only concentric circle accents — no JS */
+.hero::before{content:'';position:absolute;top:-180px;right:-180px;width:600px;height:600px;border-radius:50%;border:1px solid rgba(38,166,154,0.13)}
+.hero::after{content:'';position:absolute;top:-90px;right:-90px;width:380px;height:380px;border-radius:50%;border:1px solid rgba(38,166,154,0.09)}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(38,166,154,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(38,166,154,0.04) 1px,transparent 1px);background-size:56px 56px;pointer-events:none}
+
+.hero .container{display:grid;grid-template-columns:1fr 308px;gap:4rem;align-items:center;position:relative;z-index:2;padding-top:6rem;padding-bottom:5rem}
+
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.73rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:1.1rem}
+.eyebrow-dot{width:7px;height:7px;border-radius:50%;background:var(--teal);animation:pls 2.5s ease-in-out infinite}
+@keyframes pls{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+
+.hero h1{font-family:var(--fh);font-size:clamp(2.6rem,4.5vw,4rem);font-weight:700;color:var(--white);line-height:1.1;margin-bottom:0.65rem;letter-spacing:-0.4px}
+.hero h1 em{font-style:italic;color:var(--teal)}
+
+.hero-role{font-size:1rem;color:rgba(255,255,255,0.48);font-weight:400;margin-bottom:1.4rem}
+
+.hero-value{font-size:0.975rem;color:rgba(255,255,255,0.68);line-height:1.78;max-width:470px;margin-bottom:2.25rem;padding-left:1rem;border-left:2px solid var(--teal)}
+
+.hero-chips{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:2.25rem}
+.hero-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;background:rgba(38,166,154,0.11);border:1px solid rgba(38,166,154,0.22);border-radius:20px;font-size:0.74rem;font-weight:500;color:rgba(255,255,255,0.72)}
+.hero-chip i{color:var(--teal);font-size:0.68rem}
+
+.hero-ctas{display:flex;flex-wrap:wrap;gap:11px;align-items:center}
+
+.btn-teal{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;background:var(--teal);color:var(--white);border-radius:var(--r-sm);font-size:0.875rem;font-weight:600;transition:background var(--tr),transform var(--tr)}
+.btn-teal:hover{background:var(--teal-dk);transform:translateY(-2px);color:var(--white)}
+
+.btn-ghost-light{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;background:transparent;color:rgba(255,255,255,0.75);border:1.5px solid rgba(255,255,255,0.22);border-radius:var(--r-sm);font-size:0.875rem;font-weight:600;transition:border-color var(--tr),color var(--tr),transform var(--tr)}
+.btn-ghost-light:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+
+.btn-link{display:inline-flex;align-items:center;gap:5px;font-size:0.855rem;color:rgba(255,255,255,0.42);transition:color var(--tr);border-bottom:1px solid transparent;padding-bottom:1px}
+.btn-link:hover{color:var(--teal);border-color:var(--teal)}
+
+/* Hero card */
+.hero-card{background:rgba(255,255,255,0.045);border:1px solid rgba(255,255,255,0.09);border-radius:var(--r-lg);padding:1.85rem 1.65rem;display:flex;flex-direction:column;align-items:center;gap:1rem}
+
+.hero-avatar{width:96px;height:96px;border-radius:50%;border:3px solid var(--teal);overflow:hidden;background:var(--navy-lt);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:2rem}
+.hero-avatar img{width:100%;height:100%;object-fit:cover}
+
+.hc-name{font-family:var(--fh);font-size:1rem;font-weight:700;color:var(--white);text-align:center}
+.hc-sub{font-size:0.75rem;color:rgba(255,255,255,0.38);text-align:center;margin-top:-0.55rem}
+.hc-div{width:100%;height:1px;background:rgba(255,255,255,0.07)}
+
+.hero-stats{display:flex;width:100%;justify-content:space-around}
+.hstat{display:flex;flex-direction:column;align-items:center;gap:2px}
+.hstat-val{font-family:var(--fh);font-size:1.35rem;font-weight:700;color:var(--teal)}
+.hstat-lbl{font-size:0.68rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:.7px}
+
+.avail-badge{display:inline-flex;align-items:center;gap:6px;padding:4px 12px;background:rgba(38,166,154,0.11);border:1px solid rgba(38,166,154,0.26);border-radius:20px;font-size:0.7rem;font-weight:600;color:var(--teal)}
+.avail-dot{width:6px;height:6px;border-radius:50%;background:var(--teal);animation:pls 2.5s ease-in-out infinite}
+
+.hero-social{display:flex;gap:9px}
+.hero-social a{width:33px;height:33px;border-radius:50%;border:1px solid rgba(255,255,255,0.11);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.42);font-size:0.82rem;transition:border-color var(--tr),color var(--tr)}
+.hero-social a:hover{border-color:var(--teal);color:var(--teal)}
+
+.hc-loc{font-size:0.73rem;color:rgba(255,255,255,0.32);display:flex;align-items:center;gap:5px}
+.hc-loc i{color:var(--teal);font-size:0.68rem}
+
+/* ═══════════════════════════════════════
+   ABOUT
+═══════════════════════════════════════ */
+.about{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:260px 1fr;gap:5rem;align-items:start}
+
+.about-sticky{position:sticky;top:88px}
+.about-photo{width:240px;height:300px;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border);background:var(--bg-2);display:flex;align-items:center;justify-content:center}
+.about-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
+
+.about-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:1.1rem}
+.achip{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;background:var(--teal-lt);border-radius:20px;font-size:0.72rem;font-weight:600;color:var(--teal-dk)}
+.achip i{font-size:0.65rem}
+
+.about-text p{color:var(--text-2);margin-bottom:1.1rem;font-size:1rem}
+.about-text p strong{color:var(--navy);font-weight:600}
+.about-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:1.75rem}
+
+.btn-navy{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;background:var(--navy);color:var(--white);border-radius:var(--r-sm);font-size:0.875rem;font-weight:600;transition:background var(--tr),transform var(--tr)}
+.btn-navy:hover{background:var(--teal-dk);transform:translateY(-2px);color:var(--white)}
+
+.btn-outline{display:inline-flex;align-items:center;gap:7px;padding:11px 22px;background:transparent;color:var(--navy);border:1.5px solid var(--border-2);border-radius:var(--r-sm);font-size:0.875rem;font-weight:600;transition:border-color var(--tr),color var(--tr),transform var(--tr)}
+.btn-outline:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+
+/* ═══════════════════════════════════════
+   TIMELINE
+═══════════════════════════════════════ */
+.tl-section{background:var(--bg)}
+.tl-two{display:grid;grid-template-columns:1fr 1fr;gap:4rem}
+.tl-col-title{font-size:1.15rem;font-weight:600;color:var(--navy);margin-bottom:1.75rem;padding-bottom:0.65rem;border-bottom:2px solid var(--teal-lt);display:flex;align-items:center;gap:8px}
+.tl-col-title i{color:var(--teal);font-size:0.85em}
+
+.timeline{position:relative;padding-left:1.5rem}
+.timeline::before{content:'';position:absolute;top:6px;left:0;width:2px;height:calc(100% - 6px);background:var(--border)}
+.tl-item{position:relative;margin-bottom:1.85rem}
+.tl-item:last-child{margin-bottom:0}
+.tl-item::before{content:'';position:absolute;top:6px;left:-1.875rem;width:10px;height:10px;border-radius:50%;background:var(--teal);border:2px solid var(--white);box-shadow:0 0 0 2px var(--teal)}
+.tl-period{font-size:0.7rem;font-weight:600;color:var(--teal);letter-spacing:.5px;text-transform:uppercase;margin-bottom:2px}
+.tl-title{font-size:0.975rem;font-weight:600;color:var(--navy);margin-bottom:2px;font-family:var(--fb)}
+.tl-org{font-size:0.85rem;color:var(--text-2);margin-bottom:3px}
+.tl-desc{font-size:0.82rem;color:var(--text-3);line-height:1.6}
+
+/* ═══════════════════════════════════════
+   SKILLS
+═══════════════════════════════════════ */
+.skills-sec{background:var(--white)}
+.sk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+.sk-grid .full{grid-column:1/-1}
+
+.sk-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);padding:1.4rem;transition:box-shadow var(--tr),transform var(--tr)}
+.sk-card:hover{box-shadow:var(--sh-md);transform:translateY(-3px)}
+.sk-card-lbl{font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-3);margin-bottom:1.1rem}
+
+.sk-icons{display:flex;flex-wrap:wrap;gap:1.1rem}
+.sk-item{display:flex;flex-direction:column;align-items:center;gap:5px;width:60px}
+.sk-item img{width:34px;height:34px;object-fit:contain;filter:grayscale(15%);transition:filter var(--tr),transform var(--tr)}
+.sk-item:hover img{filter:none;transform:scale(1.1)}
+.sk-item span{font-size:0.65rem;font-weight:500;color:var(--text-2);text-align:center;line-height:1.3}
+
+/* ═══════════════════════════════════════
+   PROJECTS
+═══════════════════════════════════════ */
+.proj-sec{background:var(--bg)}
+.proj-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.75rem;flex-wrap:wrap;gap:1rem}
+.view-all{display:inline-flex;align-items:center;gap:6px;font-size:0.875rem;font-weight:600;color:var(--teal);border-bottom:1.5px solid transparent;padding-bottom:1px;transition:border-color var(--tr)}
+.view-all:hover{border-color:var(--teal)}
+
+.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+
+.proj-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;transition:box-shadow var(--tr),transform var(--tr);display:flex;flex-direction:column}
+.proj-card:hover{box-shadow:var(--sh-lg);transform:translateY(-4px)}
+
+.proj-img{height:185px;overflow:hidden;position:relative;background:var(--navy)}
+.proj-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.proj-card:hover .proj-img img{transform:scale(1.05)}
+
+.proj-overlay{position:absolute;inset:0;background:rgba(26,43,71,0.72);display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity var(--tr)}
+.proj-card:hover .proj-overlay{opacity:1}
+.ov-btn{padding:8px 20px;background:var(--teal);color:var(--white);border-radius:var(--r-sm);font-size:0.8rem;font-weight:600;transform:translateY(8px);transition:transform var(--tr)}
+.proj-card:hover .ov-btn{transform:translateY(0)}
+
+.proj-badge{position:absolute;top:10px;right:10px;background:rgba(38,166,154,0.92);color:var(--white);font-size:0.68rem;font-weight:700;padding:3px 9px;border-radius:4px;display:flex;align-items:center;gap:4px}
+
+.proj-body{padding:1.2rem;display:flex;flex-direction:column;flex:1}
+.proj-title{font-size:0.94rem;font-weight:700;color:var(--navy);margin-bottom:0.45rem;line-height:1.4;font-family:var(--fb)}
+.proj-tags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:0.65rem}
+.ptag{font-size:0.66rem;padding:2px 8px;background:var(--teal-lt);color:var(--teal-dk);border-radius:20px;font-weight:500}
+.proj-impact{font-size:0.78rem;color:var(--text-2);line-height:1.55;padding:7px 10px;background:var(--bg);border-left:2px solid var(--teal);border-radius:0 4px 4px 0;margin-bottom:0.9rem;flex:1}
+.proj-impact strong{color:var(--navy)}
+
+.proj-links{display:flex;gap:7px;align-items:center;margin-top:auto}
+.pbtn{display:inline-flex;align-items:center;gap:4px;padding:6px 13px;border-radius:var(--r-sm);font-size:0.76rem;font-weight:600;transition:var(--tr)}
+.pbtn-primary{background:var(--navy);color:var(--white)}
+.pbtn-primary:hover{background:var(--teal-dk);color:var(--white)}
+.pbtn-outline{border:1.5px solid var(--border-2);color:var(--text-2)}
+.pbtn-outline:hover{border-color:var(--teal);color:var(--teal)}
+.pbtn-icon{width:31px;height:31px;border-radius:50%;border:1.5px solid var(--border-2);display:flex;align-items:center;justify-content:center;color:var(--text-2);font-size:0.78rem;transition:var(--tr)}
+.pbtn-icon:hover{border-color:var(--teal);color:var(--teal)}
+
+/* ═══════════════════════════════════════
+   RESEARCH
+═══════════════════════════════════════ */
+.research-sec{background:var(--white)}
+.res-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.res-card{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-md);padding:1.65rem;transition:box-shadow var(--tr),transform var(--tr);display:flex;flex-direction:column}
+.res-card:hover{box-shadow:var(--sh-md);transform:translateY(-3px)}
+.res-venue{font-size:0.7rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--teal);margin-bottom:0.65rem}
+.res-title{font-size:0.975rem;font-weight:600;color:var(--navy);line-height:1.45;margin-bottom:1.1rem;flex:1;font-family:var(--fb)}
+.res-link{display:inline-flex;align-items:center;gap:6px;font-size:0.8rem;font-weight:600;color:var(--teal);transition:gap var(--tr)}
+.res-link:hover{gap:9px}
+
+/* ═══════════════════════════════════════
+   CERTIFICATES
+═══════════════════════════════════════ */
+.certs-sec{background:var(--bg)}
+.certs-hdr{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:2.75rem;flex-wrap:wrap;gap:1rem}
+.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+
+.cert-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r-md);overflow:hidden;transition:box-shadow var(--tr),transform var(--tr)}
+.cert-card:hover{box-shadow:var(--sh-md);transform:translateY(-3px)}
+.cert-img{height:155px;overflow:hidden}
+.cert-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease}
+.cert-card:hover .cert-img img{transform:scale(1.04)}
+.cert-body{padding:0.9rem 1rem}
+.cert-issuer{font-size:0.68rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;color:var(--teal);margin-bottom:3px}
+.cert-title{font-size:0.84rem;font-weight:600;color:var(--navy);line-height:1.4;font-family:var(--fb)}
+
+/* ═══════════════════════════════════════
+   CONTACT
+═══════════════════════════════════════ */
+.contact-sec{background:var(--white)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+
+.contact-info h3{font-size:1.4rem;margin-bottom:0.65rem}
+.contact-info p{color:var(--text-2);margin-bottom:1.75rem;line-height:1.7;font-size:0.975rem}
+
+.cdetails{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:1.75rem}
+.cdetail{display:flex;align-items:center;gap:11px;font-size:0.875rem;color:var(--text-2)}
+.cicon{width:36px;height:36px;border-radius:8px;background:var(--teal-lt);display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:0.82rem;flex-shrink:0}
+
+.csocials{display:flex;gap:9px}
+.csoc{width:40px;height:40px;border-radius:var(--r-sm);border:1px solid var(--border-2);display:flex;align-items:center;justify-content:center;color:var(--text-2);font-size:0.95rem;transition:var(--tr)}
+.csoc:hover{background:var(--teal);border-color:var(--teal);color:var(--white)}
+
+.cform{background:var(--bg);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.85rem}
+.frow{margin-bottom:1.1rem}
+.frow label{display:block;font-size:0.8rem;font-weight:600;color:var(--navy);margin-bottom:5px}
+.frow input,.frow textarea{width:100%;padding:9px 13px;background:var(--white);border:1px solid var(--border-2);border-radius:var(--r-sm);font-family:var(--fb);font-size:0.875rem;color:var(--text);transition:border-color var(--tr);outline:none}
+.frow input:focus,.frow textarea:focus{border-color:var(--teal)}
+.frow textarea{resize:vertical;min-height:115px}
+.fhint{font-size:0.73rem;color:var(--text-3);margin-bottom:1.25rem}
+.fsub{width:100%;justify-content:center;padding:12px}
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+.site-footer{background:var(--navy);padding:2.25rem 0}
+.ftr-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ftr-logo{font-family:var(--fh);font-size:1.05rem;font-weight:700;color:var(--white)}
+.ftr-logo span{color:var(--teal)}
+.ftr-links{display:flex;gap:1.4rem}
+.ftr-links a{font-size:0.8rem;color:rgba(255,255,255,0.42);transition:color var(--tr)}
+.ftr-links a:hover{color:var(--teal)}
+.ftr-copy{font-size:0.78rem;color:rgba(255,255,255,0.35)}
+
+/* ═══════════════════════════════════════
+   BACK TO TOP
+═══════════════════════════════════════ */
+#btt{position:fixed;bottom:2rem;right:2rem;width:42px;height:42px;background:var(--navy);color:var(--white);border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--sh-md);opacity:0;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease,background var(--tr);z-index:500;font-size:0.85rem}
+#btt.show{opacity:1;transform:translateY(0)}
+#btt:hover{background:var(--teal)}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:1024px){
+  .proj-grid{grid-template-columns:repeat(2,1fr)}
+  .sk-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:860px){
+  .hero .container{grid-template-columns:1fr;text-align:center;padding-top:7rem}
+  .hero-value{border-left:none;border-top:2px solid var(--teal);padding-left:0;padding-top:.75rem}
+  .hero-chips,.hero-ctas{justify-content:center}
+  .hero-card{display:none}
+  .about-grid{grid-template-columns:1fr}
+  .about-sticky{position:static;display:flex;flex-direction:column;align-items:center}
+  .tl-two{grid-template-columns:1fr}
+  .res-grid{grid-template-columns:1fr}
+  .contact-grid{grid-template-columns:1fr;gap:3rem}
+  .main-nav{display:none}
+  .main-nav.open{display:flex;flex-direction:column;position:absolute;top:62px;left:0;right:0;background:var(--white);padding:1.4rem;gap:1.1rem;border-bottom:1px solid var(--border);box-shadow:var(--sh-md)}
+  .mob-tog{display:flex}
+  .hdr-inner{position:relative}
+}
+@media(max-width:640px){
+  section{padding:4rem 0}
+  .proj-grid{grid-template-columns:1fr}
+  .certs-grid{grid-template-columns:1fr}
+  .sk-grid{grid-template-columns:1fr}
+  .ftr-inner{flex-direction:column;align-items:flex-start;gap:.65rem}
+}
+</style>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="site-header">
-        <div class="container">
-            <div class="logo">
-                <a href="index.html">Om Patel</a>
-            </div>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <!-- <li>
-                        <a href="#education">
-                        Experience
-                        </a>
-                    </li>  -->
-                    <li><a href="#skills">Skills</a></li>                       
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#certificates">Certificate</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="mobile-nav-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Om Patel</span></h1>
-                <p id="auto-typer" style="margin-bottom: 1.5rem;">I'm passionate about <span id="typing-text"></span><span class="cursor">|</span></p>
-                <!-- <p class="hero-subtitle">Data Scientist & AI Specialist</p> -->
-                <div class="hero-actions">
-                    <a href="#about" class="btn btn-primary">About Me</a>
-                    <a href="#contact" class="btn btn-outline">Get In Touch</a>
-                </div>
-            </div>
-            <!-- <div class="hero-image">
-                <div class="profile-image">
-                    <img src="assets/images/profile-placeholder.jpg" alt="Your Name">
-                </div>
-            </div> -->
-        </div>
-        <div class="hero-background" id="particles-js"></div>
-    </section>
+<div id="prog"></div>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
-                <h2 class="section-title">About Me</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="about-content">
-                <div class="about-image" data-aos="fade-right" data-aos-delay="200">
-                    <div class="profile-circle">
-                        <img src="assets/images/Om Photo.jpg" alt="About Me">
-                    </div>
-                </div>
-                <div class="about-text" data-aos="fade-left" data-aos-delay="300">
-                    <section id="about">
-                    <p>
-                        I’m a <strong>Machine Learning</strong> and <strong>AI enthusiast</strong> with practical experience in 
-                        predictive modeling, classification, NLP, and data-driven decision-making. 
-                        My work spans traditional ML techniques to emerging fields like 
-                        <strong>Generative AI</strong> and <strong>Large Language Models (LLMs)</strong>, where I aim to solve 
-                        real-world challenges through intelligent systems.
-                    </p>
+<!-- ══════════ HEADER ══════════ -->
+<header class="site-header" id="hdr">
+  <div class="container">
+    <div class="hdr-inner">
+      <a href="#" class="logo">Om<span>.</span></a>
 
-                    <p>
-                        I bring a <strong>product-driven mindset</strong>, focusing on building efficient and scalable AI 
-                        solutions that create real impact.
-                    </p>
+      <nav class="main-nav" id="main-nav">
+        <a href="#about">About</a>
+        <a href="#timeline">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#certificates">Certs</a>
+        <a href="#contact">Contact</a>
+        <a href="#" class="nav-resume" target="_blank">
+          <i class="fas fa-download"></i> Resume
+        </a>
+      </nav>
 
-                    <p>
-                        Currently exploring <strong>Computer Vision</strong> and advanced LLM applications, I’m also 
-                        open to <strong>collaborations and side projects</strong> in AI, machine learning, and data science. 
-                        I enjoy working with teams who are passionate about innovation and eager to build meaningful AI products.
-                    </p>
+      <button class="mob-tog" id="mob-tog" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
 
-                    <p>
-                        Let’s connect and explore how we can build the future with AI—together.
-                    </p>
+<!-- ══════════ HERO ══════════ -->
+<section class="hero" id="hero">
+  <div class="hero-grid"></div>
+  <div class="container">
 
-                    <blockquote class="about-quote">
-                        "Data is the new oil, and I am here to refine it into actionable insights."
-                    </blockquote>
-                    </section>
-                 
-                    <div class="about-actions">
-                        <a href="#projects" class="btn btn-primary">View My Work</a>
-                        <a href="#contact" class="btn btn-primary" style="margin-left:10px;">Let's Connect</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div>
+      <div class="hero-eyebrow">
+        <span class="eyebrow-dot"></span> Open to opportunities
+      </div>
 
-    <!-- Toggle Section -->
-    <div class="toggle-container" data-aos="fade-up" data-aos-duration="600">
-        <div class="toggle-buttons">
-            <button class="toggle-btn active" data-target="education">Education</button>
-            <button class="toggle-btn" data-target="experience">Experience</button>
-        </div>
+      <h1>Hi, I'm<br><em>Om Patel</em></h1>
+      <p class="hero-role">ML Engineer &amp; Data Scientist · Mumbai</p>
+
+      <p class="hero-value">
+        I build end-to-end machine learning systems — from raw data to deployed models —
+        with a focus on NLP, Generative AI, and making complex data accessible to real users.
+      </p>
+
+      <div class="hero-chips">
+        <span class="hero-chip"><i class="fas fa-graduation-cap"></i> MSc Data Science · CGPA 9.34</span>
+        <span class="hero-chip"><i class="fas fa-certificate"></i> Oracle OCI GenAI Certified</span>
+        <span class="hero-chip"><i class="fas fa-file-alt"></i> 2 Published Papers</span>
+        <span class="hero-chip"><i class="fas fa-rocket"></i> 12+ Deployed Projects</span>
+      </div>
+
+      <div class="hero-ctas">
+        <a href="#projects" class="btn-teal"><i class="fas fa-layer-group"></i> View My Work</a>
+        <!-- ⚠ Replace href with your actual resume PDF link -->
+        <a href="#" class="btn-ghost-light" target="_blank"><i class="fas fa-download"></i> Download Resume</a>
+        <a href="#contact" class="btn-link">Let's connect <i class="fas fa-arrow-right" style="font-size:.75rem"></i></a>
+      </div>
     </div>
 
-    <!-- Education Section -->
-    <section id="education" class="section-content active">
-        <div class="container">
-            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
-                <h2 class="section-title">Education</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="education-timeline">
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="degree">BSc IT(Information Technology)</h3>
-                        <h4 class="institution">University of Mumbai</h4>
-                        <p class="period">Aug 2020 - May 2023</p>
-                        <p class="description">CGPA: 9.47</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="degree">MSc Data Science</h3>
-                        <h4 class="institution">Thakur College of Science and Commerce</h4>
-                        <p class="period">Aug 2023 - Apr 2025</p>
-                        <p class="description">CGPA: 9.34</p>
-                    </div>
-                </div>
+    <div class="hero-card">
+      <div class="avail-badge"><span class="avail-dot"></span> Available for hire</div>
 
-                <!-- EDITABLE: Same structure for other education items -->
-            </div>
+      <div class="hero-avatar">
+        <img src="assets/images/Om Photo.jpg" alt="Om Patel"
+             onerror="this.style.display='none';this.parentElement.innerHTML='<i class=\'fas fa-user\'></i>'">
+      </div>
+
+      <div class="hc-name">Om Patel</div>
+      <div class="hc-sub">MSc Data Science · CGPA 9.34</div>
+      <div class="hc-div"></div>
+
+      <div class="hero-stats">
+        <div class="hstat"><span class="hstat-val">12+</span><span class="hstat-lbl">Projects</span></div>
+        <div class="hstat"><span class="hstat-val">10+</span><span class="hstat-lbl">Certs</span></div>
+        <div class="hstat"><span class="hstat-val">2</span><span class="hstat-lbl">Papers</span></div>
+      </div>
+
+      <div class="hc-div"></div>
+
+      <div class="hc-loc"><i class="fas fa-location-dot"></i> Mumbai, Maharashtra</div>
+
+      <div class="hero-social">
+        <a href="https://github.com/OmPatel01" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/om-patel-tech/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <!-- ⚠ Replace with your actual email -->
+        <a href="mailto:your@email.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════ ABOUT ══════════ -->
+<section class="about" id="about" data-aos="fade-up">
+  <div class="container">
+    <div class="about-grid">
+
+      <div class="about-sticky">
+        <div class="about-photo">
+          <img src="assets/images/Om Photo.jpg" alt="Om Patel">
         </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section-content">
-        <div class="container">
-            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
-                <h2 class="section-title">Experience</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="experience-timeline">
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Machine Learning Intern</h3>
-                        <h4 class="company">Fynn Labs</h4>
-                        <p class="period">Dec 2024 - Jan 2025</p>
-                        <p class="description">Worked on Market Segmentation and applied Clustering algorithms.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="150">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">AI/ML Engineer (Part-time)</h3>
-                        <h4 class="company">Stealth Startup</h4>
-                        <p class="period">Apr 2025 – Aug 2025</p>
-                        <p class="description">
-                        Building intelligent agent systems focused on enterprise workflow automation.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Assistant Professor</h3>
-                        <h4 class="company">Thakur College of Sciencec and Commercec</h4>
-                        <p class="period">Jun 2025 - Present</p>
-                        <p class="description">Teaching in Data Science Department.</p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Data Engineer</h3>
-                        <h4 class="company">Friday AI</h4>
-                        <p class="period">Sep 2025 - Present</p>
-                        <p class="description">Contribution in builing Friday AI Ecosystem.</p>
-                    </div>
-                </div>
-                
-                <!-- <div class="timeline-item" data-aos="fade-up" data-aos-delay="300">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <h3 class="job-title">Job Title</h3>
-                        <h4 class="company">Company Name</h4>
-                        <p class="period">Period</p>
-                        <p class="description">Description of responsibilities and achievements.</p>
-                    </div>
-                </div> -->
-
-                <!-- EDITABLE: Same structure for other experience items -->
-            </div>
+        <div class="about-chips">
+          <span class="achip"><i class="fas fa-check"></i> CGPA 9.34</span>
+          <span class="achip"><i class="fas fa-check"></i> OCI Certified</span>
+          <span class="achip"><i class="fas fa-check"></i> 2 Papers</span>
+          <span class="achip"><i class="fas fa-check"></i> 12+ Projects</span>
         </div>
-    </section>
+      </div>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
-                <h2 class="section-title">Skills & Expertise</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="skills-container">
-                <!-- Programming & Databases Category -->
-                <div class="skills-category skill-card" data-aos="zoom-in" data-aos-delay="100">
-                    <h3 class="category-title">Programming & Databases</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/python.svg" alt="Python">
-                            </div>
-                            <h4 class="skill-name">Python</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/sql.svg" alt="SQL">
-                            </div>
-                            <h4 class="skill-name">SQL</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/mongodb.svg" alt="MongoDB">
-                            </div>
-                            <h4 class="skill-name">MongoDB</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Tools Category -->
-                <div class="skills-category skill-card" data-aos="zoom-in" data-aos-delay="200">
-                    <h3 class="category-title">Tools</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/excel.png" alt="Excel">
-                            </div>
-                            <h4 class="skill-name">Excel</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/power-bi.png" alt="Power BI">
-                            </div>
-                            <h4 class="skill-name">Power BI</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- MLOps Category -->
-                <div class="skills-category skill-card" data-aos="zoom-in" data-aos-delay="300">
-                    <h3 class="category-title">MLOps</h3>
-                    <div class="skills-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/git.svg" alt="Git">
-                            </div>
-                            <h4 class="skill-name">Git</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/github.svg" alt="GitHub">
-                            </div>
-                            <h4 class="skill-name">GitHub</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/github-actions.svg" alt="GitHub Actions">
-                            </div>
-                            <h4 class="skill-name">GitHub Actions</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/dvc.svg" alt="DVC">
-                            </div>
-                            <h4 class="skill-name">DVC</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/mlflow.png" alt="MLflow">
-                            </div>
-                            <h4 class="skill-name">MLflow</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/docker.svg" alt="Docker">
-                            </div>
-                            <h4 class="skill-name">Docker</h4>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Libraries & Frameworks Category - Full Width -->
-                <div class="skills-category skill-card full-width" data-aos="zoom-in" data-aos-delay="400">
-                    <h3 class="category-title">Libraries & Frameworks</h3>
-                    <div class="skills-grid frameworks-grid">
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/numpy.svg" alt="NumPy">
-                            </div>
-                            <h4 class="skill-name">NumPy</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/pandas.svg" alt="Pandas">
-                            </div>
-                            <h4 class="skill-name">Pandas</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/matplotlib.svg" alt="Matplotlib">
-                            </div>
-                            <h4 class="skill-name">Matplotlib</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/seaborn.svg" alt="Seaborn">
-                            </div>
-                            <h4 class="skill-name">Seaborn</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/scikit-learn.svg" alt="Scikit-Learn">
-                            </div>
-                            <h4 class="skill-name">Scikit-Learn</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/tensorflow.svg" alt="TensorFlow">
-                            </div>
-                            <h4 class="skill-name">TensorFlow</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/soup.png" alt="Beautiful Soup">
-                            </div>
-                            <h4 class="skill-name">Beautiful Soup</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/Flask.png" alt="Flask">
-                            </div>
-                            <h4 class="skill-name">Flask</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/FastAPI.png" alt="FastAPI">
-                            </div>
-                            <h4 class="skill-name">FastAPI</h4>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-icon">
-                                <img src="assets/icons/streamlit.svg" alt="Streamlit">
-                            </div>
-                            <h4 class="skill-name">Streamlit</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="about-text">
+        <div class="section-label">About me</div>
+        <h2 class="section-title">Turning data into<br>decisions that matter</h2>
+
+        <p>I'm a <strong>Machine Learning and AI specialist</strong> with hands-on experience spanning predictive modeling, classification, NLP, and data-driven decision-making. My work bridges traditional ML and modern Generative AI — building systems that solve real problems, not just score well on benchmarks.</p>
+        <p>I bring a <strong>product-driven mindset</strong> to every project — I care about whether the model actually gets used. From deploying Flask APIs on Docker to building LLM agents with LangChain, I focus on the full pipeline end-to-end.</p>
+        <p>Currently deepening expertise in <strong>Computer Vision and advanced LLM applications</strong>. Open to collaborations, full-time roles, and side projects in AI and data science.</p>
+
+        <div class="about-actions">
+          <a href="#projects" class="btn-navy">View Projects <i class="fas fa-arrow-right"></i></a>
+          <a href="#contact" class="btn-outline">Get in Touch</a>
         </div>
-    </section>
+      </div>
 
-    <!-- Functional Areas Section -->
-    <section id="functional-areas" class="functional-areas-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
-                <h2 class="section-title">Functional Areas</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="areas-grid">
-                <div class="area-card" data-aos="flip-up" data-aos-delay="100">
-                    <div class="area-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3 class="area-title">Data Analysis</h3>
-                </div>
-                
-                <div class="area-card" data-aos="flip-up" data-aos-delay="200">
-                    <div class="area-icon">
-                        <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3 class="area-title">Data Vislualization</h3>
-                </div>
-                
-                <div class="area-card" data-aos="flip-up" data-aos-delay="300">
-                    <div class="area-icon">
-                        <!-- <i class="fas fa-brain"></i> style="height: 35%; width: 35%;" -->
-                        <img src="assets/icons/ml-output.svg" alt="Machine_Learning">
-                    </div>
-                    <h3 class="area-title">Machine Learning</h3>
-                </div>
-                
-                <div class="area-card" data-aos="flip-up" data-aos-delay="400">
-                    <div class="area-icon">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="area-title">Deep Learning</h3>
-                </div>
-                
-                <div class="area-card" data-aos="flip-up" data-aos-delay="500">
-                    <div class="area-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3 class="area-title">Generative AI</h3>
-                </div>
-                
-                <!-- EDITABLE: Same structure for other functional areas -->
-            </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ EDUCATION + EXPERIENCE ══════════ -->
+<section class="tl-section" id="timeline" data-aos="fade-up">
+  <div class="container">
+    <div class="section-label">Background</div>
+    <h2 class="section-title" style="margin-bottom:2.75rem">Education &amp; Experience</h2>
+
+    <div class="tl-two">
+
+      <div>
+        <div class="tl-col-title"><i class="fas fa-graduation-cap"></i> Education</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-period">Aug 2023 – Apr 2025</div>
+            <div class="tl-title">MSc Data Science</div>
+            <div class="tl-org">Thakur College of Science and Commerce</div>
+            <div class="tl-desc">CGPA: 9.34 / 10 — Specialised in ML, NLP, and Generative AI systems.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period">Aug 2020 – May 2023</div>
+            <div class="tl-title">BSc IT (Information Technology)</div>
+            <div class="tl-org">University of Mumbai</div>
+            <div class="tl-desc">CGPA: 9.47 / 10</div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="projects-container">
-            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
-                <h2 class="section-title">My Projects</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <!-- <div class="projects-filter" data-aos="fade-up" data-aos-duration="600">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="ai">AI</button>
-                <button class="filter-btn" data-filter="data">Data</button>
-                <button class="filter-btn" data-filter="web">Web</button>
-            </div> -->
-            
-            <div class="carousel-container" data-aos="fade-up" data-aos-delay="200">
-                <button class="carousel-arrow prev-arrow">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </button>
-                
-                <div class="projects-grid">
-                    <!-- Group 1 (Initially visible) -->
-                    <div class="project-card" data-category="ai data">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/sql_ai_agent.png" alt="Project 1">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">SQL AI Agent</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">NLP</span>
-                                <span class="project-tag">SQL</span>
-                                <span class="project-tag">LangChain</span>
-                                <span class="project-tag">PostgreSQL</span>
-                                <span class="project-tag">Flask</span>
-                                <span class="project-tag">OpenAI</span>
-                                <span class="project-tag">Streamlit</span>                               
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/SQL AI Agent.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="ai data">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/text_summarization.png" alt="Project 1">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Text Summarization</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">NLP</span>
-                                <span class="project-tag">Abstractive Summarization</span>
-                                <span class="project-tag">Extractive Summarization</span>
-                                <span class="project-tag">Transformers</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/Text Summarization.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="ai data">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/predict_co2.jpg" alt="Project 1">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Hourly CO₂ Emission Prediction for Steel Production</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">ML</span>
-                                <span class="project-tag">Regression</span>
-                                <span class="project-tag">Flask</span>
-                                <span class="project-tag">Docker</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/CO₂ Emission Prediction.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card" data-category="web">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/cedit_risk.jpeg" alt="Project 2">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Credit Risk Prediction Using Ensemble Learning</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">ML</span>
-                                <span class="project-tag">Classification</span>
-                                <span class="project-tag">Credit Risk</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/Credit Risk Prediction.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card" data-category="ai data">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/image_colorization.png" alt="Project 1">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Image Colorization using GANs</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">Deep Learning</span>
-                                <span class="project-tag">Computer Vision</span>
-                                <span class="project-tag">PyTorch</span>
-                                <span class="project-tag">Image Colorization</span>
-                                <span class="project-tag">Conditional GAN</span>
-
-                            </div>                            
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/Image Colorization.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-
-                    <div class="project-card" data-category="ai">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/university_admission.png" alt="Project 3">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Predicting Student Admission to University</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">ML</span>
-                                <span class="project-tag">Classification</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/Predicting Student Admission.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Group 2 (Initially hidden) -->
-                    <div class="project-card hidden" data-category="data">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/medical_insuarance.jpg" alt="Project 4">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Medical Insurance Cost Estimation</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">ML</span>
-                                <span class="project-tag">Regression</span>
-                                <span class="project-tag">Cost Estimation</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/Medical Insurance Cost Estimation.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card hidden" data-category="data">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/customer_segmentation.jpg" alt="Project 6">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Revealing Shopping Personalities: Customer Segmentation</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">ML</span>
-                                <span class="project-tag">Clustering</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/project1.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-                    
-                    <!-- Group 3 (Initially hidden) -->
-                    <div class="project-card hidden" data-category="web">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/bank_customer_churn.jpg" alt="Project 7">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Bank Customer Churn Prediction</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">ML</span>
-                                <span class="project-tag">Classification</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/project1.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card hidden" data-category="ai">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/internatonal_demographics.png" alt="Project 8">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">International Student Demographics in US</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">Data Analysis</span>
-                                <span class="project-tag">Power BI</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/project1.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-                    
-                    <div class="project-card hidden" data-category="web data">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/bike_store.jpg" alt="Project 9">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Bike Store Analysis Power BI Project</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">Data Analysis</span>
-                                <span class="project-tag">Power BI</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/Bike Store Analysis Power BI.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card hidden" data-category="web data">
-                        <div class="project-image">
-                            <img class="responsive-image" src="assets/images/project_images/pizza_sales.jpg" alt="Project 9">
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Pizza Sales Analysis using SQL</h3>
-                            <div class="project-tags">
-                                <span class="project-tag">Data Analysis</span>
-                                <span class="project-tag">SQL</span>
-                            </div>
-                            <!-- <p class="project-description">Project description goes here.</p> -->
-                            <a href="pages/Pizza Sales Analysis.html" class="btn btn-outline">View Project</a>
-                        </div>
-                    </div>
-                </div>
-                <button class="carousel-arrow next-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
-            </div>
-            
-            <!-- NEW: Mobile-friendly navigation (arrows + indicators in one row) -->
-            <div class="mobile-carousel-nav" data-aos="fade-up" data-aos-delay="100">
-                <button class="carousel-arrow prev-arrow">
-                    <i class="fa-solid fa-arrow-left"></i>
-                </button>
-                <div class="mobile-carousel-indicators">
-                    <span class="indicator active" data-index="0"></span>
-                    <span class="indicator" data-index="1"></span>
-                    <span class="indicator" data-index="2"></span>
-                </div>
-                <button class="carousel-arrow next-arrow">
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
-            </div>
-            
-            <!-- Desktop-only indicators (hidden on mobile) -->
-            <div class="desktop-carousel-indicators" data-aos="fade-up" data-aos-delay="100">
-                <span class="indicator active" data-index="0"></span>
-                <span class="indicator" data-index="1"></span>
-                <span class="indicator" data-index="2"></span>
-            </div>
-            
-            <div class="section-footer" data-aos="fade-up" data-aos-delay="300">
-                <a href="pages/all_projects.html" class="btn btn-text">View All Projects <i class="fas fa-arrow-right"></i></a>
-            </div>
+      <div>
+        <div class="tl-col-title"><i class="fas fa-briefcase"></i> Experience</div>
+        <div class="timeline">
+          <div class="tl-item">
+            <div class="tl-period">Sep 2025 – Present</div>
+            <div class="tl-title">Data Engineer</div>
+            <div class="tl-org">Friday AI</div>
+            <div class="tl-desc">Contributing to the Friday AI ecosystem — data pipelines and model integrations.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period">Jun 2025 – Present</div>
+            <div class="tl-title">Assistant Professor</div>
+            <div class="tl-org">Thakur College of Science and Commerce</div>
+            <div class="tl-desc">Teaching Data Science fundamentals and applied ML to postgraduate students.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period">Apr 2025 – Aug 2025</div>
+            <div class="tl-title">AI/ML Engineer (Part-time)</div>
+            <div class="tl-org">Stealth Startup</div>
+            <div class="tl-desc">Built intelligent agent systems for enterprise workflow automation using LLMs.</div>
+          </div>
+          <div class="tl-item">
+            <div class="tl-period">Dec 2024 – Jan 2025</div>
+            <div class="tl-title">Machine Learning Intern</div>
+            <div class="tl-org">Fynn Labs</div>
+            <div class="tl-desc">Applied K-Means and hierarchical clustering for market segmentation analysis.</div>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Research Section -->
-    <section id="research" class="research-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
-                <h2 class="section-title">Research</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="research-grid">
-                <div class="research-card" data-aos="fade-right" data-aos-delay="100">
-                    <h3 class="research-title">Machine Failure Prediction Using Machine Learning: A Multi
-                        Stage Approach for Predictive Maintenance </h3>
-                    <p class="research-meta">IJSRED, March 2025</p>
-                    <!-- <p class="research-abstract">Abstract of the research paper.</p> -->
-                    <div class="research-actions">
-                        <a href="https://drive.google.com/file/d/16sQo0j9fZgukwEnfc3s-KPMBTWE0kxK7/view?usp=sharing" class="btn btn-outline" target="_blank">View Certificate</a>
-                    </div>
-                </div>
-                
-                <div class="research-card" data-aos="fade-left" data-aos-delay="200">
-                    <h3 class="research-title"> Deepfake Detection of Images Using Deep Learning Techniques</h3>
-                    <p class="research-meta">IJCRT, March 2024</p>
-                    <!-- <p class="research-abstract">Abstract of the research paper.</p> -->
-                    <div class="research-actions">
-                        <a href="https://drive.google.com/file/d/1jiGtiY3eKIwGD2bTfyfcUYPzJFnpl1kl/view?usp=sharing" class="btn btn-outline" target="_blank">View Certificate</a>
-                    </div>
-                </div>           
-                <!-- EDITABLE: Same structure for other research items -->
-            </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ SKILLS ══════════ -->
+<section class="skills-sec" id="skills" data-aos="fade-up">
+  <div class="container">
+    <div class="section-label">Technical skills</div>
+    <h2 class="section-title">What I work with</h2>
+    <p class="section-sub">Tools and technologies I use across the full ML pipeline — from data to deployment.</p>
+
+    <div class="sk-grid">
+      <div class="sk-card">
+        <div class="sk-card-lbl">Programming &amp; Databases</div>
+        <div class="sk-icons">
+          <div class="sk-item"><img src="assets/icons/python.svg" alt="Python"><span>Python</span></div>
+          <div class="sk-item"><img src="assets/icons/sql.svg" alt="SQL"><span>SQL</span></div>
+          <div class="sk-item"><img src="assets/icons/mongodb.svg" alt="MongoDB"><span>MongoDB</span></div>
         </div>
-    </section>
+      </div>
 
-    <!-- Certificates Section -->
-    <section id="certificates" class="certificates-section">
-        <div class="container">
-            <div class="section-header" data-aos="fade-down" data-aos-duration="800">
-                <h2 class="section-title">Certificates</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="certificates-grid">
-                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="certificate-image">
-                        <img class="responsive-image" src="assets/images/certificates/Coursera IBM Machine Learning.jpg" alt="Certificate 1">
-                    </div>
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">IBM Machine Learning</h3>
-                        <p class="certificate-issuer">Coursera</p>
-                    </div>
-                </div>
-                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="certificate-image">
-                        <img class="responsive-image" src="assets/images/certificates/Building LLM Applications With Prompt Engineering.jpg" alt="Certificate 2">
-                    </div>
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">Building LLM Applications With Prompt Engineering</h3>
-                        <p class="certificate-issuer">NVIDIA</p>
-                    </div>
-                </div>
-                <div class="certificate-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="certificate-image">
-                        <img class="responsive-image" src="assets/images/certificates/Databricks Generative AI Fundamentals.jpg" alt="Certificate 3">
-                    </div>
-                    <div class="certificate-content">
-                        <h3 class="certificate-title">Generative AI Fundamentals</h3>
-                        <p class="certificate-issuer">Databricks</p>
-                    </div>
-                </div>
-                
-                
-                <!-- EDITABLE: Same structure for other certificates (only show 3) -->
-            </div>
-            
-            <div class="section-footer" data-aos="fade-up" data-aos-delay="300">
-                <a href="pages/certificates.html" class="btn btn-text">View All Certificates <i class="fas fa-arrow-right"></i></a>
-            </div>
+      <div class="sk-card">
+        <div class="sk-card-lbl">Tools &amp; BI</div>
+        <div class="sk-icons">
+          <div class="sk-item"><img src="assets/icons/power-bi.png" alt="Power BI"><span>Power BI</span></div>
+          <div class="sk-item"><img src="assets/icons/excel.png" alt="Excel"><span>Excel</span></div>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Get In Touch</h2>
-                <div class="section-divider"></div>
-            </div>
-            
-            <div class="contact-container">
-                <div class="contact-info">
-                    <div class="contact-image">
-                        <img src="assets/images/contact-z.png" alt="Contact">
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/om-patel-tech/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/OmPatel01" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="mailto:ompatel2587@example.com" class="social-link" target="_blank"><i class="fas fa-envelope"></i></a>
-                        <a class="social-link"><i class="fa-solid fa-location-dot"></i></a>
-                        <p style="margin-top: 8px;"> Mumbai, Maharashtra</p>
-                    </div>
-                </div>
-                
-                <!-- <div class="contact-form">
-                    <form id="contact-form" action="submit-form.php" method="POST">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div> -->
-
-                <div class="contact-form">
-                    <form id="contact-form" method="POST">
-                        <div class="form-group">
-                            <label for="name">Your Name</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Your Email</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">Subject</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-paper-plane"></i> Send Message
-                        </button>
-                    </form>
-                </div>
-            </div>
+      <div class="sk-card">
+        <div class="sk-card-lbl">MLOps &amp; DevOps</div>
+        <div class="sk-icons">
+          <div class="sk-item"><img src="assets/icons/docker.svg" alt="Docker"><span>Docker</span></div>
+          <div class="sk-item"><img src="assets/icons/git.svg" alt="Git"><span>Git</span></div>
+          <div class="sk-item"><img src="assets/icons/github.svg" alt="GitHub"><span>GitHub</span></div>
+          <div class="sk-item"><img src="assets/icons/mlflow.png" alt="MLflow"><span>MLflow</span></div>
+          <div class="sk-item"><img src="assets/icons/dvc.svg" alt="DVC"><span>DVC</span></div>
         </div>
-    </section>
+      </div>
 
-    <!-- Footer Section -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="copyright">
-                    <p>&copy; <span id="current-year"></span> Om Patel. All Rights Reserved.</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
+      <div class="sk-card full">
+        <div class="sk-card-lbl">Libraries &amp; Frameworks</div>
+        <div class="sk-icons">
+          <div class="sk-item"><img src="assets/icons/scikit-learn.svg" alt="Scikit-Learn"><span>Scikit-Learn</span></div>
+          <div class="sk-item"><img src="assets/icons/tensorflow.svg" alt="TensorFlow"><span>TensorFlow</span></div>
+          <div class="sk-item"><img src="assets/icons/pandas.svg" alt="Pandas"><span>Pandas</span></div>
+          <div class="sk-item"><img src="assets/icons/numpy.svg" alt="NumPy"><span>NumPy</span></div>
+          <div class="sk-item"><img src="assets/icons/matplotlib.svg" alt="Matplotlib"><span>Matplotlib</span></div>
+          <div class="sk-item"><img src="assets/icons/seaborn.svg" alt="Seaborn"><span>Seaborn</span></div>
+          <div class="sk-item"><img src="assets/icons/Flask.png" alt="Flask"><span>Flask</span></div>
+          <div class="sk-item"><img src="assets/icons/FastAPI.png" alt="FastAPI"><span>FastAPI</span></div>
+          <div class="sk-item"><img src="assets/icons/streamlit.svg" alt="Streamlit"><span>Streamlit</span></div>
+          <div class="sk-item"><img src="assets/icons/soup.png" alt="BeautifulSoup"><span>BeautifulSoup</span></div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Scripts -->
-    <script src="assets/js/main.js"></script>
-    <!-- <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/brain.js/2.0.0-beta.1/brain-browser.min.js"></script>
+<!-- ══════════ PROJECTS ══════════ -->
+<section class="proj-sec" id="projects" data-aos="fade-up">
+  <div class="container">
+    <div class="proj-hdr">
+      <div>
+        <div class="section-label">Portfolio</div>
+        <h2 class="section-title">Selected projects</h2>
+      </div>
+      <a href="pages/all_projects.html" class="view-all">View all 12 projects <i class="fas fa-arrow-right"></i></a>
+    </div>
 
-    <!-- Particles.js Library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
+    <div class="proj-grid">
 
-    <!-- Add before closing body tag -->
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-    AOS.init({
-        // Global settings
-        once: true, // Animation only happens once
-        offset: 120, // Offset (in px) from the original trigger point
-        duration: 800, // Default animation duration
-        easing: 'ease', // Default easing
-        delay: 0 // Default delay
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="proj-img">
+          <img src="assets/images/project_images/sql_ai_agent.png" alt="SQL AI Agent">
+          <div class="proj-overlay"><span class="ov-btn">View Details</span></div>
+          <span class="proj-badge"><i class="fas fa-bolt"></i> LLM-powered</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">SQL AI Agent</div>
+          <div class="proj-tags">
+            <span class="ptag">NLP</span><span class="ptag">LangChain</span><span class="ptag">PostgreSQL</span><span class="ptag">OpenAI</span>
+          </div>
+          <div class="proj-impact">
+            Converts <strong>natural language to SQL</strong> via GPT-4-turbo. Non-technical users query live databases through a Streamlit UI — zero SQL knowledge required.
+          </div>
+          <div class="proj-links">
+            <a href="pages/SQL AI Agent.html" class="pbtn pbtn-primary">View Project</a>
+            <a href="https://github.com/OmPatel01/SQL-AI-Agent-using-OpenAI" target="_blank" class="pbtn-icon"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="proj-img">
+          <img src="assets/images/project_images/predict_co2.jpg" alt="CO2 Prediction">
+          <div class="proj-overlay"><span class="ov-btn">View Details</span></div>
+          <span class="proj-badge"><i class="fas fa-server"></i> Live on Render</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Hourly CO₂ Emission Prediction for Steel Production</div>
+          <div class="proj-tags">
+            <span class="ptag">Regression</span><span class="ptag">Flask</span><span class="ptag">Docker</span><span class="ptag">MLOps</span>
+          </div>
+          <div class="proj-impact">
+            Polynomial Regression model predicting industrial emissions. <strong>Dockerised Flask API deployed live on Render</strong> for real-time predictions.
+          </div>
+          <div class="proj-links">
+            <a href="pages/CO₂ Emission Prediction.html" class="pbtn pbtn-primary">View Project</a>
+            <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" target="_blank" class="pbtn-icon"><i class="fab fa-github"></i></a>
+            <a href="https://co2-emission-prediction-mlops.onrender.com" target="_blank" class="pbtn-icon"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="proj-img">
+          <img src="assets/images/project_images/cedit_risk.jpeg" alt="Credit Risk">
+          <div class="proj-overlay"><span class="ov-btn">View Details</span></div>
+          <span class="proj-badge"><i class="fas fa-chart-line"></i> 91% accuracy</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Credit Risk Prediction Using Ensemble Learning</div>
+          <div class="proj-tags">
+            <span class="ptag">Classification</span><span class="ptag">Random Forest</span><span class="ptag">Streamlit</span>
+          </div>
+          <div class="proj-impact">
+            Voting Classifier (RF + LR) achieves <strong>91% accuracy</strong> on loan default detection. Live Streamlit app — real users can test predictions.
+          </div>
+          <div class="proj-links">
+            <a href="pages/Credit Risk Prediction.html" class="pbtn pbtn-primary">View Project</a>
+            <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Classisfication/Credit%20Risk%20Prediction%20Using%20Ensemble%20Learning" target="_blank" class="pbtn-icon"><i class="fab fa-github"></i></a>
+            <a href="https://credit-risk-prediction1.streamlit.app/" target="_blank" class="pbtn-icon"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="proj-img">
+          <img src="assets/images/project_images/image_colorization.png" alt="Image Colorization">
+          <div class="proj-overlay"><span class="ov-btn">View Details</span></div>
+          <span class="proj-badge"><i class="fas fa-palette"></i> Pix2Pix GAN</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Image Colorization using GANs</div>
+          <div class="proj-tags">
+            <span class="ptag">Deep Learning</span><span class="ptag">PyTorch</span><span class="ptag">Conditional GAN</span>
+          </div>
+          <div class="proj-impact">
+            U-Net Generator + PatchGAN Discriminator converts greyscale images to colour. Evaluated with <strong>SSIM and PSNR metrics</strong>.
+          </div>
+          <div class="proj-links">
+            <a href="pages/Image Colorization.html" class="pbtn pbtn-primary">View Project</a>
+            <a href="https://github.com/OmPatel01/Computer-Vision/tree/main/Image%20Colorization%20using%20GANs" target="_blank" class="pbtn-icon"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="60">
+        <div class="proj-img">
+          <img src="assets/images/project_images/text_summarization.png" alt="Text Summarization">
+          <div class="proj-overlay"><span class="ov-btn">View Details</span></div>
+          <span class="proj-badge"><i class="fas fa-brain"></i> Transformers</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Text Summarization Using Transformers</div>
+          <div class="proj-tags">
+            <span class="ptag">NLP</span><span class="ptag">BART</span><span class="ptag">MiniLM</span><span class="ptag">HuggingFace</span>
+          </div>
+          <div class="proj-impact">
+            Dual approach — <strong>abstractive (BART)</strong> and extractive (MiniLM + cosine similarity). Supports PDF and .txt file uploads.
+          </div>
+          <div class="proj-links">
+            <a href="pages/Text Summarization.html" class="pbtn pbtn-primary">View Project</a>
+            <a href="https://github.com/OmPatel01/Generative-AI-Projects/tree/main/Text%20Summarization" target="_blank" class="pbtn-icon"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card" data-aos="fade-up" data-aos-delay="120">
+        <div class="proj-img">
+          <img src="assets/images/project_images/customer_segmentation.jpg" alt="Customer Segmentation">
+          <div class="proj-overlay"><span class="ov-btn">View Details</span></div>
+          <span class="proj-badge"><i class="fas fa-users"></i> Live on Streamlit</span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-title">Revealing Shopping Personalities: Customer Segmentation</div>
+          <div class="proj-tags">
+            <span class="ptag">K-Means</span><span class="ptag">Clustering</span><span class="ptag">Streamlit</span>
+          </div>
+          <div class="proj-impact">
+            K-Means segments mall customers into <strong>5 distinct spending personalities</strong>. Interactive Streamlit app lets users explore clusters dynamically.
+          </div>
+          <div class="proj-links">
+            <a href="pages/Customer Segmentation.html" class="pbtn pbtn-primary">View Project</a>
+            <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Clustering/Mall%20Customer%20Segmentation" target="_blank" class="pbtn-icon"><i class="fab fa-github"></i></a>
+            <a href="https://mallcustomersegmentation.streamlit.app/" target="_blank" class="pbtn-icon"><i class="fas fa-external-link-alt"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ RESEARCH ══════════ -->
+<section class="research-sec" id="research" data-aos="fade-up">
+  <div class="container">
+    <div class="section-label">Academic work</div>
+    <h2 class="section-title">Research &amp; Publications</h2>
+    <p class="section-sub">Peer-reviewed work published in national and international journals.</p>
+
+    <div class="res-grid">
+      <div class="res-card">
+        <div class="res-venue">IJSRED · March 2025</div>
+        <div class="res-title">Machine Failure Prediction Using Machine Learning: A Multi-Stage Approach for Predictive Maintenance</div>
+        <a href="https://drive.google.com/file/d/16sQo0j9fZgukwEnfc3s-KPMBTWE0kxK7/view?usp=sharing" target="_blank" class="res-link">View Certificate <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="res-card">
+        <div class="res-venue">IJCRT · March 2024</div>
+        <div class="res-title">Deepfake Detection of Images Using Deep Learning Techniques</div>
+        <a href="https://drive.google.com/file/d/1jiGtiY3eKIwGD2bTfyfcUYPzJFnpl1kl/view?usp=sharing" target="_blank" class="res-link">View Certificate <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CERTIFICATES ══════════ -->
+<section class="certs-sec" id="certificates" data-aos="fade-up">
+  <div class="container">
+    <div class="certs-hdr">
+      <div>
+        <div class="section-label">Credentials</div>
+        <h2 class="section-title">Certifications</h2>
+      </div>
+      <a href="pages/certificates.html" class="view-all">View all 15 certs <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <div class="certs-grid">
+      <div class="cert-card">
+        <div class="cert-img"><img src="assets/images/certificates/OCI GENAI.jpg" alt="Oracle OCI GenAI"></div>
+        <div class="cert-body">
+          <div class="cert-issuer">Oracle</div>
+          <div class="cert-title">OCI Certified Generative AI Professional</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-img"><img src="assets/images/certificates/Building LLM Applications With Prompt Engineering.jpg" alt="NVIDIA LLM"></div>
+        <div class="cert-body">
+          <div class="cert-issuer">NVIDIA</div>
+          <div class="cert-title">Building LLM Applications With Prompt Engineering</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-img"><img src="assets/images/certificates/Coursera IBM Machine Learning.jpg" alt="IBM ML"></div>
+        <div class="cert-body">
+          <div class="cert-issuer">Coursera · IBM</div>
+          <div class="cert-title">IBM Machine Learning Professional Certificate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ CONTACT ══════════ -->
+<section class="contact-sec" id="contact" data-aos="fade-up">
+  <div class="container">
+    <div class="contact-grid">
+
+      <div class="contact-info">
+        <div class="section-label">Get in touch</div>
+        <h2 class="section-title">Let's work<br>together</h2>
+        <p>I'm actively looking for ML and Data Science roles. Whether it's a full-time position, freelance project, or research collaboration — I'd love to hear from you.</p>
+
+        <div class="cdetails">
+          <div class="cdetail">
+            <div class="cicon"><i class="fas fa-envelope"></i></div>
+            <!-- ⚠ Replace with your actual email -->
+            <span>your@email.com</span>
+          </div>
+          <div class="cdetail">
+            <div class="cicon"><i class="fas fa-location-dot"></i></div>
+            <span>Mumbai, Maharashtra, India</span>
+          </div>
+          <div class="cdetail">
+            <div class="cicon"><i class="fas fa-clock"></i></div>
+            <span>Responds within 24 hours</span>
+          </div>
+        </div>
+
+        <div class="csocials">
+          <a href="https://github.com/OmPatel01" target="_blank" class="csoc"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/om-patel-tech/" target="_blank" class="csoc"><i class="fab fa-linkedin"></i></a>
+          <!-- ⚠ Replace with your actual email -->
+          <a href="mailto:your@email.com" class="csoc"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
+
+      <div class="cform">
+        <form id="contact-form" method="POST">
+          <div class="frow">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Jane Smith" required>
+          </div>
+          <div class="frow">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="jane@company.com" required>
+          </div>
+          <div class="frow">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Job opportunity / Collaboration" required>
+          </div>
+          <div class="frow">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Tell me about the role or project..." required></textarea>
+          </div>
+          <p class="fhint">I'll get back to you within 24 hours.</p>
+          <button type="submit" class="btn-navy fsub">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════ FOOTER ══════════ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="ftr-inner">
+      <div class="ftr-logo">Om<span>.</span></div>
+      <div class="ftr-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#research">Research</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="ftr-copy">&copy; <span id="yr"></span> Om Patel. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="btt" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
+
+<!-- AOS only — no brain.js, no particles.js -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+AOS.init({once:true,duration:650,offset:70,easing:'ease-out'});
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* Scroll progress */
+window.addEventListener('scroll',function(){
+  var s=document.documentElement;
+  document.getElementById('prog').style.width=((s.scrollTop||document.body.scrollTop)/(s.scrollHeight-s.clientHeight)*100)+'%';
+},{passive:true});
+
+/* Header shadow */
+var hdr=document.getElementById('hdr');
+window.addEventListener('scroll',function(){hdr.classList.toggle('scrolled',window.scrollY>20);},{passive:true});
+
+/* Back to top */
+var btt=document.getElementById('btt');
+window.addEventListener('scroll',function(){btt.classList.toggle('show',window.scrollY>300);},{passive:true});
+btt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+
+/* Scroll-spy */
+var secs=document.querySelectorAll('section[id],.hero[id]');
+var navAs=document.querySelectorAll('.main-nav a[href^="#"]');
+window.addEventListener('scroll',function(){
+  var cur='';
+  secs.forEach(function(s){if(window.scrollY>=s.offsetTop-110)cur=s.id;});
+  navAs.forEach(function(a){a.classList.toggle('active',a.getAttribute('href')==='#'+cur);});
+},{passive:true});
+
+/* Mobile nav */
+var tog=document.getElementById('mob-tog');
+var nav=document.getElementById('main-nav');
+tog.addEventListener('click',function(){nav.classList.toggle('open');});
+
+/* FormSpree */
+(function(){
+  var form=document.getElementById('contact-form');
+  if(!form)return;
+  form.action='https://formspree.io/f/xrbpenrq';
+  form.setAttribute('accept-charset','UTF-8');
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type="submit"]');
+    var orig=btn.innerHTML;
+    btn.disabled=true;
+    btn.innerHTML='<i class="fas fa-spinner fa-spin"></i> Sending…';
+    fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+    .then(function(r){
+      if(r.ok){
+        btn.innerHTML='<i class="fas fa-check"></i> Message sent!';
+        btn.style.background='var(--teal)';
+        form.reset();
+        setTimeout(function(){btn.innerHTML=orig;btn.disabled=false;btn.style.background='';},4000);
+      }else{throw new Error();}
+    }).catch(function(){
+      btn.innerHTML='<i class="fas fa-times"></i> Failed — try again';
+      btn.disabled=false;
+      setTimeout(function(){btn.innerHTML=orig;},3000);
     });
-    </script>
+  });
+})();
+</script>
 
 </body>
-<<<<<<< HEAD
 </html>
-=======
-</html>
->>>>>>> 12ff7f42b0dfbdff2b5cd4533ec1983d942de24b
