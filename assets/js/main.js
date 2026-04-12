@@ -362,69 +362,6 @@ function initParticlesJS() {
     });
 }
 
-// Additional functions (placeholders - implement as needed)
-// function initMobileNav() {
-//     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
-//     const mainNav = document.querySelector('.main-nav');
-    
-//     if (mobileNavToggle && mainNav) {
-//         mobileNavToggle.addEventListener('click', function() {
-//             this.classList.toggle('active');
-//             mainNav.classList.toggle('active');
-//         });
-        
-//         // Close mobile menu when clicking on a nav link
-//         const navLinks = document.querySelectorAll('.main-nav a');
-//         navLinks.forEach(link => {
-//             link.addEventListener('click', function() {
-//                 mainNav.classList.remove('active');
-//                 mobileNavToggle.classList.remove('active');
-//             });
-//         });
-
-//         navLinks.forEach(link => {
-//             link.addEventListener('click', function(event) {
-
-//                 const targetToggle = this.getAttribute('data-toggle'); // Check if navbar link has toggle action
-//                 if (targetToggle) {
-//                     event.preventDefault(); // Prevent default scrolling behavior
-
-//                     // Scroll to Education section smoothly
-//                     document.getElementById('education').scrollIntoView({ behavior: "smooth" });
-
-//                     // Switch to Experience tab
-//                     document.querySelectorAll('.toggle-btn').forEach(btn => {
-//                         btn.classList.remove('active'); // Remove active from both buttons
-//                         if (btn.getAttribute('data-target') === targetToggle) {
-//                             btn.classList.add('active'); // Activate Experience button
-//                         }
-//                     });
-
-//                     // Hide all sections and show Experience
-//                     document.querySelectorAll('.section-content').forEach(section => {
-//                         section.classList.remove('active');
-//                     });
-//                     document.getElementById(targetToggle).classList.add('active'); // Show Experience
-//                 }
-
-//                 event.preventDefault();
-//                 const targetId = this.getAttribute('href').substring(1);
-//                 console.log("Navigating to:", targetId);
-//                 const targetSection = document.getElementById(targetId);
-                
-//                 if (targetSection) {
-//                     targetSection.scrollIntoView({ behavior: "smooth" });
-//                 } else {
-//                     console.error("Section not found:", targetId);
-//                 }
-
-//             });
-
-//         });
-
-//     }
-// }
-
 function initMobileNav() {
     const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
     const mainNav = document.querySelector('.main-nav');
@@ -1240,57 +1177,6 @@ function initNeuralNetwork() {
     // Start periodic predictions
     runSamplePrediction();
 }
-
-/**
- * Adjusts images to maintain proper aspect ratio within their containers
- * This function checks each project image and adjusts it based on its natural dimensions
- */
-// function adjustProjectImages() {
-//     // Get all project images
-//     const projectImages = document.querySelectorAll('.project-image img');
-    
-//     projectImages.forEach(img => {
-//         // Wait for the image to load to get its natural dimensions
-//         img.onload = function() {
-//             const container = img.parentElement;
-//             const containerWidth = container.offsetWidth;
-//             const containerHeight = container.offsetHeight;
-//             const containerRatio = containerWidth / containerHeight;
-            
-//             const imgRatio = img.naturalWidth / img.naturalHeight;
-            
-//             // If image is wider than container (landscape vs portrait)
-//             if (imgRatio > containerRatio) {
-//                 img.style.width = 'auto';
-//                 img.style.height = '100%';
-//                 // Center horizontally
-//                 const widthDiff = (img.offsetWidth - containerWidth) / 2;
-//                 img.style.marginLeft = `-${widthDiff}px`;
-//                 img.style.marginTop = '0';
-//             } 
-//             // If image is taller than container
-//             else {
-//                 img.style.width = '100%';
-//                 img.style.height = 'auto';
-//                 // Center vertically
-//                 const heightDiff = (img.offsetHeight - containerHeight) / 2;
-//                 img.style.marginTop = `-${heightDiff}px`;
-//                 img.style.marginLeft = '0';
-//             }
-//         };
-        
-//         // Trigger onload for cached images
-//         if (img.complete) {
-//             img.onload();
-//         }
-//     });
-// }
-
-// // Run when DOM is loaded
-// document.addEventListener('DOMContentLoaded', adjustProjectImages);
-
-// // Also run when window is resized
-// window.addEventListener('resize', adjustProjectImages);
 
 /**
  * Adjusts all images with the specified class to ensure they're fully visible
