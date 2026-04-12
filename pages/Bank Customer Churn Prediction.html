@@ -29,9 +29,10 @@
                         
             <div class="project-description">
                 <h2>Project Overview</h2>
-                <p>This project aims to <strong>predict customer churn</strong> for a bank using <strong>machine learning techniques</strong>. Churn occurs when customers stop using the bank’s services, leading to revenue loss. By accurately predicting churn, the bank can proactively implement retention strategies and improve customer satisfaction.</p>
+                <p>This project aims to <strong>predict customer churn</strong> for a bank using <strong>machine learning techniques</strong>. Churn occurs when customers stop using the bank's services, leading to revenue loss. By accurately predicting churn, the bank can proactively implement retention strategies and improve customer satisfaction.</p>
     
                 <p>The dataset includes key customer attributes such as <strong>credit score, age, account balance</strong>, and <strong>engagement metrics</strong>.</p>
+
                 <h2>Key Insights</h2>
                 <ul>
                     <li>Banks can reduce churn by identifying <strong>high-risk customers early</strong>.</li>
@@ -64,15 +65,6 @@
                     <li>Used <strong>Precision</strong>, <strong>Recall</strong>, <strong>F1-Score</strong>, and <strong>Confusion Matrix</strong> to assess model performance.</li>
                     <li><strong>Cross-validation</strong> ensured robust and reliable model accuracy.</li>
                 </ul>
-                
-                <!-- <h2>Live Preview</h2>
-                <div class="iframe-container">
-                    <div class="iframe-loading" id="iframe-loading">
-                        <div class="spinner"></div>
-                        <p>Loading preview...</p>
-                    </div>
-                    <iframe src="https://example.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
-                </div> -->
 
                 <h2>Key Learnings</h2>
                 <ul>
@@ -84,14 +76,12 @@
             </div>
             
             <div class="project-links">
-                <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
                 <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Classisfication/Bank%20Customer%20Churn%20Prediction" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
-                <!-- <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a> -->
             </div>
         </div>
         
         <div class="project-navigation">
-            <a href="Bank Customer Churn Prediction.html" class="nav-link prev-project">
+            <a href="Medical Insurance Cost Estimation.html" class="nav-link prev-project">
                 <i class="fas fa-chevron-left"></i>
                 <span>Previous Project</span>
             </a>
@@ -99,7 +89,7 @@
                 <i class="fas fa-th-large"></i>
                 <span>All Projects</span>
             </a>
-            <a href="International Student Demographics in US.html?id=next" class="nav-link next-project">
+            <a href="Bike Store Analysis Power BI.html" class="nav-link next-project">
                 <span>Next Project</span>
                 <i class="fas fa-chevron-right"></i>
             </a>
@@ -108,18 +98,13 @@
     
     <script src="../assets/js/project_detail.js"></script>
     <script>
-        // Handle iframe error
         function handleIframeError() {
             const loadingElement = document.getElementById('iframe-loading');
             loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
             loadingElement.style.display = 'flex';
         }
-        
-        // Initialize syntax highlighting if available
         document.addEventListener('DOMContentLoaded', function() {
-            if (typeof hljs !== 'undefined') {
-                hljs.highlightAll();
-            }
+            if (typeof hljs !== 'undefined') { hljs.highlightAll(); }
         });
     </script>
 </body>

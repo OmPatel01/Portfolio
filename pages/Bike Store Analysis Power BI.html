@@ -81,15 +81,6 @@
                     <li>Allowed stakeholders to analyze data based on specific <strong>time periods</strong>, <strong>product categories</strong>, and <strong>store locations</strong>.</li>
                 </ul>
                 
-                <!-- <h2>Live Preview</h2>
-                <div class="iframe-container">
-                    <div class="iframe-loading" id="iframe-loading">
-                        <div class="spinner"></div>
-                        <p>Loading preview...</p>
-                    </div>
-                    <iframe src="https://example.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
-                </div> -->
-                
                 <h2>Key Learnings</h2>
                 <ul>
                     <li><strong>Data modeling in Power BI</strong> is crucial for structuring relationships efficiently.</li>
@@ -101,14 +92,12 @@
             </div>
             
             <div class="project-links">
-                <!-- <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a> -->
                 <a href="https://github.com/OmPatel01/Data-Analysis-Projects/tree/main/Power%20BI%20Projects/Bike%20Store%20Analysis" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
-                <!-- <a href="#" class="btn btn-outline">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a> -->
             </div>
         </div>
         
         <div class="project-navigation">
-            <a href="International Student Demographics in US.html" class="nav-link prev-project">
+            <a href="Bank Customer Churn Prediction.html" class="nav-link prev-project">
                 <i class="fas fa-chevron-left"></i>
                 <span>Previous Project</span>
             </a>
@@ -116,7 +105,7 @@
                 <i class="fas fa-th-large"></i>
                 <span>All Projects</span>
             </a>
-            <a href="Pizza Sales Analysis.html?id=next" class="nav-link next-project">
+            <a href="Credit Risk Modelling.html" class="nav-link next-project">
                 <span>Next Project</span>
                 <i class="fas fa-chevron-right"></i>
             </a>
@@ -125,18 +114,13 @@
     
     <script src="../assets/js/project_detail.js"></script>
     <script>
-        // Handle iframe error
         function handleIframeError() {
             const loadingElement = document.getElementById('iframe-loading');
             loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
             loadingElement.style.display = 'flex';
         }
-        
-        // Initialize syntax highlighting if available
         document.addEventListener('DOMContentLoaded', function() {
-            if (typeof hljs !== 'undefined') {
-                hljs.highlightAll();
-            }
+            if (typeof hljs !== 'undefined') { hljs.highlightAll(); }
         });
     </script>
 </body>
