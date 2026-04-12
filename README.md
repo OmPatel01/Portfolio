@@ -6,18 +6,8 @@ Welcome to my personal portfolio – a responsive, interactive showcase built wi
 - ✅ *Certifications & Achievements*: Milestones along my learning path
 - ✅ *About Me*: My passion for data, technology, and building meaningful digital experiences
 
-<<<<<<< HEAD
-## 🛠 Tech Stack:
-- HTML5
-- CSS3 (Flexbox, Grid, Responsive Design)
-- JavaScript (DOM manipulation, basic interactivity)
-
 ## 📌 Purpose:
 This portfolio is both a personal website and a demonstration of my coding abilities. It’s designed to be a quick snapshot for recruiters, collaborators, and anyone interested in my journey as a developer.
-=======
-## 📌 Purpose:
-This portfolio is both a personal website and a demonstration of my coding abilities. It’s designed to be a quick snapshot for recruiters, collaborators, and anyone interested in my journey.
->>>>>>> 12ff7f42b0dfbdff2b5cd4533ec1983d942de24b
 
 ## 🔗 Live Demo:
 [View Portfolio](https://ompatel01.github.io/Portfolio/) 
