@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects | Portfolio</title>
+    <title>Om Patel — ML & Data Science Projects</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/all_projects.css">
@@ -15,15 +15,16 @@
                 <div class="section-header">
                     <a href="../index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
                     <div class="header-content">
-                        <h1 class="section-title">My Projects</h1>
+                        <h1 class="section-title">Om Patel — Projects</h1>
                         <div class="section-divider"></div>
-                        <p class="section-subtitle">Explore my recent work and personal projects showcasing my skills and creativity</p>
+                        <p class="section-subtitle">8 end-to-end ML & AI systems — from raw data to deployed APIs, dashboards, and LLM-powered tools</p>
                     </div>
                 </div>
-                
+
                 <div class="projects-grid" id="projects">
 
-                    <div class="project-card" data-tools="python, scikit-learn, streamlit" data-techniques="machine-learning, predictive-modeling, classification" data-industry="finance">
+                    <!-- 1. Credit Risk — STRONGEST -->
+                    <div class="project-card" data-tools="python, scikit-learn, fastapi, xgboost" data-techniques="machine-learning, predictive-modeling, classification, simulation" data-industry="finance">
                         <div class="project-image">
                             <img class="responsive-image" src="../assets/images/project_images/cedit_risk.jpeg" alt="Credit Risk Modelling Platform">
                             <div class="project-overlay">
@@ -34,27 +35,28 @@
                             <h3 class="project-title">Credit Risk Modeling & Decision Intelligence System</h3>
                             <div class="project-tags">
                                 <span class="project-tag">Credit Risk</span>
-                                <span class="project-tag">Risk Segmentation</span>
-                                <span class="project-tag">ECL</span>
-                                <span class="project-tag">Monte Carlo Simulation</span>
+                                <span class="project-tag">XGBoost</span>
+                                <span class="project-tag">Monte Carlo</span>
+                                <span class="project-tag">FastAPI</span>
+                                <span class="project-tag">MLflow</span>
                             </div>
                             <p class="project-description">
-                                ML-powered credit risk system combining default prediction, risk segmentation (Approve/Review/Reject), and Expected Credit Loss (ECL) estimation. 
-                                Includes Monte Carlo simulation (10,000+ runs) for portfolio risk analysis.
+                                End-to-end credit risk platform on 30,000 records. WOE scorecard (champion) + XGBoost (challenger) tracked via MLflow. Monte Carlo simulation (500k scenarios) for VaR &amp; CVaR. Three-scenario stress testing — fully deployed FastAPI + HTML dashboard.
                             </p>
                             <div class="project-links">
                                 <a href="Credit Risk Modelling.html" class="btn btn-outline">View Project</a>
-                                <a href="https://github.com/OmPatel01/Credit-Risk-Modelling" class="btn btn-icon" target="_blank">
+                                <a href="https://github.com/OmPatel01/Credit-Risk-Modelling" class="btn btn-icon" target="_blank" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://credit-risk-modelling-two.vercel.app/" class="btn btn-icon" target="_blank">
+                                <a href="credit-risk-modelling-two.vercel.app" class="btn btn-icon" target="_blank" aria-label="Live demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-tools="python, openai-api, streamlit" data-techniques="natural-language-processing, generative-ai, llms, agents" data-industry="productivity, ai">
+                    <!-- 2. SQL AI Agent -->
+                    <div class="project-card" data-tools="python, openai-api, langchain, postgresql, flask, streamlit" data-techniques="natural-language-processing, generative-ai, llms, agents" data-industry="productivity, ai">
                         <div class="project-image">
                             <img class="responsive-image" src="../assets/images/project_images/sql_ai_agent.png" alt="SQL AI Agent">
                             <div class="project-overlay">
@@ -62,29 +64,28 @@
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">SQL AI Agent</h3>
+                            <h3 class="project-title">SQL AI Agent — Natural Language to SQL</h3>
                             <div class="project-tags">
                                 <span class="project-tag">NLP</span>
-                                <span class="project-tag">SQL</span>
                                 <span class="project-tag">LangChain</span>
+                                <span class="project-tag">GPT-4</span>
                                 <span class="project-tag">PostgreSQL</span>
-                                <span class="project-tag">Flask</span>
-                                <span class="project-tag">OpenAI</span>
                                 <span class="project-tag">Streamlit</span>
                             </div>
                             <p class="project-description">
-                                Transform natural language queries into SQL commands and execute them on a PostgreSQL database with this AI-powered agent, providing non-technical users with an intuitive web interface for seamless data interaction.
+                                LLM-powered agent (GPT-4-turbo) that converts natural language into validated SQL and executes against live PostgreSQL. Schema-aware query generation with error handling — zero SQL knowledge required from end users. Flask API + Streamlit UI.
                             </p>
                             <div class="project-links">
                                 <a href="SQL AI Agent.html" class="btn btn-outline">View Project</a>
-                                <a href="https://github.com/OmPatel01/SQL-AI-Agent-using-OpenAI" class="btn btn-icon" target="_blank">
+                                <a href="https://github.com/OmPatel01/SQL-AI-Agent-using-OpenAI" class="btn btn-icon" target="_blank" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-tools="python, scikit-learn, flask" data-techniques="machine-learning, predictive-modeling, regression" data-industry="manufacturing, environment">
+                    <!-- 3. CO2 Emission -->
+                    <div class="project-card" data-tools="python, scikit-learn, flask, docker" data-techniques="machine-learning, predictive-modeling, regression, mlops" data-industry="manufacturing, environment">
                         <div class="project-image">
                             <img class="responsive-image" src="../assets/images/project_images/predict_co2.jpg" alt="CO2 Emission Prediction">
                             <div class="project-overlay">
@@ -92,30 +93,30 @@
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Hourly CO₂ Emission Prediction for Steel Production</h3>
+                            <h3 class="project-title">Hourly CO₂ Emission Prediction — MLOps Pipeline</h3>
                             <div class="project-tags">
-                                <span class="project-tag">Python</span>
+                                <span class="project-tag">Polynomial Regression</span>
                                 <span class="project-tag">Docker</span>
-                                <span class="project-tag">Flask</span>
-                                <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Regression</span>
+                                <span class="project-tag">Flask API</span>
+                                <span class="project-tag">Render</span>
                             </div>
                             <p class="project-description">
-                                Built a machine learning model to predict hourly CO₂ emissions in steel production using regression techniques. Deployed the model with Flask and Docker for real-time predictions.
+                                Polynomial Regression (degree 2, R² = 0.94) for industrial CO₂ emission forecasting in steel production. Containerised with Docker, served via Flask REST API — live on Render. PCA applied for feature reduction and emission pattern visualisation.
                             </p>
                             <div class="project-links">
                                 <a href="CO₂ Emission Prediction.html" class="btn btn-outline">View Project</a>
-                                <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" class="btn btn-icon" target="_blank">
+                                <a href="https://github.com/OmPatel01/Co2-Emission-Prediction-MLOps" class="btn btn-icon" target="_blank" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
-                                <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-icon" target="_blank">
+                                <a href="https://co2-emission-prediction-mlops.onrender.com" class="btn btn-icon" target="_blank" aria-label="Live demo">
                                     <i class="fas fa-external-link-alt"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-tools="python, nltk, streamlit" data-techniques="transformers, natural-language-processing, deep-learning, generative-ai" data-industry="ai, productivity">
+                    <!-- 4. Text Summarization -->
+                    <div class="project-card" data-tools="python, nltk, transformers, streamlit, flask" data-techniques="transformers, natural-language-processing, deep-learning, generative-ai" data-industry="ai, productivity">
                         <div class="project-image">
                             <img class="responsive-image" src="../assets/images/project_images/text_summarization.png" alt="Text Summarization">
                             <div class="project-overlay">
@@ -125,24 +126,26 @@
                         <div class="project-content">
                             <h3 class="project-title">Text Summarization Using Transformers</h3>
                             <div class="project-tags">
-                                <span class="project-tag">NLP</span>
-                                <span class="project-tag">Abstractive Summarization</span>
-                                <span class="project-tag">Extractive Summarization</span>
-                                <span class="project-tag">Transformers</span>
+                                <span class="project-tag">BART</span>
+                                <span class="project-tag">MiniLM</span>
+                                <span class="project-tag">Abstractive</span>
+                                <span class="project-tag">Extractive</span>
+                                <span class="project-tag">HuggingFace</span>
                             </div>
                             <p class="project-description">
-                                A GenAI-powered project that delivers concise summaries using both abstractive and extractive text summarization techniques with transformer models.
+                                Dual-mode summarisation: BART (facebook/bart-large-cnn) for abstractive and MiniLM + cosine similarity for extractive. Handles PDF &amp; .txt uploads. Chunking strategy for BART's 1024-token limit. ROUGE-1 = 0.44 evaluated on CNN/DailyMail.
                             </p>
                             <div class="project-links">
                                 <a href="Text Summarization.html" class="btn btn-outline">View Project</a>
-                                <a href="https://github.com/OmPatel01/Generative-AI-Projects/tree/main/Text%20Summarization" class="btn btn-icon" target="_blank">
+                                <a href="https://github.com/OmPatel01/Generative-AI-Projects/tree/main/Text%20Summarization" class="btn btn-icon" target="_blank" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                                    
-                    <div class="project-card" data-tools="python, streamlit" data-techniques="deep-learning, generative-ai" data-industry="creative">
+
+                    <!-- 5. Image Colorization -->
+                    <div class="project-card" data-tools="python, pytorch" data-techniques="deep-learning, generative-ai, computer-vision, gans" data-industry="creative">
                         <div class="project-image">
                             <img class="responsive-image" src="../assets/images/project_images/image_colorization.png" alt="Image Colorization using GANs">
                             <div class="project-overlay">
@@ -150,28 +153,28 @@
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Image Colorization using GANs</h3>
+                            <h3 class="project-title">Image Colorization using Conditional GANs (Pix2Pix)</h3>
                             <div class="project-tags">
-                                <span class="project-tag">Deep Learning</span>
-                                <span class="project-tag">Computer Vision</span>
-                                <span class="project-tag">Pix2Pix</span>
-                                <span class="project-tag">Image Colorization</span>
-                                <span class="project-tag">Conditional GAN</span>
                                 <span class="project-tag">PyTorch</span>
+                                <span class="project-tag">Pix2Pix</span>
+                                <span class="project-tag">U-Net</span>
+                                <span class="project-tag">PatchGAN</span>
+                                <span class="project-tag">SSIM / PSNR</span>
                             </div>
                             <p class="project-description">
-                                Transform grayscale images into realistic colorized versions using a Conditional GAN (Pix2Pix), leveraging deep learning for high-quality image generation.
+                                Conditional GAN (U-Net generator + PatchGAN discriminator) trained on 8,000 COCO images. Achieves SSIM = 0.81 and PSNR = 27.4 dB. Combined L1 + adversarial loss — gradient clipping + StepLR for stable GAN training.
                             </p>
                             <div class="project-links">
                                 <a href="Image Colorization.html" class="btn btn-outline">View Project</a>
-                                <a href="https://github.com/OmPatel01/Computer-Vision/tree/main/Image%20Colorization%20using%20GANs" class="btn btn-icon" target="_blank">
+                                <a href="https://github.com/OmPatel01/Computer-Vision/tree/main/Image%20Colorization%20using%20GANs" class="btn btn-icon" target="_blank" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-tools="python, scikit-learn, streamlit" data-techniques="machine-learning, predictive-modeling, regression" data-industry="healthcare">
+                    <!-- 6. Medical Insurance -->
+                    <div class="project-card" data-tools="python, scikit-learn" data-techniques="machine-learning, predictive-modeling, regression" data-industry="healthcare">
                         <div class="project-image">
                             <img class="responsive-image" src="../assets/images/project_images/medical_insuarance.jpg" alt="Medical Insurance Cost Estimation">
                             <div class="project-overlay">
@@ -181,24 +184,24 @@
                         <div class="project-content">
                             <h3 class="project-title">Medical Insurance Cost Estimation</h3>
                             <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">Streamlit</span>
-                                <span class="project-tag">Machine Learning</span>
-                                <span class="project-tag">Regression</span>
+                                <span class="project-tag">Polynomial Regression</span>
+                                <span class="project-tag">Feature Engineering</span>
+                                <span class="project-tag">R² = 0.81</span>
                             </div>
                             <p class="project-description">
-                                Developed a predictive model to estimate insurance costs based on customer demographics and health metrics, aiding in policy pricing and risk assessment.
+                                Polynomial regression (R² = 0.81 test) outperforms linear baseline (R² = 0.63) on 1,338 insurance records. Smokers pay 2.8× more on average. Southeast region shows highest charges at $14,735 — actionable for pricing strategy.
                             </p>
                             <div class="project-links">
                                 <a href="Medical Insurance Cost Estimation.html" class="btn btn-outline">View Project</a>
-                                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Regression/Predicting%20Medical%20Insurance" class="btn btn-icon" target="_blank">
+                                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Regression/Predicting%20Medical%20Insurance" class="btn btn-icon" target="_blank" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-tools="python, scikit-learn, streamlit" data-techniques="machine-learning, predictive-modeling, classification" data-industry="finance">
+                    <!-- 7. Bank Customer Churn -->
+                    <div class="project-card" data-tools="python, scikit-learn" data-techniques="machine-learning, predictive-modeling, classification" data-industry="finance">
                         <div class="project-image">
                             <img class="responsive-image" src="../assets/images/project_images/bank_customer_churn.jpg" alt="Bank Customer Churn Prediction">
                             <div class="project-overlay">
@@ -208,24 +211,25 @@
                         <div class="project-content">
                             <h3 class="project-title">Bank Customer Churn Prediction</h3>
                             <div class="project-tags">
-                                <span class="project-tag">Python</span>
-                                <span class="project-tag">Streamlit</span>
-                                <span class="project-tag">Machine Learning</span>
+                                <span class="project-tag">Random Forest</span>
+                                <span class="project-tag">SMOTE</span>
                                 <span class="project-tag">Classification</span>
+                                <span class="project-tag">Class Imbalance</span>
                             </div>
                             <p class="project-description">
-                                Identified key factors influencing customer churn using machine learning. Implemented predictive analytics to help banks retain high-value customers.
+                                Random Forest on 10,000 customers with 80:20 class imbalance. SMOTE vs class-weight adjustment compared — best config achieves F1 = 0.76 on churn class. Age, balance, and credit score identified as top three predictors.
                             </p>
                             <div class="project-links">
                                 <a href="Bank Customer Churn Prediction.html" class="btn btn-outline">View Project</a>
-                                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Classisfication/Bank%20Customer%20Churn%20Prediction" class="btn btn-icon" target="_blank">
+                                <a href="https://github.com/OmPatel01/Machine-Learning-Projects/tree/main/Classisfication/Bank%20Customer%20Churn%20Prediction" class="btn btn-icon" target="_blank" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="project-card" data-tools="powerbi" data-techniques="data-analysis" data-industry="retail">
+                    <!-- 8. Bike Store Power BI -->
+                    <div class="project-card" data-tools="powerbi" data-techniques="data-analysis, data-visualization" data-industry="retail">
                         <div class="project-image">
                             <img class="responsive-image" src="../assets/images/project_images/bike_store.jpg" alt="Bike Store Analysis Power BI">
                             <div class="project-overlay">
@@ -233,19 +237,19 @@
                             </div>
                         </div>
                         <div class="project-content">
-                            <h3 class="project-title">Bike Store Analysis Power BI Project</h3>
+                            <h3 class="project-title">Bike Store Sales Analysis — Power BI Dashboard</h3>
                             <div class="project-tags">
-                                <span class="project-tag">Data Analysis</span>
                                 <span class="project-tag">Power BI</span>
-                                <span class="project-tag">Data Visualization</span>
                                 <span class="project-tag">DAX</span>
+                                <span class="project-tag">Star Schema</span>
+                                <span class="project-tag">9 Tables</span>
                             </div>
                             <p class="project-description">
-                                Developed a Power BI dashboard to analyze bike store sales, customer demographics, and product demand. Provided insights on revenue trends, top-selling products, and customer behavior.
+                                3-page Power BI dashboard integrating 9 tables via star schema. DAX measures for revenue growth, customer LTV, and inventory turnover. Interactive slicers for time period, category, and location — surfaced top-performing stores and seasonal demand patterns.
                             </p>
                             <div class="project-links">
                                 <a href="Bike Store Analysis Power BI.html" class="btn btn-outline">View Project</a>
-                                <a href="https://github.com/OmPatel01/Data-Analysis-Projects/tree/main/Power%20BI%20Projects/Bike%20Store%20Analysis" class="btn btn-icon" target="_blank">
+                                <a href="https://github.com/OmPatel01/Data-Analysis-Projects/tree/main/Power%20BI%20Projects/Bike%20Store%20Analysis" class="btn btn-icon" target="_blank" aria-label="GitHub">
                                     <i class="fab fa-github"></i>
                                 </a>
                             </div>
@@ -254,8 +258,8 @@
 
                 </div>
 
-                <!-- Pagination is generated dynamically by all_projects.js -->
-                <div class="pagination"></div>
+                <!-- No pagination — all 8 projects shown -->
+                <div class="pagination" style="display:none;"></div>
 
             </div>
         </section>
@@ -265,14 +269,14 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-left">
-                    <h3>Portfolio</h3>
-                    <p>A showcase of my projects and professional journey.</p>
+                    <h3>Om Patel</h3>
+                    <p>ML Engineer & Data Scientist — building end-to-end AI systems.</p>
                 </div>
                 <div class="footer-right">
                     <div class="social-links">
-                        <a href="https://github.com/OmPatel01" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/om-patel-tech/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="mailto:ompatel2587@example.com" target="_blank"><i class="far fa-envelope"></i></a>
+                        <a href="https://github.com/OmPatel01" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/om-patel-tech/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="mailto:ompatel2587@gmail.com" aria-label="Email"><i class="far fa-envelope"></i></a>
                     </div>
                 </div>
             </div>

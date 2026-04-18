@@ -1,113 +1,17 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // ==============================
-    // STATE
-    // ==============================
+
+    // Show all project cards immediately — no pagination for 8 projects
     const projectCards = document.querySelectorAll('.project-card');
-    const paginationButtons = document.querySelectorAll('.pagination-btn');
+    projectCards.forEach(card => {
+        card.style.display = 'block';
+    });
 
-    const itemsPerPage = 6;
-    let currentPage = 1;
-
-    let projectsData = [];
-
-    // ==============================
-    // INIT
-    // ==============================
-    function init() {
-        extractProjectData();
-        setupPagination(projectCards.length);
-        showPage(1);
-        setupPaginationEvents();
+    // Remove any pagination container if present
+    const pagination = document.querySelector('.pagination');
+    if (pagination) {
+        pagination.style.display = 'none';
     }
 
-    // ==============================
-    // DATA EXTRACTION
-    // ==============================
-    function extractProjectData() {
-        projectCards.forEach((card, index) => {
-            const projectId = index + 1;
-            card.setAttribute('data-id', projectId);
-
-            projectsData.push({
-                id: projectId,
-                title: card.querySelector('.project-title')?.textContent || ''
-            });
-
-            // Update detail page links
-            const detailLinks = card.querySelectorAll('a[href*="#"]');
-            detailLinks.forEach(link => {
-                if (
-                    link.classList.contains('view-project') ||
-                    link.classList.contains('btn-outline')
-                ) {
-                    link.href = `#project-${projectId}`;
-                }
-            });
-        });
-
-        localStorage.setItem('projectsData', JSON.stringify(projectsData));
-    }
-
-    // ==============================
-    // PAGINATION LOGIC
-    // ==============================
-    function setupPagination(totalItems) {
-        const pageCount = Math.ceil(totalItems / itemsPerPage);
-
-        paginationButtons.forEach((btn, index) => {
-            if (!btn.classList.contains('next')) {
-                btn.style.display = index < pageCount ? 'flex' : 'none';
-            }
-        });
-    }
-
-    function showPage(pageNum) {
-        currentPage = pageNum;
-
-        const startIndex = (pageNum - 1) * itemsPerPage;
-        const endIndex = startIndex + itemsPerPage;
-
-        projectCards.forEach((project, index) => {
-            project.style.display =
-                index >= startIndex && index < endIndex ? 'block' : 'none';
-        });
-
-        updateActivePagination(pageNum);
-    }
-
-    function updateActivePagination(pageNum) {
-        paginationButtons.forEach(btn => {
-            if (!btn.classList.contains('next')) {
-                btn.classList.toggle(
-                    'active',
-                    parseInt(btn.textContent) === pageNum
-                );
-            }
-        });
-    }
-
-    // ==============================
-    // EVENTS
-    // ==============================
-    function setupPaginationEvents() {
-        paginationButtons.forEach(button => {
-            button.addEventListener('click', function () {
-                if (this.classList.contains('next')) {
-                    const maxPage = Math.ceil(projectCards.length / itemsPerPage);
-                    if (currentPage < maxPage) {
-                        showPage(currentPage + 1);
-                    }
-                } else {
-                    showPage(parseInt(this.textContent));
-                }
-            });
-        });
-    }
-
-    // ==============================
-    // START APP
-    // ==============================
-    init();
 });
 
 

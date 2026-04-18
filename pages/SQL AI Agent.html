@@ -3,78 +3,511 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SQL AI Agent</title>
+    <title>NL → SQL Assistant</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/project-detail.css">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: #f5f6fa;
+            color: #1a1d27;
+            line-height: 1.7;
+        }
+
+        .project-description h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #1a1d27;
+            margin: 2rem 0 0.75rem;
+            padding-bottom: 0.4rem;
+            border-bottom: 2px solid #e2e5ed;
+        }
+
+        .project-description p {
+            color: #374151;
+            font-size: 0.92rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-description ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 1rem;
+        }
+
+        .project-description ul li {
+            font-size: 0.9rem;
+            color: #374151;
+            padding: 0.4rem 0 0.4rem 1.4rem;
+            position: relative;
+            border-bottom: 1px solid #f0f1f5;
+        }
+
+        .project-description ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #4f6ef7;
+            font-size: 0.75rem;
+            top: 0.55rem;
+        }
+
+        .project-description ul li:last-child { border-bottom: none; }
+
+        .pipeline {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            margin: 1.25rem 0;
+        }
+
+        .pipeline-step {
+            background: #eef1fe;
+            color: #3a57e8;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.45rem 0.9rem;
+            border-radius: 6px;
+            border: 1.5px solid #c7d2fe;
+            white-space: nowrap;
+        }
+
+        .pipeline-arrow {
+            color: #9ca3af;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .tech-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.75rem 0 1.25rem;
+        }
+
+        .tech-chip {
+            background: #1a1d27;
+            color: #e5e7eb;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 0.3rem 0.75rem;
+            border-radius: 99px;
+            letter-spacing: 0.03em;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 0.875rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            border: 1.5px solid #e2e5ed;
+            border-radius: 10px;
+            padding: 1.1rem 1.25rem;
+            transition: border-color 0.18s, box-shadow 0.18s;
+        }
+
+        .feature-card:hover {
+            border-color: #4f6ef7;
+            box-shadow: 0 4px 16px rgba(79,110,247,0.1);
+        }
+
+        .feature-card__icon { font-size: 1.4rem; margin-bottom: 0.5rem; display: block; }
+
+        .feature-card__title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: #1a1d27;
+            margin-bottom: 0.4rem;
+        }
+
+        .feature-card__desc { font-size: 0.8rem; color: #6b7280; line-height: 1.55; }
+
+        .metrics-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.875rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .metric-box {
+            flex: 1;
+            min-width: 130px;
+            background: linear-gradient(135deg, #4f6ef7 0%, #3a57e8 100%);
+            color: #fff;
+            border-radius: 10px;
+            padding: 1rem 1.25rem;
+            text-align: center;
+        }
+
+        .metric-box__value {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.6rem;
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .metric-box__label { font-size: 0.72rem; opacity: 0.85; margin-top: 0.25rem; }
+
+        .callout {
+            border-left: 4px solid #4f6ef7;
+            background: #eef1fe;
+            border-radius: 0 8px 8px 0;
+            padding: 0.9rem 1.25rem;
+            margin: 1rem 0;
+            font-size: 0.88rem;
+            color: #1a1d27;
+        }
+
+        .callout strong { color: #3a57e8; }
+
+        .layer-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.83rem;
+            margin: 0.75rem 0 1.5rem;
+        }
+
+        .layer-table th {
+            background: #1a1d27;
+            color: #f9fafb;
+            padding: 0.6rem 1rem;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+        }
+
+        .layer-table td {
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid #e2e5ed;
+            color: #374151;
+            vertical-align: top;
+        }
+
+        .layer-table tr:last-child td { border-bottom: none; }
+        .layer-table tr:nth-child(even) td { background: #f9fafb; }
+
+        .badge-layer {
+            display: inline-block;
+            background: #eef1fe;
+            color: #3a57e8;
+            font-size: 0.68rem;
+            font-weight: 700;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .code-block {
+            background: #0f172a;
+            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.78rem;
+            color: #7dd3fc;
+            overflow-x: auto;
+            margin: 0.75rem 0 1.25rem;
+            line-height: 1.8;
+        }
+
+        .code-comment { color: #4a5568; }
+        .code-kw { color: #c792ea; }
+        .code-str { color: #c3e88d; }
+
+        .warning-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 0.75rem 0 1.25rem;
+        }
+
+        .warning-chip {
+            background: #fef3c7;
+            border: 1px solid #fcd34d;
+            color: #92400e;
+            font-size: 0.72rem;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            padding: 0.3rem 0.75rem;
+            border-radius: 99px;
+        }
+
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 0.75rem;
+            margin: 1rem 0 1.5rem;
+        }
+
+        .learning-card {
+            background: #fff;
+            border: 1.5px solid #e2e5ed;
+            border-radius: 8px;
+            padding: 0.875rem 1rem;
+        }
+
+        .learning-card__num {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #e2e5ed;
+            line-height: 1;
+        }
+
+        .learning-card__title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #4f6ef7;
+            margin: 0.25rem 0 0.3rem;
+        }
+
+        .learning-card__desc { font-size: 0.78rem; color: #6b7280; line-height: 1.5; }
+
+        .quote-box {
+            background: #1a1d27;
+            color: #e5e7eb;
+            border-radius: 10px;
+            padding: 1.25rem 1.5rem;
+            margin: 1.25rem 0;
+            font-size: 0.88rem;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .quote-box strong { color: #7dd3fc; font-style: normal; }
+    </style>
 </head>
 <body>
     <div class="project-detail-container">
         <div class="project-detail-header">
             <button class="close-button" aria-label="Close project details">&times;</button>
             <div class="project-detail-image">
-                <img class="responsive-image" src="../assets/images/project_images/sql_ai_agent.png" alt="Project thumbnail image">
+                <img class="responsive-image" src="../assets/images/project_images/sql_ai_agent.png" alt="NL to SQL Assistant — project thumbnail">
             </div>
-            <h1 class="project-detail-title">SQL AI Agent</h1>
+            <h1 class="project-detail-title">NL → SQL Assistant</h1>
         </div>
-        
+
         <div class="project-detail-content">
+
             <div class="project-tags">
                 <span class="project-tag">Python</span>
-                <span class="project-tag">NLP</span>
-                <span class="project-tag">SQL</span>
-                <span class="project-tag">LangChain</span>
+                <span class="project-tag">FastAPI</span>
                 <span class="project-tag">PostgreSQL</span>
-                <span class="project-tag">Flask</span>
-                <span class="project-tag">OpenAI</span>
-                <span class="project-tag">Streamlit</span>
+                <span class="project-tag">Google Gemini</span>
+                <span class="project-tag">asyncpg</span>
+                <span class="project-tag">Pydantic</span>
+                <span class="project-tag">NLP</span>
+                <span class="project-tag">LLM</span>
+                <span class="project-tag">REST API</span>
             </div>
-            
+
             <div class="project-description">
+
                 <h2>Project Overview</h2>
-                <p> This <strong>AI Agent for SQL Query Execution</strong> project leverages the power of <strong>Natural Language Processing (NLP)</strong> to allow non-technical users to interact with databases using simple, natural language queries. By converting user inputs into <strong>SQL queries</strong> and executing them against a <strong>PostgreSQL</strong> database, this AI-powered agent simplifies data extraction without the need for SQL expertise. Built with <strong>LangChain</strong> and the <strong>OpenAI API (gpt-4-turbo-preview)</strong>, the agent ensures efficient and syntactically correct query generation. A <strong>Streamlit-based web interface</strong> provides an intuitive front-end for seamless user interaction, making it an ideal solution for businesses and individuals seeking quick access to data insights. </p>
-                
-                <h2>Key Insights</h2>
+                <p>
+                    Most people who need data insights don't know SQL. They either wait for an analyst or they go without. This project solves that. <strong>NL → SQL Assistant</strong> is a production-grade, LLM-powered backend system that converts plain English questions into safe, optimised PostgreSQL queries and returns structured results — all without the user writing a single line of SQL.
+                </p>
+                <p>
+                    Built in Python with <strong>FastAPI</strong> and <strong>Google Gemini 2.5 Flash</strong>, the system goes far beyond a simple "prompt → query" wrapper. It implements a multi-layer validation pipeline, schema-aware prompting, session management, cost-optimised LLM usage, and real-time confidence warnings — patterns you'd expect in a mature, production AI system.
+                </p>
+
+                <div class="metrics-row">
+                    <div class="metric-box">
+                        <div class="metric-box__value">3</div>
+                        <div class="metric-box__label">Validation Layers</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-box__value">7</div>
+                        <div class="metric-box__label">Service Layers</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-box__value">6</div>
+                        <div class="metric-box__label">Confidence Checks</div>
+                    </div>
+                    <div class="metric-box">
+                        <div class="metric-box__value">0</div>
+                        <div class="metric-box__label">Blind LLM Calls</div>
+                    </div>
+                </div>
+
+                <h2>Problem Statement</h2>
+                <div class="callout">
+                    <strong>The core problem:</strong> LLMs are powerful but unreliable. A naive NL-to-SQL system just sends a user's question to an LLM and trusts the output. In practice this leads to hallucinated table names, SQL injection risks, runaway queries scanning millions of rows, and no mechanism to catch when the model produces garbage. How do you build an LLM-powered data query system that is simultaneously <strong>safe, accurate, cost-efficient, and production-ready?</strong>
+                </div>
+                <p>
+                    This project answers that question by rethinking every stage of the pipeline — from input validation to query execution to error transparency — treating the LLM as one component within a system of guardrails rather than the system itself.
+                </p>
+
+                <h2>System Architecture</h2>
+                <p>Every query passes through a strict, ordered pipeline. No stage is skipped, and each service has a single responsibility:</p>
+
+                <div class="pipeline">
+                    <span class="pipeline-step">User Question</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-step">Ambiguity Check</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-step">Schema Relevance</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-step">LLM Classifier</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-step">SQL Generation</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-step">Confidence Eval</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-step">SQL Validation</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-step">Query Execution</span>
+                    <span class="pipeline-arrow">→</span>
+                    <span class="pipeline-step">Structured Response</span>
+                </div>
+
+                <table class="layer-table">
+                    <thead>
+                        <tr>
+                            <th>Layer</th>
+                            <th>Module</th>
+                            <th>Responsibility</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge-layer">GeminiProvider</span></td>
+                            <td><code>llm/gemini_provider.py</code></td>
+                            <td>Async Gemini calls — exponential retry, fallback model, truncation detection, SQL fence stripping</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-layer">ClassifierService</span></td>
+                            <td><code>services/classifier.py</code></td>
+                            <td>Fast-reject rules → fuzzy schema keyword match → LLM intent classification (3-layer defence)</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-layer">NLToSQLService</span></td>
+                            <td><code>services/nl_to_sql.py</code></td>
+                            <td>Schema-injected prompt building, SQL generation, on-demand plain-English explanation</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-layer">ConfidenceEvaluator</span></td>
+                            <td><code>services/confidence.py</code></td>
+                            <td>6 rule-based checks post-generation: missing filters, SELECT *, ambiguous columns, strict ILIKE, etc.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-layer">SQLValidator</span></td>
+                            <td><code>services/validator.py</code></td>
+                            <td>Allowlist-based safety gate: blocked keywords, SELECT-only enforcement, comment injection prevention</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-layer">QueryExecutor</span></td>
+                            <td><code>services/query_executor.py</code></td>
+                            <td>READ ONLY transaction, CTE-aware LIMIT injection, row capping, result serialisation</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge-layer">SchemaService</span></td>
+                            <td><code>services/schema_service.py</code></td>
+                            <td>Schema extraction, 1-hour TTL cache, MD5 fingerprint change detection, manual refresh</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Tech Stack</h2>
+                <div class="tech-grid">
+                    <span class="tech-chip">Python 3.11+</span>
+                    <span class="tech-chip">FastAPI</span>
+                    <span class="tech-chip">asyncpg</span>
+                    <span class="tech-chip">Pydantic v2</span>
+                    <span class="tech-chip">Google Gemini 2.5 Flash</span>
+                    <span class="tech-chip">google-genai SDK</span>
+                    <span class="tech-chip">PostgreSQL</span>
+                    <span class="tech-chip">Uvicorn</span>
+                    <span class="tech-chip">Vanilla JS Frontend</span>
+                </div>
+
+                <h2>Key Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <span class="feature-card__icon">🛡️</span>
+                        <div class="feature-card__title">3-Layer Input Validation</div>
+                        <div class="feature-card__desc">Fast rule-based rejection → fuzzy keyword schema relevance → LLM intent classifier. Only valid, answerable queries ever reach SQL generation, saving tokens and latency on every bad request.</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">🧠</span>
+                        <div class="feature-card__title">Schema-Aware Prompting</div>
+                        <div class="feature-card__desc">Live database schema (tables, columns, PKs, FKs) is injected into every Gemini prompt from a fingerprinted, TTL-cached store — preventing hallucinated columns entirely.</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">🔁</span>
+                        <div class="feature-card__title">LLM Resilience</div>
+                        <div class="feature-card__desc">Exponential backoff on 503s, automatic fallback to a lighter Gemini model, and truncation detection with doubled token-budget retry — the pipeline never crashes silently on an LLM error.</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">⚡</span>
+                        <div class="feature-card__title">CTE-Aware LIMIT Injection</div>
+                        <div class="feature-card__desc">Row caps are enforced in the executor layer, not the LLM. A custom paren-depth parser injects LIMIT on the outer SELECT of CTEs — not inside the CTE body, which would break the query.</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">💬</span>
+                        <div class="feature-card__title">Conversational Context</div>
+                        <div class="feature-card__desc">Session history (last N turns) is injected into the SQL generation prompt, enabling natural follow-ups like "now filter that by genre = Fiction" without restating the full question.</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">💡</span>
+                        <div class="feature-card__title">On-Demand Explanation</div>
+                        <div class="feature-card__desc">A dedicated <code>/explain</code> endpoint generates plain-English summaries only when the user requests it. Zero unnecessary LLM calls during normal query execution — cost is a first-class concern.</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">🔍</span>
+                        <div class="feature-card__title">Fuzzy Typo Tolerance</div>
+                        <div class="feature-card__desc">Schema relevance uses <code>difflib.SequenceMatcher</code> with a 0.75 similarity threshold — "produts" still maps to "products" and isn't rejected as out-of-scope.</div>
+                    </div>
+                    <div class="feature-card">
+                        <span class="feature-card__icon">🗄️</span>
+                        <div class="feature-card__title">Schema Caching & Fingerprinting</div>
+                        <div class="feature-card__desc">Schema is extracted once, cached with a 1-hour TTL, and MD5-fingerprinted. Cache refreshes only happen when the schema actually changes — not on every request.</div>
+                    </div>
+                </div>
+
+                <h2>Safety & SQL Guardrails</h2>
+                <p>The SQL validator enforces a strict allowlist — no exceptions, no overrides. If a query doesn't pass, it never reaches the database:</p>
                 <ul>
-                    <li><strong>Natural Language Processing (NLP)</strong> enables seamless conversion of user queries into accurate SQL statements, eliminating the need for SQL expertise.</li>
-                    <li><strong>LangChain</strong> with OpenAI's <strong>GPT-4-turbo-preview</strong> ensures the generation of syntactically correct and optimized SQL queries for PostgreSQL.</li>
-                    <li><strong>AI-powered query generation</strong> adapts to complex user requests, ensuring flexible and scalable query execution.</li>
-                    <li><strong>Web-based interface using Streamlit</strong> provides a user-friendly experience for non-technical users, enabling easy interaction with the backend SQL query system.</li>
-                    <li><strong>PostgreSQL optimization</strong> guarantees that generated queries align with the specific syntax and functions of PostgreSQL for efficient execution.</li>
+                    <li>Only <code>SELECT</code> and <code>WITH ... SELECT</code> (CTEs) are permitted — query must match these patterns exactly</li>
+                    <li>Blocked keywords: <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code>, <code>DROP</code>, <code>ALTER</code>, <code>TRUNCATE</code>, <code>EXECUTE</code>, <code>GRANT</code>, <code>REVOKE</code>, and more</li>
+                    <li>No stacked statements — any semicolon appearing mid-query is an immediate rejection</li>
+                    <li>SQL comment injection via <code>--</code> and <code>/* */</code> is explicitly blocked</li>
+                    <li>Every query executes inside a <code>READ ONLY</code> transaction — even if a statement somehow slipped through validation, the database would refuse it at the connection level</li>
                 </ul>
-               
-                <h2>Technical Implementation</h2>
+
+                <h2>Confidence Warning System</h2>
+                <p>After SQL generation, a rule-based <code>ConfidenceEvaluator</code> analyses the query and emits structured, machine-readable warnings that are surfaced in the API response and shown to the user in the UI:</p>
+                <div class="warning-chips">
+                    <span class="warning-chip">MISSING_FILTER</span>
+                    <span class="warning-chip">SELECT_STAR</span>
+                    <span class="warning-chip">AMBIGUOUS_COLUMN</span>
+                    <span class="warning-chip">LARGE_RESULT</span>
+                    <span class="warning-chip">LOW_CONFIDENCE</span>
+                    <span class="warning-chip">STRICT_MATCH</span>
+                    <span class="warning-chip">AMBIGUOUS_QUERY</span>
+                    <span class="warning-chip">OUT_OF_SCOPE</span>
+                </div>
+                <p>For example, <code>STRICT_MATCH</code> uses a regex scan to catch when the LLM generates <code>ILIKE 'Fiction'</code> without wildcards — an exact match that would silently miss rows. The prompt enforces <code>ILIKE '%value%'</code> as the default, and the confidence layer catches regressions. These warnings help users understand <em>why</em> a result looks unexpected without exposing internal errors.</p>
+
+                <h2>Demo Mode vs Custom Mode</h2>
+                <p>The system supports two operating modes with no code changes required:</p>
                 <ul>
-                    <li><strong>Model Architecture:</strong>
-                        <ul>
-                            <li>Utilized <strong>LangChain</strong> framework integrated with <strong>OpenAI GPT-4-turbo-preview</strong> to translate natural language into SQL queries with high accuracy.</li>
-                            <li>Integrated an <strong>AI Agent chain</strong> to handle context-aware SQL generation and ensure syntactic correctness for PostgreSQL.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Backend Logic:</strong>
-                        <ul>
-                            <li>Built with <strong>Flask</strong> to serve as the API layer that receives user queries, interacts with the AI agent, and fetches results from the database.</li>
-                            <li>Handles secure and efficient execution of generated SQL queries on a <strong>PostgreSQL</strong> database.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Frontend Interface:</strong>
-                        <ul>
-                            <li>Developed using <strong>Streamlit</strong> to create an intuitive web-based UI for user interaction.</li>
-                            <li>Enables users to enter natural language queries, receive tabular results, and view query explanations in real-time.</li>
-                        </ul>
-                    </li>
-                    <li><strong>Query Execution Flow:</strong>
-                        <ul>
-                            <li>Natural language input → Processed by LangChain with GPT-4 → SQL query generated → Executed on PostgreSQL → Structured result returned.</li>
-                            <li>Includes error handling mechanisms for invalid queries and ambiguous inputs</li>
-                        </ul>
-                    </li>
-                    <li><strong>Database Integration:</strong>
-                        <ul>
-                            <li>Connected to a live <strong>PostgreSQL</strong> instance containing structured data with multiple tables and relationships.</li>
-                            <li>Supports dynamic schema introspection to tailor query generation according to available tables and columns.</li>
-                        </ul>
-                    </li>
+                    <li><strong>Demo mode</strong> — connects to a pre-seeded library management PostgreSQL database with three related tables: books, members, and borrowings. No credentials required — anyone can try it immediately.</li>
+                    <li><strong>Custom mode</strong> — users provide their own PostgreSQL connection string and Gemini API key via <code>POST /session/init</code>. Credentials are stored in-memory only, scoped to the session, and never persisted to disk. The system auto-extracts that database's schema and adapts every prompt accordingly — making the system database-agnostic.</li>
                 </ul>
 
                 <h2>Video Preview</h2>
@@ -82,24 +515,54 @@
                     <source src="../assets/video/SQL AI Agent.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
-                
-                <h2>Key Learnings</h2>
-                <ul>
-                    <li><strong>Natural Language Processing (NLP)</strong> can be effectively used to translate human queries into accurate SQL statements using large language models like GPT-4.</li>
-                    <li><strong>LangChain framework</strong> simplifies the orchestration of language model chains, improving modularity and reusability in AI agent design.</li>
-                    <li><strong>Integrating GPT with SQL</strong> requires schema-awareness to ensure generated queries align with actual table structures and constraints.</li>
-                    <li><strong>Error handling and query validation</strong> are essential to prevent execution of incorrect or potentially harmful SQL statements.</li>
-                    <li><strong>User experience</strong> is greatly enhanced by offering real-time feedback, clear result formatting, and transparency in how queries are formed.</li>
-                </ul>                
+
+                <h2>Key Engineering Decisions & Learnings</h2>
+                <div class="learning-grid">
+                    <div class="learning-card">
+                        <div class="learning-card__num">01</div>
+                        <div class="learning-card__title">LLM ≠ Reliable Infrastructure</div>
+                        <div class="learning-card__desc">503 errors, model deprecations, and mid-output truncation are normal. Every Gemini call is wrapped with retries, a fallback model, and truncation detection — treating the LLM as an unreliable dependency, not a magic box.</div>
+                    </div>
+                    <div class="learning-card">
+                        <div class="learning-card__num">02</div>
+                        <div class="learning-card__title">Backend Owns System Constraints</div>
+                        <div class="learning-card__desc">LIMIT clauses, safety checks, and row caps are enforced by backend code — never delegated to the LLM. Letting the model control system-level constraints is a reliability anti-pattern that breaks under real usage.</div>
+                    </div>
+                    <div class="learning-card">
+                        <div class="learning-card__num">03</div>
+                        <div class="learning-card__title">Cost is a First-Class Concern</div>
+                        <div class="learning-card__desc">Explanation generation was isolated to an on-demand endpoint. Schema relevance uses fast keyword matching before an LLM classification call. Every layer asks: does this actually need the LLM?</div>
+                    </div>
+                    <div class="learning-card">
+                        <div class="learning-card__num">04</div>
+                        <div class="learning-card__title">CTEs Need Special Handling</div>
+                        <div class="learning-card__desc">Naively appending LIMIT to a CTE truncates the inner query, not the outer one. A custom paren-depth parser identifies the outer SELECT and injects LIMIT there — a PostgreSQL-specific edge case requiring real engineering.</div>
+                    </div>
+                    <div class="learning-card">
+                        <div class="learning-card__num">05</div>
+                        <div class="learning-card__title">Real Users Are Messy</div>
+                        <div class="learning-card__desc">Typos, vague queries, partial table names — the fuzzy matching layer using <code>difflib</code> handles all of these, reducing false rejections and making the system genuinely usable rather than brittle.</div>
+                    </div>
+                    <div class="learning-card">
+                        <div class="learning-card__num">06</div>
+                        <div class="learning-card__title">Modular Design Pays Off</div>
+                        <div class="learning-card__desc">Every service has one job. Adding the STRICT_MATCH check, the on-demand explain endpoint, or the auto-LIMIT prompt rule each required touching exactly one file — not refactoring the whole codebase.</div>
+                    </div>
+                </div>
+
+                <h2>What Makes This Production-Grade</h2>
+                <div class="quote-box">
+                    "I started with a simple NL-to-SQL system, but iteratively evolved it into a <strong>production-style architecture</strong> by introducing multi-layer validation, schema-aware prompting, execution guardrails, and cost-optimized LLM usage. The key learning was that <strong>LLMs must be treated as unreliable components and wrapped with strong backend controls</strong> — not trusted to handle system constraints themselves."
+                </div>
+
             </div>
-            
+
             <div class="project-links">
-                <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
-                <a href="https://github.com/OmPatel01/SQL-AI-Agent-using-OpenAI" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
-                <a href="https://drive.google.com/file/d/1xqZEHIbxeYaFYUYOv99ceoL9l5simQ2z/view" class="btn btn-outline" target="_blank">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a>
+                <!-- <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a> -->
+                <a href="https://github.com/OmPatel01/nl2sql-agent" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
             </div>
         </div>
-        
+
         <div class="project-navigation">
             <a href="Credit Risk Modelling.html" class="nav-link prev-project">
                 <i class="fas fa-chevron-left"></i>
@@ -115,19 +578,11 @@
             </a>
         </div>
     </div>
-    
+
     <script src="../assets/js/project_detail.js"></script>
     <script>
-        function handleIframeError() {
-            const loadingElement = document.getElementById('iframe-loading');
-            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
-            loadingElement.style.display = 'flex';
-        }
-        
         document.addEventListener('DOMContentLoaded', function() {
-            if (typeof hljs !== 'undefined') {
-                hljs.highlightAll();
-            }
+            if (typeof hljs !== 'undefined') { hljs.highlightAll(); }
         });
     </script>
 </body>

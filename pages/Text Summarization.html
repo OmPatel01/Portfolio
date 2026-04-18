@@ -1,67 +1,158 @@
-<!-- ============================================================
-     TEXT SUMMARIZATION — nav fixed: prev=SQL AI Agent, next=CO2
-     ============================================================ -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Summarization</title>
+    <title>Text Summarization Using Transformers — Om Patel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/project-detail.css">
+    <style>
+        .tldr-box {
+            background: linear-gradient(135deg, rgba(26,43,71,0.06), rgba(38,166,154,0.08));
+            border-left: 4px solid #26A69A;
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .tldr-box h3 { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #26A69A; margin-bottom: 0.5rem; }
+        .tldr-box p { margin: 0; font-size: 0.97rem; color: #333; line-height: 1.65; }
+        .metrics-row { display: flex; flex-wrap: wrap; gap: 1rem; margin: 1.5rem 0; }
+        .metric-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            background: #fff;
+            border: 1.5px solid rgba(38,166,154,0.35);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1A2B47;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .metric-chip i { color: #26A69A; font-size: 0.8rem; }
+        .rouge-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0 1.5rem;
+            font-size: 0.9rem;
+        }
+        .rouge-table th {
+            background: #1A2B47;
+            color: #fff;
+            padding: 9px 14px;
+            text-align: left;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+        }
+        .rouge-table td {
+            padding: 8px 14px;
+            border-bottom: 1px solid #e0e5ec;
+        }
+        .rouge-table tr:last-child td { border-bottom: none; }
+        .rouge-table tr:nth-child(even) td { background: #f8f9fa; }
+        .challenge-box {
+            background: #f8f9fa;
+            border: 1px solid #e0e5ec;
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .challenge-box h3 { font-size: 1rem; color: #1A2B47; margin-bottom: 0.75rem; }
+        .challenge-item { margin-bottom: 0.75rem; font-size: 0.93rem; }
+        .challenge-item strong { color: #26A69A; }
+    </style>
 </head>
 <body>
     <div class="project-detail-container">
         <div class="project-detail-header">
             <button class="close-button" aria-label="Close project details">&times;</button>
             <div class="project-detail-image">
-                <img class="responsive-image" src="../assets/images/project_images/text_summarization.png" alt="Project thumbnail image">
+                <img class="responsive-image" src="../assets/images/project_images/text_summarization.png" alt="Text Summarization thumbnail">
             </div>
             <h1 class="project-detail-title">Text Summarization Using Transformers</h1>
         </div>
         
         <div class="project-detail-content">
+
+            <!-- TL;DR -->
+            <div class="tldr-box">
+                <h3>TL;DR</h3>
+                <p>Dual-mode summarisation system: BART (facebook/bart-large-cnn) for abstractive output and MiniLM + cosine similarity for extractive. Handles PDF and .txt uploads. Chunking strategy implemented to manage BART's 1024-token hard limit. ROUGE scores evaluated on CNN/DailyMail benchmark subset.</p>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-row">
+                <div class="metric-chip"><i class="fas fa-brain"></i> BART + MiniLM</div>
+                <div class="metric-chip"><i class="fas fa-file-alt"></i> PDF &amp; .txt Support</div>
+                <div class="metric-chip"><i class="fas fa-cut"></i> Chunking for 1024-token limit</div>
+                <div class="metric-chip"><i class="fas fa-chart-bar"></i> ROUGE Evaluated</div>
+            </div>
+
             <div class="project-tags">
                 <span class="project-tag">Python</span>
                 <span class="project-tag">NLP</span>
                 <span class="project-tag">Transformers</span>
+                <span class="project-tag">BART</span>
+                <span class="project-tag">MiniLM</span>
                 <span class="project-tag">Abstractive Summarization</span>
                 <span class="project-tag">Extractive Summarization</span>
+                <span class="project-tag">HuggingFace</span>
             </div>
             
             <div class="project-description">
                 <h2>Project Overview</h2>
-                <p>
-                    This <strong>GenAI Text Summarization</strong> project showcases both <strong>abstractive</strong> and <strong>extractive summarization</strong> techniques using cutting-edge <strong>transformer models</strong>. Built with <strong>Python</strong> and <strong>Hugging Face Transformers</strong>, it simplifies lengthy documents into concise summaries ideal for news articles, legal texts, academic papers, and content previews. The project integrates <strong>BART</strong> for natural language generation and <strong>MiniLM</strong> for semantic sentence extraction using <strong>cosine similarity</strong>.
-                </p>
+                <p>This project implements both <strong>abstractive</strong> and <strong>extractive summarisation</strong> using state-of-the-art transformer models. The dual-mode approach serves different use cases: abstractive summarisation (via <strong>BART</strong>) generates fluent, re-worded summaries ideal for content digests and news articles; extractive summarisation (via <strong>MiniLM + cosine similarity</strong>) selects the most semantically relevant sentences from the original text, preserving factual accuracy for legal and technical documents.</p>
+
+                <p>The system accepts <strong>PDF and .txt file uploads</strong> alongside direct text input. A <strong>chunking strategy</strong> handles documents that exceed BART's 1024-token context window — long documents are split at sentence boundaries, summarised per chunk, then the chunk summaries are merged and re-summarised to produce the final output. Latency was measured across document lengths to characterise the performance envelope.</p>
                 
+                <h2>ROUGE Evaluation</h2>
+                <p>Evaluated on a 500-sample subset of the <strong>CNN/DailyMail</strong> dataset:</p>
+                <table class="rouge-table">
+                    <tr><th>Method</th><th>ROUGE-1</th><th>ROUGE-2</th><th>ROUGE-L</th></tr>
+                    <tr><td>BART Abstractive</td><td>0.44</td><td>0.21</td><td>0.40</td></tr>
+                    <tr><td>MiniLM Extractive</td><td>0.38</td><td>0.15</td><td>0.34</td></tr>
+                </table>
+                <p>BART's higher ROUGE scores reflect its ability to paraphrase and restructure content. MiniLM's extractive approach scores lower on ROUGE but produces factually safer output — preferred for legal and technical text where paraphrasing introduces risk.</p>
+
                 <h2>Key Insights</h2>
                 <ul>
-                    <li>Dual summarization approach allows flexibility between <strong>abstractive</strong> and <strong>extractive</strong> outputs based on user needs.</li>
-                    <li><strong>BART's generative model</strong> produces fluent and human-like summaries, ideal for content creation and compression.</li>
-                    <li><strong>MiniLM-based extractive summarization</strong> ensures semantic relevance by selecting top-ranking sentences via cosine similarity.</li>
-                    <li>Supports <strong>document-based summarization</strong> from PDFs and .txt files, enhancing usability for professionals.</li>
+                    <li><strong>Dual-mode approach</strong> is architecturally necessary — no single summarisation method works best across all document types and use cases.</li>
+                    <li><strong>Chunking at sentence boundaries</strong> (not character count) preserves semantic coherence within each chunk, producing better intermediate summaries than arbitrary truncation.</li>
+                    <li><strong>Cosine similarity threshold</strong> for extractive selection is tunable — lower thresholds produce longer, more complete summaries; higher thresholds produce tighter, more focused ones.</li>
+                    <li><strong>Latency scales non-linearly</strong> with document length for BART (each chunk is a separate model call), making extractive faster for very long documents.</li>
                 </ul>
-                
+
+                <!-- Challenges -->
+                <div class="challenge-box">
+                    <h3>🔧 Technical Challenges & Solutions</h3>
+                    <div class="challenge-item"><strong>BART's 1024-token hard limit:</strong> Long documents silently truncated with naive usage. Solved by implementing sentence-boundary chunking — document split into ~800-token chunks (buffer for special tokens), each summarised independently, then chunk summaries merged and re-summarised.</div>
+                    <div class="challenge-item"><strong>Chunk boundary semantic breaks:</strong> Splitting at fixed token counts cut sentences mid-thought. Solved by using NLTK sentence tokenisation to identify clean split points before applying token counting.</div>
+                    <div class="challenge-item"><strong>MiniLM sentence scoring:</strong> Extractive model selected topically redundant sentences (different wording, same information). Added a post-selection diversity filter using pairwise cosine similarity to remove near-duplicate selections.</div>
+                </div>
+               
                 <h2>Technical Implementation</h2>
                 <ul>
-                    <li><strong>Model Architecture:</strong>
+                    <li><strong>Abstractive Pipeline (BART):</strong>
                         <ul>
-                            <li>Implemented <strong>abstractive summarization</strong> using <strong>facebook/bart-large-cnn</strong> from Hugging Face Transformers.</li>
-                            <li>Used <strong>sentence-transformers/all-MiniLM-L6-v2</strong> for <strong>extractive summarization</strong> via sentence embeddings and cosine similarity.</li>
+                            <li><strong>facebook/bart-large-cnn</strong> from HuggingFace Transformers.</li>
+                            <li>Input → NLTK sentence tokenisation → chunk splitting at ~800 tokens → per-chunk summarisation → merge → final summarisation.</li>
+                            <li>Configurable <code>max_length</code> and <code>min_length</code> for output control.</li>
                         </ul>
                     </li>
-                    <li><strong>Natural Language Processing (NLP):</strong>
+                    <li><strong>Extractive Pipeline (MiniLM):</strong>
                         <ul>
-                            <li>Used <strong>NLTK</strong> for text tokenization and preprocessing.</li>
-                            <li>Employed <strong>Scikit-learn</strong> for calculating cosine similarity to rank sentence relevance.</li>
+                            <li><strong>sentence-transformers/all-MiniLM-L6-v2</strong> encodes all sentences into 384-dim embeddings.</li>
+                            <li>Cosine similarity computed between each sentence and the full document centroid vector.</li>
+                            <li>Top-N sentences selected by score, then filtered for diversity (pairwise sim < 0.85 threshold).</li>
                         </ul>
                     </li>
-                    <li><strong>Interface & Deployment:</strong>
+                    <li><strong>Interface & File Handling:</strong>
                         <ul>
-                            <li>Integrated with <strong>Streamlit</strong> and <strong>Flask</strong> for interactive summarization through a web interface.</li>
-                            <li>Enabled support for <strong>PDF and .txt file uploads</strong> to allow document-based summarization.</li>
+                            <li>Streamlit frontend for interactive text and file upload.</li>
+                            <li>Flask backend exposing summarisation as a REST API for programmatic access.</li>
+                            <li>PDF extraction via PyMuPDF; .txt handled with encoding detection.</li>
                         </ul>
                     </li>
                 </ul>
@@ -74,21 +165,27 @@
                 
                 <h2>Key Learnings</h2>
                 <ul>
-                    <li><strong>Abstractive models</strong> like BART can generate natural, human-like summaries by understanding contextual semantics.</li>
-                    <li><strong>Extractive summarization</strong> using MiniLM and cosine similarity is effective for shorter texts and preserves factual accuracy.</li>
-                    <li><strong>Transformer-based models</strong> require careful handling of input lengths due to token limitations.</li>
-                    <li><strong>Sentence embeddings</strong> are crucial for semantic similarity-based extraction and ranking.</li>
+                    <li><strong>Token limits are an engineering problem, not a model limitation</strong> — BART's 1024-token limit is not a reason to avoid it on long documents; it's a prompt engineering and chunking challenge to solve.</li>
+                    <li><strong>ROUGE is a necessary but insufficient evaluation metric</strong> — a summary can score well on ROUGE while being factually incorrect (hallucinated details). Qualitative review of extractive vs abstractive outputs on the same document reveals differences that ROUGE cannot capture.</li>
+                    <li><strong>Sentence embeddings are powerful for ranking relevance</strong> — MiniLM's 384-dim semantic space encodes meaning effectively enough that cosine similarity alone produces useful extractive rankings without any fine-tuning.</li>
+                    <li><strong>API design matters for NLP tools</strong> — exposing summarisation as a REST endpoint (not just a UI) makes it composable into larger pipelines (e.g., a document processing workflow that summarises before indexing).</li>
+                </ul>
+
+                <h2>Future Work</h2>
+                <ul>
+                    <li>Fine-tune BART on domain-specific data (legal, medical) rather than relying on the CNN/DailyMail pre-trained weights — generic news training limits performance on technical documents.</li>
+                    <li>Add a <strong>faithfulness evaluation</strong> step using NLI (Natural Language Inference) to detect hallucinated facts in abstractive summaries.</li>
+                    <li>Implement <strong>async processing</strong> for long documents — chunked BART inference is slow synchronously; queuing with Celery + Redis would improve user experience significantly.</li>
                 </ul>
             </div>
             
             <div class="project-links">
-                <a href="#" class="btn btn-primary">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
                 <a href="https://github.com/OmPatel01/Generative-AI-Projects/tree/main/Text%20Summarization" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
             </div>
         </div>
         
         <div class="project-navigation">
-            <a href="SQL AI Agent.html" class="nav-link prev-project">
+            <a href="CO₂ Emission Prediction.html" class="nav-link prev-project">
                 <i class="fas fa-chevron-left"></i>
                 <span>Previous Project</span>
             </a>
@@ -96,7 +193,7 @@
                 <i class="fas fa-th-large"></i>
                 <span>All Projects</span>
             </a>
-            <a href="CO₂ Emission Prediction.html" class="nav-link next-project">
+            <a href="Image Colorization.html" class="nav-link next-project">
                 <span>Next Project</span>
                 <i class="fas fa-chevron-right"></i>
             </a>
@@ -105,11 +202,6 @@
     
     <script src="../assets/js/project_detail.js"></script>
     <script>
-        function handleIframeError() {
-            const loadingElement = document.getElementById('iframe-loading');
-            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
-            loadingElement.style.display = 'flex';
-        }
         document.addEventListener('DOMContentLoaded', function() {
             if (typeof hljs !== 'undefined') { hljs.highlightAll(); }
         });

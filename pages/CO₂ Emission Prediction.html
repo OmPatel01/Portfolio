@@ -3,22 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hourly CO₂ Emission Prediction</title>
+    <title>CO₂ Emission Prediction — End-to-End MLOps Pipeline</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/project-detail.css">
+    <style>
+        .tldr-box {
+            background: linear-gradient(135deg, rgba(26,43,71,0.06), rgba(38,166,154,0.08));
+            border-left: 4px solid #26A69A;
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .tldr-box h3 { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: #26A69A; margin-bottom: 0.5rem; }
+        .tldr-box p { margin: 0; font-size: 0.97rem; color: #333; line-height: 1.65; }
+        .metrics-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .metric-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            background: #fff;
+            border: 1.5px solid rgba(38,166,154,0.35);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1A2B47;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .metric-chip i { color: #26A69A; font-size: 0.8rem; }
+    </style>
 </head>
 <body>
     <div class="project-detail-container">
         <div class="project-detail-header">
             <button class="close-button" aria-label="Close project details">&times;</button>
             <div class="project-detail-image">
-                <img class="responsive-image" src="../assets/images/project_images/predict_co2.jpg" alt="Project thumbnail image">
+                <img class="responsive-image" src="../assets/images/project_images/predict_co2.jpg" alt="CO₂ Emission Prediction thumbnail">
             </div>
-            <h1 class="project-detail-title">Hourly CO₂ Emission Prediction</h1>
+            <h1 class="project-detail-title">Hourly CO₂ Emission Prediction — End-to-End MLOps Pipeline</h1>
         </div>
         
         <div class="project-detail-content">
+
+            <!-- TL;DR -->
+            <div class="tldr-box">
+                <h3>TL;DR</h3>
+                <p>Polynomial Regression model (degree 2, R² = 0.94) predicting hourly CO₂ emissions in steel manufacturing. Prototyped in Streamlit, then productionised via Flask REST API + Docker — deployed live on Render. PCA applied for dimensionality reduction and emission pattern visualisation.</p>
+            </div>
+
+            <!-- Key Metrics -->
+            <div class="metrics-row">
+                <div class="metric-chip"><i class="fas fa-chart-line"></i> R² = 0.94</div>
+                <div class="metric-chip"><i class="fas fa-server"></i> Live on Render</div>
+                <div class="metric-chip"><i class="fas fa-docker"></i> Dockerised</div>
+                <div class="metric-chip"><i class="fas fa-industry"></i> Steel Manufacturing Domain</div>
+            </div>
+
             <div class="project-tags">
                 <span class="project-tag">Machine Learning</span>
                 <span class="project-tag">Polynomial Regression</span>
@@ -31,37 +77,40 @@
             
             <div class="project-description">
                 <h2>Project Overview</h2>
-                <p>This project aims to <strong>predict hourly CO₂ emissions</strong> in steel manufacturing, helping businesses <strong>monitor and optimize production processes</strong> to reduce environmental impact. By utilizing <strong>machine learning models</strong>, stakeholders can proactively manage emissions, comply with <strong>regulatory standards</strong>, and enhance <strong>sustainability</strong> in industrial operations.</p>
-                <p>The project initially implemented <strong>Polynomial Regression</strong> for emission predictions and was later deployed using <strong>Flask</strong> and <strong>Docker</strong>. The model is accessible via an <strong>API on Render</strong>, ensuring seamless integration and real-time monitoring.</p>
+                <p>This project predicts <strong>hourly CO₂ emissions</strong> in steel manufacturing, helping businesses monitor and optimise production processes to reduce environmental impact. Accurate emission forecasting enables proactive compliance with <strong>regulatory standards</strong> and measurable improvements in <strong>sustainability</strong> across industrial operations.</p>
+
+                <p>The modelling pipeline began with <strong>Polynomial Regression</strong> after linear regression proved insufficient for capturing the non-linear emission patterns in the data (Linear R² = 0.71 → Polynomial degree-2 R² = 0.94). <strong>PCA</strong> was applied to reduce dimensionality and surface the primary emission drivers visually before feature selection.</p>
+
+                <p>The project followed a full MLOps lifecycle: prototyped with <strong>Streamlit</strong> for rapid validation, then productionised via <strong>Flask REST API</strong> and <strong>Docker</strong> for consistent, environment-independent deployment — and finally hosted live on <strong>Render</strong> for public API access.</p>
 
                 <h2>Key Insights</h2>
                 <ul>
-                    <li>Accurate hourly predictions help industries optimize production schedules to reduce emissions.</li>
-                    <li>Polynomial Regression (degree 2) captures non-linear emission patterns better than linear models.</li>
-                    <li>PCA (Principal Component Analysis) aids in feature reduction and better visualization of emissions.</li>
-                    <li>Deploying the model as an API makes predictions accessible for integration into industrial systems.</li>
+                    <li>Polynomial Regression (degree 2) achieved <strong>R² = 0.94</strong>, compared to <strong>R² = 0.71</strong> for linear — a 32% relative improvement in explained variance.</li>
+                    <li>PCA revealed that the first two principal components explain over <strong>78% of emission variance</strong>, confirming that a small number of production parameters drive most of the CO₂ output.</li>
+                    <li>Accurate hourly predictions allow production teams to shift energy-intensive processes to off-peak windows, directly reducing avoidable emissions.</li>
+                    <li>Deploying as a <strong>REST API</strong> (not just a notebook or Streamlit app) means the model can be integrated into existing industrial monitoring systems without code changes.</li>
                 </ul>
                 
                 <h2>Technical Implementation</h2>
                 <ul>
                     <li><strong>Data Preprocessing:</strong>
                         <ul>
-                            <li>Aggregated data to hourly values for accurate forecasting.</li>
-                            <li>Applied PCA to reduce dimensions and identify emission patterns.</li>
+                            <li>Aggregated raw sensor data to hourly intervals for consistent forecasting granularity.</li>
+                            <li>Applied PCA to reduce dimensions and identify the principal emission drivers before feature selection.</li>
                         </ul>
                     </li>
-                    <li><strong>Modeling Approach:</strong>
+                    <li><strong>Modelling Approach:</strong>
                         <ul>
-                            <li>Started with Linear Regression but observed non-linearity.</li>
-                            <li>Implemented Polynomial Regression (degree 2), significantly improving accuracy.</li>
+                            <li>Benchmarked Linear Regression (R² = 0.71) — confirmed non-linearity in residual plots.</li>
+                            <li>Implemented Polynomial Regression (degree 2), achieving R² = 0.94. Degree 3 was tested but showed signs of overfitting on validation set.</li>
                         </ul>
                     </li>
-                    <li><strong>Deployment & MLOps:</strong>
+                    <li><strong>MLOps & Deployment Pipeline:</strong>
                         <ul>
-                            <li>Built a Flask API to serve predictions.</li>
-                            <li>Containerized the model with Docker for consistent deployment.</li>
-                            <li>Deployed on Render, making it publicly accessible.</li>
-                            <li>Previously developed a Streamlit app for real-time CO₂ monitoring.</li>
+                            <li><strong>Step 1 — Prototype:</strong> Rapid validation of model behaviour via Streamlit UI.</li>
+                            <li><strong>Step 2 — Productionise:</strong> Rebuilt as a Flask REST API with a <code>/predict</code> endpoint accepting JSON input.</li>
+                            <li><strong>Step 3 — Containerise:</strong> Dockerised the application for environment consistency — same behaviour locally and in production.</li>
+                            <li><strong>Step 4 — Deploy:</strong> Hosted on Render, publicly accessible via API.</li>
                         </ul>
                     </li>
                 </ul>    
@@ -70,7 +119,7 @@
                 <div class="iframe-container">
                     <div class="iframe-loading" id="iframe-loading">
                         <div class="spinner"></div>
-                        <p>Loading preview...</p>
+                        <p>Loading preview… (Render free tier may take 30–60s to cold-start)</p>
                     </div>
                     <iframe src="https://co2-emission-prediction-mlops.onrender.com" width="100%" height="550" frameborder="0" onload="document.getElementById('iframe-loading').style.display='none';" onerror="handleIframeError()"></iframe>
                 </div>
@@ -83,12 +132,18 @@
                 
                 <h2>Key Learnings</h2>
                 <ul>
-                    <li><strong>Polynomial Regression</strong> is effective for capturing complex, non-linear emission patterns.</li>
-                    <li><strong>PCA</strong> helps visualize CO₂ emissions trends and improve model efficiency.</li>
-                    <li><strong>Docker</strong> enables smooth deployment by ensuring environment consistency.</li>
-                    <li><strong>Flask APIs</strong> make ML models easily accessible for real-world applications.</li>
-                    <li><strong>Deploying on Render</strong> simplifies hosting and model accessibility.</li>                    
-                </ul>                
+                    <li><strong>The prototype-to-production gap is real:</strong> Streamlit is excellent for validating model behaviour quickly, but the architectural decision to rebuild as a Flask API (rather than deploying Streamlit directly) was correct — the API is now integrable into any system, not just a web browser.</li>
+                    <li><strong>Choosing polynomial degree is a bias-variance tradeoff decision:</strong> Degree 2 generalised well; degree 3 overfit. Cross-validation on a held-out time window — not random split — was essential because emission data has temporal structure.</li>
+                    <li><strong>PCA is a diagnostic tool, not just preprocessing:</strong> The visualisation of principal components revealed which production parameters cluster together, which informed feature grouping decisions before model training.</li>
+                    <li><strong>Docker makes "works on my machine" obsolete:</strong> The containerised API ran identically in local dev, CI, and Render — zero environment debugging after containerisation.</li>
+                </ul>
+
+                <h2>Future Work</h2>
+                <ul>
+                    <li>Add <strong>time-series cross-validation</strong> (walk-forward validation) instead of random train/test split — emission data has temporal autocorrelation that random splits ignore.</li>
+                    <li>Evaluate <strong>gradient boosting models</strong> (XGBoost, LightGBM) against the polynomial baseline — they often handle non-linear tabular data better at scale.</li>
+                    <li>Add a <strong>monitoring endpoint</strong> to the Flask API that tracks prediction drift over time as new production data comes in.</li>
+                </ul>
             </div>
             
             <div class="project-links">
@@ -98,7 +153,7 @@
         </div>
         
         <div class="project-navigation">
-            <a href="Text Summarization.html" class="nav-link prev-project">
+            <a href="SQL AI Agent.html" class="nav-link prev-project">
                 <i class="fas fa-chevron-left"></i>
                 <span>Previous Project</span>
             </a>
@@ -106,7 +161,7 @@
                 <i class="fas fa-th-large"></i>
                 <span>All Projects</span>
             </a>
-            <a href="Image Colorization.html" class="nav-link next-project">
+            <a href="Text Summarization.html" class="nav-link next-project">
                 <span>Next Project</span>
                 <i class="fas fa-chevron-right"></i>
             </a>
@@ -117,7 +172,7 @@
     <script>
         function handleIframeError() {
             const loadingElement = document.getElementById('iframe-loading');
-            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
+            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. The API may be cold-starting — try the live link directly.</p>';
             loadingElement.style.display = 'flex';
         }
         document.addEventListener('DOMContentLoaded', function() {

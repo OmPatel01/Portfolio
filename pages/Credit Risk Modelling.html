@@ -3,10 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Credit Risk Modelling Platform</title>
+    <title>Credit Risk Modelling Platform — Om Patel</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/project-detail.css">
+    <style>
+        .tldr-box {
+            background: linear-gradient(135deg, rgba(26,43,71,0.06), rgba(38,166,154,0.08));
+            border-left: 4px solid #26A69A;
+            border-radius: 8px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0 2rem;
+        }
+        .tldr-box h3 {
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #26A69A;
+            margin-bottom: 0.5rem;
+        }
+        .tldr-box p {
+            margin: 0;
+            font-size: 0.97rem;
+            color: #333;
+            line-height: 1.65;
+        }
+        .metrics-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .metric-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            background: #fff;
+            border: 1.5px solid rgba(38,166,154,0.35);
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #1A2B47;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .metric-chip i {
+            color: #26A69A;
+            font-size: 0.8rem;
+        }
+        @media (max-width: 600px) {
+            .metrics-row { flex-direction: column; }
+        }
+    </style>
 </head>
 <body>
     <div class="project-detail-container">
@@ -19,6 +67,22 @@
         </div>
 
         <div class="project-detail-content">
+
+            <!-- TL;DR -->
+            <div class="tldr-box">
+                <h3>TL;DR</h3>
+                <p>End-to-end credit risk system on 30,000 records. Champion/challenger architecture: WOE scorecard vs XGBoost — both tracked via MLflow. Monte Carlo simulation (500k scenarios) for VaR &amp; CVaR. Three-scenario stress testing (Base / Mild / Severe). Fully deployed FastAPI backend + interactive HTML dashboard. IFRS 9 and Basel III methodologies applied.</p>
+            </div>
+
+            <!-- Key Metrics upfront -->
+            <div class="metrics-row">
+                <div class="metric-chip"><i class="fas fa-database"></i> 30,000 Records</div>
+                <div class="metric-chip"><i class="fas fa-chart-line"></i> AUC Tracked via MLflow</div>
+                <div class="metric-chip"><i class="fas fa-dice"></i> 500k Monte Carlo Scenarios</div>
+                <div class="metric-chip"><i class="fas fa-server"></i> Live on Render</div>
+                <div class="metric-chip"><i class="fas fa-shield-alt"></i> IFRS 9 / Basel III</div>
+            </div>
+
             <div class="project-tags">
                 <span class="project-tag">Python</span>
                 <span class="project-tag">FastAPI</span>
@@ -28,6 +92,7 @@
                 <span class="project-tag">scorecardpy</span>
                 <span class="project-tag">Monte Carlo</span>
                 <span class="project-tag">MLflow</span>
+                <span class="project-tag">DVC</span>
                 <span class="project-tag">HTML/CSS/JS</span>
             </div>
 
@@ -36,11 +101,15 @@
                 <h2>Project Overview</h2>
                 <p>
                     The <strong>Credit Risk Modelling Platform</strong> is an end-to-end credit risk analytics system built on the
-                    <strong>UCI Taiwan Credit Card Default dataset</strong> (30,000 records). It implements a
+                    <strong>UCI Taiwan Credit Card Default dataset</strong> (30,000 records). Designed to meet <strong>IFRS 9 Expected Credit Loss (ECL)</strong>
+                    and <strong>Basel III stress-testing</strong> requirements, it implements a
                     <strong>champion/challenger model architecture</strong> — a <strong>WOE-based Logistic Regression scorecard</strong>
-                    as the champion and an <strong>XGBoost classifier</strong> as the challenger — allowing real-time comparison of
-                    interpretable and ensemble-based risk signals. The platform exposes a <strong>FastAPI</strong> backend with a
-                    business-friendly input layer and a fully interactive <strong>HTML/CSS/JavaScript</strong> frontend dashboard
+                    as the champion and an <strong>XGBoost classifier</strong> as the challenger — enabling real-time comparison of
+                    interpretable and ensemble-based risk signals.
+                </p>
+                <p>
+                    The platform exposes a <strong>FastAPI</strong> backend with a business-friendly input layer (10 plain-language
+                    fields abstracting 21 raw features) and a fully interactive <strong>HTML/CSS/JavaScript</strong> frontend
                     covering prediction, portfolio analytics, Monte Carlo simulation, stress testing, and sensitivity analysis.
                     Experiment tracking is handled by <strong>MLflow</strong> and the training pipeline is managed via
                     <strong>DVC</strong> with a <code>params.yaml</code> configuration file.
@@ -57,9 +126,9 @@
                     <li><strong>Inability to quantify portfolio-level exposure</strong> — lenders cannot see total expected losses
                         or how losses concentrate in tail scenarios.</li>
                     <li><strong>Poor stress resilience visibility</strong> — banks cannot answer "what happens to our losses if
-                        the economy contracts by 30%?" without running manual, one-off analyses.</li>
-                    <li><strong>Regulatory pressure</strong> — IFRS 9 mandates Expected Credit Loss (ECL) reporting; Basel III
-                        requires stress-tested capital adequacy — both are difficult to produce without an automated system.</li>
+                        the economy contracts by 30%?" without manual, one-off analyses.</li>
+                    <li><strong>Regulatory pressure</strong> — IFRS 9 mandates ECL reporting; Basel III requires stress-tested
+                        capital adequacy — both are difficult to produce without an automated system.</li>
                     <li><strong>Model opacity</strong> — black-box models cannot explain a credit decision to a borrower or
                         regulator, creating legal and reputational risk.</li>
                 </ul>
@@ -114,7 +183,6 @@
                                 to call the API without a proxy.</li>
                             <li>Business input routes accept 10 plain-language fields and internally call
                                 <code>input_mapper.py</code> to reconstruct all 21 raw dataset columns before inference.</li>
-                            <li>What-if analysis endpoint compares two borrower profiles and returns score delta and PD delta.</li>
                         </ul>
                     </li>
                     <li><strong>Risk Analytics Services:</strong>
@@ -133,19 +201,15 @@
                         <ul>
                             <li>Six pages: Dashboard, Prediction, Risk Analytics, Simulation, Stress Test, Sensitivity —
                                 all sharing a unified dark-themed design system.</li>
-                            <li>Prediction page supports Scorecard and XGBoost tabs with client-side validation mirroring
-                                backend rules, and an inline What-If analysis panel.</li>
                             <li>Stress test results rendered via <strong>Chart.js</strong> bar chart; simulation results
                                 display VaR / CVaR metrics in a responsive grid layout.</li>
-                            <li>API base URL auto-switches between <code>localhost:8000</code> (development) and the
-                                deployed Render URL (production) via <code>config.js</code>.</li>
                         </ul>
                     </li>
                 </ul>
 
                 <h2>Video Preview</h2>
                 <video width="100%" height="550" frameborder="0" controls>
-                    <source src="../assets/video/Credit Risk Modelling.mp4" type="video/mp4">
+                    <source src="../assets/video/credit risk.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
 
@@ -168,12 +232,18 @@
                         requirements from the start (ECL methodology, stress scenario definitions, model documentation)
                         is far cheaper than retrofitting compliance later.</li>
                 </ul>
+
+                <h2>Future Work</h2>
+                <ul>
+                    <li>Add a <strong>model card</strong> with fairness metrics and feature importance for regulatory documentation.</li>
+                    <li>Integrate a <strong>real-time data pipeline</strong> (Kafka or Airflow) so the platform ingests live transaction data rather than batch uploads.</li>
+                    <li>Implement <strong>model drift detection</strong> — PSI (Population Stability Index) monitoring on score distributions over time.</li>
+                </ul>
             </div>
 
             <div class="project-links">
-                <a href="https://credit-risk-modelling-3zjb.onrender.com" class="btn btn-primary" target="_blank">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
+                <a href="https://credit-risk-modelling-two.vercel.app/" class="btn btn-primary" target="_blank">View Live&nbsp;<i class="fa-solid fa-up-right-from-square"></i></a>
                 <a href="https://github.com/OmPatel01/Credit-Risk-Modelling" class="btn btn-secondary" target="_blank">GitHub&nbsp;<i class="fab fa-github"></i></a>
-                <a href="https://drive.google.com/file/d/1xqZEHIbxeYaFYUYOv99ceoL9l5simQ2z/view" class="btn btn-outline" target="_blank">View Documentation&nbsp;<i class="fa-solid fa-file-lines"></i></a>
             </div>
         </div>
 
@@ -195,16 +265,8 @@
 
     <script src="../assets/js/project_detail.js"></script>
     <script>
-        function handleIframeError() {
-            const loadingElement = document.getElementById('iframe-loading');
-            loadingElement.innerHTML = '<p class="error-message">Preview could not be loaded. Please check the live link instead.</p>';
-            loadingElement.style.display = 'flex';
-        }
-
         document.addEventListener('DOMContentLoaded', function() {
-            if (typeof hljs !== 'undefined') {
-                hljs.highlightAll();
-            }
+            if (typeof hljs !== 'undefined') { hljs.highlightAll(); }
         });
     </script>
 </body>
