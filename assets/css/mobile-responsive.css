@@ -1,0 +1,801 @@
+/* ============================================================
+   mobile-responsive.css
+   Mobile-only overrides — desktop styles are untouched.
+   Link AFTER main.css, all_projects.css, certificate.css,
+   and project-detail.css on every page.
+
+   Breakpoints used:
+     768px  — tablet / large phone (landscape)
+     480px  — small phone (portrait)
+     360px  — very small phone
+============================================================ */
+
+
+/* ============================================================
+   GLOBAL FIXES — prevent horizontal scroll on all pages
+============================================================ */
+html, body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%; /* prevent iOS font-size inflation */
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ============================================================
+   ═══════════════════════════════════════════════════════════
+   1.  INDEX.HTML  — main.css overrides
+   ═══════════════════════════════════════════════════════════
+============================================================ */
+
+/* ── 1a. Header / Nav ─────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Prevent nav from appearing underneath fixed header */
+  .site-header {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+  }
+
+  /* Mobile nav drawer — slides in from top */
+  .main-nav.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;          /* fixed so it covers content */
+    top: 62px;
+    left: 0;
+    right: 0;
+    max-height: calc(100vh - 62px);
+    overflow-y: auto;
+    background: var(--white, #fff);
+    padding: 1.25rem 1.5rem;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(0,0,0,.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,.12);
+    z-index: 999;
+  }
+
+  .main-nav.open a {
+    font-size: 1rem;
+    width: 100%;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(0,0,0,.05);
+  }
+
+  .main-nav.open a:last-child {
+    border-bottom: none;
+  }
+
+  /* Resume button in mobile nav */
+  .nav-resume {
+    margin-left: 0;
+    width: 100%;
+    justify-content: center;
+    padding: 10px 16px;
+  }
+}
+
+/* ── 1b. Hero Section ─────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* Push content below fixed header */
+  .hero {
+    padding-top: 62px;
+    min-height: auto;
+  }
+
+  .hero .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-top: 3rem;
+    padding-bottom: 3.5rem;
+    text-align: center;
+  }
+
+  /* Decorative circles overflow fix */
+  .hero::before,
+  .hero::after {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+
+  .hero-role {
+    font-size: 0.92rem;
+  }
+
+  .hero-value {
+    border-left: none;
+    border-top: 2px solid var(--teal, #26A69A);
+    padding-left: 0;
+    padding-top: 0.75rem;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.93rem;
+  }
+
+  .hero-chips,
+  .hero-ctas {
+    justify-content: center;
+  }
+
+  .hero-chip {
+    font-size: 0.7rem;
+  }
+
+  /* Hide the profile card on mobile — it's already hidden by main.css
+     but be explicit to avoid specificity issues */
+  .hero-card {
+    display: none !important;
+  }
+
+  /* CTA buttons — stack on very small screens */
+  .hero-ctas {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .btn-teal,
+  .btn-ghost-light {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+}
+
+/* ── 1c. About Section ────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-sticky {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-photo {
+    width: 180px;
+    height: 220px;
+    margin: 0 auto;
+  }
+
+  .about-chips {
+    justify-content: center;
+  }
+
+  .about-actions {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .about-actions .btn-navy,
+  .about-actions .btn-outline {
+    width: 100%;
+    justify-content: center;
+    max-width: 300px;
+  }
+
+  .section-sub {
+    max-width: 100%;
+  }
+}
+
+/* ── 1d. Timeline (Education / Experience) ────────────────── */
+@media (max-width: 768px) {
+
+  .tl-two {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .tl-item {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ── 1e. Skills Section ───────────────────────────────────── */
+@media (max-width: 768px) {
+
+  .sk-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .sk-grid .full {
+    grid-column: 1;
+  }
+
+  .sk-icons {
+    gap: 0.85rem;
+  }
+
+  .sk-item {
+    width: 54px;
+  }
+
+  .sk-item img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sk-item span {
+    font-size: 0.6rem;
+  }
+}
+
+/* ── 1f. Projects Section ─────────────────────────────────── */
+@media (max-width: 1024px) {
+  .proj-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proj-hdr {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .proj-img {
+    height: 210px;
+  }
+}
+
+@media (max-width: 480px) {
+  .proj-img {
+    height: 185px;
+  }
+}
+
+/* ── 1g. Research Section ─────────────────────────────────── */
+@media (max-width: 768px) {
+
+  .res-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 1h. Certificates Section ─────────────────────────────── */
+@media (max-width: 1024px) {
+  .certs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certs-hdr {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .cert-img {
+    height: 175px;
+  }
+}
+
+/* ── 1i. Contact Section ──────────────────────────────────── */
+@media (max-width: 768px) {
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .cform {
+    padding: 1.25rem;
+  }
+}
+
+/* ── 1j. Footer ───────────────────────────────────────────── */
+@media (max-width: 640px) {
+
+  .ftr-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+
+  .ftr-links {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+}
+
+/* ── 1k. Section typography / spacing ────────────────────── */
+@media (max-width: 768px) {
+
+  section {
+    padding: 4rem 0;
+  }
+
+  .section-title {
+    font-size: clamp(1.6rem, 5vw, 2.2rem);
+  }
+
+  .container {
+    padding: 0 1rem; /* tighter side padding on phones */
+  }
+}
+
+@media (max-width: 480px) {
+
+  section {
+    padding: 3rem 0;
+  }
+
+  .container {
+    padding: 0 0.875rem;
+  }
+}
+
+
+/* ============================================================
+   ═══════════════════════════════════════════════════════════
+   2.  ALL_PROJECTS.HTML — all_projects.css overrides
+   ═══════════════════════════════════════════════════════════
+============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Section header positioning */
+  .section-header {
+    margin: 2rem auto;
+    padding: 3.5rem 1rem 2rem; /* extra top padding for back link */
+  }
+
+  /* Back link — pulled out of absolute to in-flow */
+  .back-link {
+    position: relative;
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 1rem;
+    top: auto;
+    left: auto;
+    font-size: 0.85rem;
+    padding: 0.45rem 0.9rem;
+  }
+
+  /* Projects grid — single column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .section-title,
+  .section-title.section-header h1 {
+    font-size: 1.9rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.95rem;
+  }
+
+  /* Project image area */
+  .project-image {
+    height: 200px;
+  }
+
+  /* Project links row — wrap on small screens */
+  .project-links {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .btn {
+    font-size: 0.82rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .project-image {
+    height: 175px;
+  }
+
+  .project-title {
+    font-size: 1rem;
+  }
+
+  .project-description {
+    font-size: 0.88rem;
+  }
+
+  .project-tag {
+    font-size: 0.7rem;
+    padding: 0.2rem 0.6rem;
+  }
+}
+
+/* Pagination — already mostly fine but ensure it wraps */
+@media (max-width: 480px) {
+
+  .pagination {
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+
+  .pagination-btn {
+    width: 34px;
+    height: 34px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Footer on all_projects page (dark footer variant) */
+@media (max-width: 768px) {
+
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1.25rem;
+  }
+
+  .footer-right {
+    align-items: center;
+  }
+
+  .footer-left {
+    max-width: 100%;
+  }
+}
+
+
+/* ============================================================
+   ═══════════════════════════════════════════════════════════
+   3.  CERTIFICATES.HTML — certificate.css overrides
+   ═══════════════════════════════════════════════════════════
+============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Page header — give room for back link + centered title */
+  .page-header {
+    margin: 2rem auto;
+    padding: 3.5rem 1rem 2rem;
+  }
+
+  .page-header h1 {
+    font-size: 1.9rem;
+  }
+
+  /* Back link */
+  .back-link {
+    position: relative;
+    display: inline-flex;
+    width: fit-content;
+    margin-bottom: 1rem;
+    top: auto;
+    left: auto;
+  }
+
+  /* Certificate grid — single column */
+  .certificates-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  /* Certificate image */
+  .certificate-image {
+    height: 195px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .certificate-image {
+    height: 170px;
+  }
+
+  .certificate-title {
+    font-size: 1rem;
+  }
+
+  .certificate-issuer,
+  .certificate-date,
+  .certificate-id,
+  .certificate-description {
+    font-size: 0.87rem;
+  }
+
+  .certificate-tag {
+    font-size: 0.72rem;
+  }
+
+  .container {
+    padding: 0 0.875rem;
+  }
+}
+
+
+/* ============================================================
+   ═══════════════════════════════════════════════════════════
+   4.  PROJECT DETAIL PAGES — project-detail.css overrides
+   ═══════════════════════════════════════════════════════════
+============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Main container */
+  .project-detail-container {
+    padding: 1.25rem;
+    margin: 0.75rem;
+    border-radius: 8px;
+  }
+
+  /* Hero image */
+  .project-detail-image {
+    height: 240px;
+  }
+
+  /* Title */
+  .project-detail-title {
+    font-size: 1.65rem;
+  }
+
+  /* Metadata strip — stack vertically */
+  .project-metadata {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.85rem;
+  }
+
+  /* Tags wrap */
+  .project-tags {
+    gap: 6px;
+  }
+
+  .project-tag {
+    font-size: 0.78rem;
+    padding: 4px 9px;
+  }
+
+  /* Content headings */
+  .project-description h2 {
+    font-size: 1.3rem;
+  }
+
+  /* CTA buttons — full width stack */
+  .project-links {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .project-links .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Related projects grid */
+  .related-projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  /* Iframe preview */
+  .iframe-container {
+    height: 320px;
+  }
+
+  /* Bottom navigation */
+  .project-navigation {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    padding-top: 1.25rem;
+  }
+
+  .nav-link {
+    padding: 0.4rem 0.75rem;
+    font-size: 0.88rem;
+  }
+
+  /* Tables (comparison, rouge, arch) */
+  .comparison-table,
+  .rouge-table,
+  .arch-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.82rem;
+  }
+
+  .comparison-table th,
+  .comparison-table td,
+  .rouge-table th,
+  .rouge-table td,
+  .arch-table th,
+  .arch-table td {
+    padding: 7px 10px;
+    white-space: nowrap; /* let table scroll horizontally */
+  }
+
+  /* Metrics row chips */
+  .metrics-row {
+    gap: 0.6rem;
+  }
+
+  .metric-chip {
+    font-size: 0.78rem;
+    padding: 5px 11px;
+  }
+
+  /* Pipeline steps */
+  .pipeline-row {
+    gap: 0.25rem;
+  }
+
+  .pipeline-step {
+    font-size: 0.65rem;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .pipeline-arrow {
+    font-size: 0.85rem;
+  }
+
+  /* Warning chips */
+  .warning-chips {
+    gap: 0.35rem;
+  }
+
+  .warning-chip {
+    font-size: 0.66rem;
+    padding: 0.25rem 0.6rem;
+  }
+
+  /* TL;DR box */
+  .tldr-box {
+    padding: 1rem 1.1rem;
+  }
+
+  .tldr-box p {
+    font-size: 0.92rem;
+  }
+
+  /* Video */
+  video {
+    height: auto;
+    max-height: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .project-detail-container {
+    padding: 1rem;
+    margin: 0.5rem;
+  }
+
+  .project-detail-image {
+    height: 200px;
+  }
+
+  .project-detail-title {
+    font-size: 1.4rem;
+  }
+
+  .project-description h2 {
+    font-size: 1.15rem;
+  }
+
+  .metric-value {
+    font-size: 1.3rem;
+  }
+
+  .iframe-container {
+    height: 260px;
+  }
+
+  .close-button {
+    width: 34px;
+    height: 34px;
+    font-size: 1.2rem;
+  }
+
+  /* Code blocks scroll horizontally */
+  .code-snippet pre {
+    font-size: 0.78rem;
+  }
+}
+
+
+/* ============================================================
+   ═══════════════════════════════════════════════════════════
+   5.  SHARED RESPONSIVE IMAGE WRAPPERS
+       (used in all pages via .image-wrapper / .responsive-image)
+   ═══════════════════════════════════════════════════════════
+============================================================ */
+
+@media (max-width: 768px) {
+
+  /* Ensure blurred background wrapper doesn't overflow card */
+  .image-wrapper {
+    overflow: hidden;
+    border-radius: inherit;
+  }
+
+  .background-blur {
+    /* Prevent blur edges peeking on small screens */
+    transform: scale(1.15);
+  }
+}
+
+
+/* ============================================================
+   ═══════════════════════════════════════════════════════════
+   6.  VERY SMALL PHONES (≤ 360px) — micro-adjustments
+   ═══════════════════════════════════════════════════════════
+============================================================ */
+
+@media (max-width: 360px) {
+
+  .container {
+    padding: 0 0.75rem;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .project-detail-title {
+    font-size: 1.25rem;
+  }
+
+  .btn-teal,
+  .btn-ghost-light,
+  .btn-navy,
+  .btn-outline {
+    font-size: 0.82rem;
+    padding: 9px 16px;
+  }
+
+  /* Certificates / Projects — ensure no overflow */
+  .certificate-card,
+  .project-card,
+  .proj-card {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Back-to-top button repositioned so it doesn't eat content */
+  #btt {
+    right: 1rem;
+    bottom: 1rem;
+    width: 36px;
+    height: 36px;
+    font-size: 0.75rem;
+  }
+}
