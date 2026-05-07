@@ -533,7 +533,15 @@
   .nav-link {
     padding: 0.5rem;
   }
+  
 }
+
+  .project-credit {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #555;
+  }
 
 @media (max-width: 480px) {
   .project-detail-title {
