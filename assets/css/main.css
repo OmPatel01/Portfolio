@@ -831,6 +831,265 @@ section {
 }
 
 
+.tl-block {
+  margin-bottom: 3.5rem;
+}
+.tl-block:last-child {
+  margin-bottom: 0;
+}
+
+/* ============================================================
+   TIMELINE — SIDE RAIL + DETAIL PANEL
+============================================================ */
+.rail-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2rem;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.rail {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.rail::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  bottom: 28px;
+  left: 34px;
+  width: 2px;
+  background: var(--border-2);
+  z-index: 0;
+}
+
+.rail-item {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: var(--r-md);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: var(--tr);
+}
+.rail-item:hover {
+  background: var(--bg);
+}
+.rail-item.active {
+  background: var(--white);
+  box-shadow: var(--sh-sm);
+}
+
+.rail-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bg-2);
+  border: 2px solid var(--border-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-3);
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  transition: var(--tr);
+}
+.rail-item.active .rail-icon {
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--white);
+}
+.rail-item.glow.active .rail-icon {
+  background: var(--teal);
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(38, 166, 154, 0.25);
+  animation: glowPulse 2.2s ease-in-out infinite;
+}
+
+.rail-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+.rail-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+.rail-role {
+  font-size: 0.74rem;
+  color: var(--text-3);
+}
+
+.rail-detail-wrap {
+  position: relative;
+  min-height: 220px;
+}
+.rail-detail {
+  display: none;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 1.75rem;
+  animation: stepFade 0.3s ease;
+}
+.rail-detail.active {
+  display: block;
+}
+.rail-detail.ecofy-glow {
+  border-color: rgba(38, 166, 154, 0.4);
+}
+
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 0 4px rgba(38, 166, 154, 0.25); }
+  50%      { box-shadow: 0 0 0 9px rgba(38, 166, 154, 0); }
+}
+
+@media (max-width: 768px) {
+  .rail-layout {
+    grid-template-columns: 1fr;
+  }
+  .rail {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 0.5rem;
+    padding-bottom: 6px;
+  }
+  .rail::before {
+    display: none;
+  }
+  .rail-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 110px;
+    padding: 10px 8px;
+    gap: 6px;
+  }
+  .rail-text {
+    align-items: center;
+  }
+  .rail-name {
+    font-size: 0.78rem;
+  }
+  .rail-role {
+    font-size: 0.68rem;
+  }
+}
+/* MSc rank highlight — text left, image right */
+.tl-detail-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+.tl-detail-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.tl-highlight-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 0.9rem;
+  padding: 6px 12px;
+  background: var(--teal-lt);
+  border-radius: var(--r-sm);
+  border: 1px solid rgba(38, 166, 154, 0.25);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--navy);
+}
+.tl-highlight-text i {
+  color: var(--teal-dk);
+}
+.tl-highlight-text strong {
+  color: var(--teal-dk);
+}
+
+.tl-highlight-img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: var(--r-md);
+  border: 1px solid var(--border-2);
+  flex-shrink: 0;
+}
+@media (max-width: 640px) {
+  .tl-detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tl-highlight-img {
+    width: 100%;
+    height: auto;
+    max-width: 220px;
+    margin-top: 0.5rem;
+  }
+}
+/* Stack on small screens so image doesn't get squeezed */
+@media (max-width: 640px) {
+  .tl-detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .tl-highlight-img {
+    margin-top: 0.5rem;
+  }
+}
+/* Clickable state for highlight images */
+.tl-highlight-img {
+  cursor: zoom-in;
+  transition: transform 0.2s ease;
+}
+.tl-highlight-img:hover {
+  transform: scale(1.04);
+}
+
+/* Lightbox overlay */
+.img-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(13, 31, 60, 0.92);
+  z-index: 5000;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  cursor: zoom-out;
+}
+.img-lightbox.active {
+  display: flex;
+}
+.img-lightbox img {
+  max-width: 90vw;
+  max-height: 85vh;
+  border-radius: var(--r-md);
+  box-shadow: var(--sh-lg);
+}
+.img-lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.75rem;
+  color: var(--white);
+  font-size: 2.2rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+}
+.img-lightbox-close:hover {
+  color: var(--teal);
+}
 /* ============================================================
    9. SKILLS SECTION
 ============================================================ */

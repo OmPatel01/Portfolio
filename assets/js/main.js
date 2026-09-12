@@ -74,32 +74,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // toggle to switch education & experience
-    const toggleButtons = document.querySelectorAll('.toggle-btn');
-    const sections = document.querySelectorAll('.section-content');
-
-    toggleButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            toggleButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Get the target section id
-            const targetId = this.getAttribute('data-target');
-            
-            // Hide all sections
-            sections.forEach(section => section.classList.remove('active'));
-            
-            // Show the target section
-            document.getElementById(targetId).classList.add('active');
-        });
-    });
-
-
-
-
     // project carousel & fumctionality for next & prev button
     // Project filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
@@ -1288,3 +1262,65 @@ function adjustImagesByClass(imageClass) {
       adjustImagesByClass('responsive-image');
     });
   });
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    // ---- Side rail nav (scoped per block, so Experience and Education work independently) ----
+    document.querySelectorAll('.rail-layout').forEach(function (layout) {
+        const items = layout.querySelectorAll('.rail-item');
+        const details = layout.querySelectorAll('.rail-detail');
+
+        items.forEach(function (item) {
+            item.addEventListener('click', function () {
+                const target = this.getAttribute('data-node');
+
+                items.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+
+                details.forEach(function (d) {
+                    d.classList.toggle('active', d.getAttribute('data-detail') === target);
+                });
+            });
+        });
+    });
+
+    // ---- Ecofy expand/collapse ----
+    document.querySelectorAll('.step-expand-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const detail = this.nextElementSibling;
+            const isOpen = detail.classList.toggle('open');
+            this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+            this.querySelector('span').textContent = isOpen ? 'Hide detailed work' : 'View detailed work';
+        });
+    });
+
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  const lightbox = document.getElementById('imgLightbox');
+  const lightboxImg = document.getElementById('imgLightboxContent');
+  const closeBtn = document.querySelector('.img-lightbox-close');
+
+  if (!lightbox || !lightboxImg) return;
+
+  document.querySelectorAll('.tl-highlight-img').forEach(function (img) {
+    img.addEventListener('click', function () {
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
+    });
+  });
+
+  function closeLightbox() {
+    lightbox.classList.remove('active');
+    lightboxImg.src = '';
+  }
+
+  closeBtn.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (e) {
+    if (e.target === lightbox) closeLightbox(); // click outside image closes it
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+});
